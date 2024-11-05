@@ -1,11 +1,17 @@
 :root{
-    --bg-color-primary:#2e4644;
+    /* --bg-color-primary:#2e4644;
     --texts-principal:#d2d1d2;
     --bg-secondary:#8b9c94;
-    --bg-thirdy:#427d61;
+    --bg-thirdy:#427d61; */
+    --texts-principal:#fdf6d0;
+    --bg-secondary:#264667;
+    --bg-thirdy:#123254;
+    --bg-color-primary:#081625;
+    --bg-light:#fdf6d0;
+    --bg-light-blue:#659adb;
 }
 *{
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
 }
 html{
     scroll-behavior: smooth;
@@ -45,6 +51,7 @@ nav .offcanvas{
     outline: none;
     box-shadow: none;
     border: none;
+    z-index: 3;
 }
 .dropdown-item{
     transform:background-color .1s ease;
@@ -111,7 +118,7 @@ nav .offcanvas{
     height: auto;
     width: 100%;
     flex-direction:row;
-    background: radial-gradient(circle at 60% 50%, var(--bg-color-primary), #395450, #45625c, #526f68, #5f7c73, #6c887e, #7b9289, var(--bg-secondary));
+    background: radial-gradient(circle at 60% 50%, var(--bg-color-primary), var(--bg-thirdy));
 }
 .container-main{
     width: 40%;
@@ -168,6 +175,42 @@ nav .offcanvas{
 .whatsapp-icon{
     font-size: 2.4rem;
     color:rgb(56, 178, 56);
+}
+.user-buttons{
+    list-style-type: none;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    height: 16%;
+}
+.user-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    height: 70px;  
+    padding: 10px; 
+    border-radius: 50%; 
+}
+.fa-user{
+    padding-left: 10px;
+}
+.user-buttons i{
+    font-size: 2rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+.user-buttons a:hover{
+    background-color: var(--bg-secondary);
+}
+.catalog{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color-primary);
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
