@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top border-bottom" style="background-color: #081625;">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
             <a class="navbar-brand text-light fw-semibold fs-2" href="#">
                 <img src="/imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70" class="d-inline-block align-text-center">
@@ -30,84 +30,29 @@
                     <button class="btn-close bg-primary" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
                 </div>
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
-                    <ul class="navbar-nav fs-5 justify-content-evenly" style="--bs-scroll-height: 100px;">
+                    <ul class="navbar-nav fs-5 justify-content-evenly">
                         <li class="nav-item p-3 ">
                             <a class="nav-link" href="#">Novedades</a>
                         </li>
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="#">Sobre Nosotros</a>
+                            <a class="nav-link" href="#">Galería</a>
                         </li>
                         <li class="nav-item p-3 ">
                             <a class="nav-link" href="#">Ofertas</a>
                         </li>
-                        
-                        <!-- <li class="nav-item p-3">
-                            <a class="nav-link" href="#">Hombres</a>
-                        </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="#">Mujeres</a>
+                            <a class="nav-link" href="#">Contacto</a>
                         </li>
-                        <li class="nav-item p-3">
-                            <a class="nav-link" href="#">Niños</a>
-                        </li>
-                        <li class="nav-item dropdown p-3">
-                            <a class="nav-link dropdown-toggle  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Estilo
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item " href="#">Camisetas</a></li>
-                                <li><a class="dropdown-item " href="#">Conjuntos</a></li>
-                                <li><a class="dropdown-item " href="#">Pants</a></li>
-                                <li><a class="dropdown-item " href="#">Shoes</a></li>
-                                <li><a class="dropdown-item " href="#">Caps</a></li>
-                                <li><a class="dropdown-item " href="#">Jackets</a></li>
-                                <li><a class="dropdown-item " href="#">Hoodies</a></li> 
-                            </ul>
-                        </li> -->
-                        <!-- <li class="nav-item dropdown p-3">
-                            <a class="nav-link dropdown-toggle  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorias
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item " href="#">Ligas</a></li>
-                                <li><a class="dropdown-item " href="#">Selecciones</a></li>
-                                <li><a class="dropdown-item " href="#">Kids</a></li>
-                            </ul>
-                        </li> -->
-                        <!-- <li class="nav-item dropdown p-3">
-                            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Sizes
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item  text-center" href="#">XL</a></li>
-                                <li><a class="dropdown-item  text-center" href="#">L</a></li>
-                                <li><a class="dropdown-item  text-center" href="#">M</a></li>
-                                <li><a class="dropdown-item  text-center" href="#">S</a></li>
-                                <li><a class="dropdown-item  text-center" href="#">XS</a></li>
-                            </ul>
-                        </li> -->
-                        <!-- <li class="nav-item dropdown p-3">
-                            <a class="nav-link dropdown-toggle  " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Brands
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item " href="#">Nike</a></li>
-                                <li><a class="dropdown-item " href="#">Adidas</a></li>
-                                <li><a class="dropdown-item " href="#">Puma</a></li>
-                                <li><a class="dropdown-item " href="#">Reebok</a></li>
-                                <li><a class="dropdown-item " href="#">Polo</a></li>
-                                <li><a class="dropdown-item " href="#">Vans</a></li>
-                            </ul>
-                        </li> -->
-                    </ul>
-                    <div class="user-buttons d-flex justify-content-evenly p-2 d-lg-none">
+                        <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" href="#">
                                 <i class="fa-solid fa-user users-icon py-2"></i>
                             </a>
                             <a class="nav-link user-item" href="#">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
                             </a>
-                    </div>
+                        </li>
+                    </ul>
+                    
                     <div class="d-lg-none align-self-center py-3 d-flex icons-socials">
                         <a href="" class="nav-link">
                             <i class="px-2 py-4  fa-brands fa-facebook-f fa-lg text-center"></i>
@@ -126,8 +71,11 @@
     </nav>
     <!-- Main -->
     <main class="main-content d-flex position-relative flex-wrap">
+        <!-- Container para subdividir en dos secciones el main -->
         <section class="container d-flex align-items-center justify-content-center container-main col-6 col-md-12">
+            <!-- Fila que lleva un pequeño mensaje introduciendo la empresa y que lleva a la sección de catálogo -->
             <div class="row m-2 row-main p-3">
+                <!-- Columna que lleva el mensaje y el boton -->
                 <div class="col-12 d-flex justify-content-evenly flex-column p-3">
                     <h1 class="text-center main-title">Empresa líder en Perú para la venta de Camisetas. </h1>
                     <p class=" text-center main-subtitle">Revisa nuestro amplio catálogo en camisetas de cualquier equipo y cualquier temporada.</p>
@@ -135,107 +83,142 @@
                 </div>
             </div>
         </section>
+        <!-- Segunda columna que lleva la imagen principal -->
         <section class ="container container-clothes col-md-6 col-12 d-flex p-3">
             <div class="container img-container-main d-flex justify-content-center">
                 <img src="/imgs/model.png" alt="T-shirt brand" class="clothe-img-brand">
             </div>
         </section>
+        <!-- Botón de whatsapp fijado siempre a la pantalla -->
         <a href="#" class="whatsapp-link" target="_blank">
             <i class="fa-brands fa-whatsapp py-4 whatsapp-icon"></i>
         </a>
     </main>
     <!-- Catalogo Pequeño -->
     <section class="catalog">
+        <!-- Contenedor para subdividir el catalogo -->
         <div class="container">
+            <!-- Primera fila que lleva el nombre de la sección y las cartas de equipos peruanos -->
             <div class="row">
-                <h2 class="subtitle-catalog mt-2">Futbol Nacional</h2>
-                <div class="col-md-4 mb-4">
+                <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
+                <!-- Cartas de los equipos peruanos subdividas en 3 columnas y en pantallas pequeños adaptable a solo 2 columnas -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <!-- Cada carta lleva una imagen de la camiseta, el titulo y el precio enfatizado, un boton que lleva a la pagina del producto y un boton para añadir a la cesta -->
                     <div class="card">
-                        <img src="/imgs/universitario24.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Camiseta Local Universitario 24/25</p>
-                                <h5 class="card-title">S/. 210.00</h5>
-                                <a href="#" class="btn btn-primary">Ir a detalles</a>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="/imgs/alianza.webp" class="card-img-top" alt="...">
+                        <img src="/imgs/universitario24.jpg" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Camiseta Local Alianza Lima 24/25</p>
-                            <h5 class="card-title">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary">Ir a detalles</a>
+                            <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
+                            <h5 class="card-title text-center">S/. 210.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                    <img src="/imgs/cristal.avif" class="card-img-top" alt="...">
+                        <img src="/imgs/alianza.webp" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Camiseta Local Sporting Cristal 24/25</p>
-                            <h5 class="card-title">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary">Ir a detalles</a>
+                            <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 my-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                    <img src="/imgs/cusco.jpg" class="card-img-top" alt="...">
+                    <img src="/imgs/cristal.avif" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Camiseta Local Cusco 24/25</p>
-                            <h5 class="card-title">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary">Ir a detalles</a>
+                            <p class="card-text text-center">Camiseta Local Sporting Cristal 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                    <img src="/imgs/cusco.jpg" class="card-img-top img-catalog" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <h2 class="subtitle-catalog">Camisetas al menor precio</h2>
-                <div class="col-md-4 my-4">
+                <h2 class="subtitle-catalog my-4">Camisetas al menor precio</h2>
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="imagen4.jpg" class="card-img-top" alt="...">
+                        <img src="/imgs/chelsea.jpg" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Tarjeta 4</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Ir a detalles</a>
+                            <p class="card-text text-center">Camiseta Local Chelsea 24/25</p>
+                            <h5 class="card-title text-center">S/. 210.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 my-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="imagen5.jpg" class="card-img-top" alt="...">
+                        <img src="/imgs/mun.avif" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Tarjeta 5</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Ir a detalles</a>
+                            <p class="card-text text-center">Camiseta Local Man. United 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 my-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="imagen6.jpg" class="card-img-top" alt="...">
+                    <img src="/imgs/dortmund.jpg" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Tarjeta 6</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Ir a detalles</a>
+                            <p class="card-text text-center">Camiseta Local Bor. Dortmund 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 my-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                    <img src="imagen3.jpg" class="card-img-top" alt="...">
+                    <img src="/imgs/boca.jpg" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Tarjeta 3</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Ir a detalles</a>
+                            <p class="card-text text-center">Camiseta Local Boca Juniors 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+    <!-- Galería de imagenes -->
+    <section class="galeria">
+
+    </section>
+
+    <!-- Pie de pagina / Footer -->
     <footer class="footer">
 
     </footer>
