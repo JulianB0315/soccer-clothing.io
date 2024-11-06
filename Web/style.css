@@ -12,7 +12,7 @@
     --bg-light-secondary:#4877b0;
 }
 *{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 html{
     scroll-behavior: smooth;
@@ -180,7 +180,6 @@ nav .offcanvas{
 }
 .user-buttons{
     width: 20%;
-    background-color: yellowgreen;
     margin-left: 180px;
 }
 .user-item{
@@ -190,7 +189,7 @@ nav .offcanvas{
     border-radius: 50%;
 }
 .user-buttons i{
-    
+    font-size: 2.3rem;
 }
 .catalog{
     min-height: 100vh;
