@@ -1,43 +1,67 @@
 <?php
 session_start();
 
+// Agregar producto al carrito
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
-    // Recibir datos del formulario
+    $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_quantity = $_POST['product_quantity'];
 
+    // Crear el producto como array
     $product = [
+        'id' => $product_id,
         'name' => $product_name,
         'price' => $product_price,
         'quantity' => $product_quantity
     ];
 
+    // Inicializar el carrito si no existe en la sesión
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = [];
     }
 
+    // Verificar si el producto ya está en el carrito usando el product_id
     $product_exists = false;
     foreach ($_SESSION['cart'] as &$item) {
-        if ($item['name'] == $product_name) {
+        if ($item['id'] == $product_id) {
+            // Si existe, actualizar la cantidad
             $item['quantity'] += $product_quantity;
             $product_exists = true;
             break;
         }
     }
 
+    // Si no existe, añadir al carrito
     if (!$product_exists) {
         $_SESSION['cart'][] = $product;
     }
 
-    header("Location: Shop.php"); 
+    // Redirigir al carrito o catálogo tras añadir
+    header("Location: shop.php");
+    exit();
+}
+
+// Eliminar producto del carrito
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['remove_item'])) {
+    $product_id = $_POST['product_id'];
+
+    // Filtrar productos que no coincidan con el producto a eliminar
+    $_SESSION['cart'] = array_filter($_SESSION['cart'], function ($item) use ($product_id) {
+        return $item['id'] !== $product_id;
+    });
+
+    header("Location: shop.php");
+    exit();
+}
+
+// Finalizar compra
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
+    $_SESSION['cart'] = [];
+    header("Location: gracias.php");
     exit();
 }
 ?>
-<?php
-session_start();
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +89,7 @@ session_start();
             <tbody>
                 <?php
                 $total_price = 0;
-                foreach ($_SESSION['cart'] as $key => $item):
+                foreach ($_SESSION['cart'] as $item):
                     $item_total = $item['price'] * $item['quantity'];
                     $total_price += $item_total;
                 ?>
@@ -75,8 +99,8 @@ session_start();
                     <td><?= htmlspecialchars($item['quantity']) ?></td>
                     <td>S/. <?= number_format($item_total, 2) ?></td>
                     <td>
-                        <form action="eliminar.php" method="post" style="display:inline;">
-                            <input type="hidden" name="product_name" value="<?= htmlspecialchars($item['name']) ?>">
+                        <form action="shop.php" method="post" style="display:inline;">
+                            <input type="hidden" name="product_id" value="<?= htmlspecialchars($item['id']) ?>">
                             <button type="submit" name="remove_item" class="btn btn-danger btn-sm">Eliminar</button>
                         </form>
                     </td>
@@ -89,6 +113,11 @@ session_start();
                 </tr>
             </tbody>
         </table>
+        
+        <!-- Formulario de "Finalizar Compra" -->
+        <form action="shop.php" method="post">
+            <button type="submit" name="checkout" class="btn btn-success">Finalizar Compra</button>
+        </form>
     <?php else: ?>
         <p>Tu carrito está vacío.</p>
     <?php endif; ?>
