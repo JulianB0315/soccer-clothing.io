@@ -105,55 +105,83 @@
                 <div class="col-md-6 col-lg-3 mb-4">
                     <!-- Cada carta lleva una imagen de la camiseta, el titulo y el precio enfatizado, un boton que lleva a la pagina del producto y un boton para añadir a la cesta -->
                     <div class="card">
-                        <img src="/imgs/universitario24.jpg" class="card-img-top img-catalog" alt="...">
+                        <img src="/imgs/universitario24.jpg" class="card-img-top img-catalog" alt="Camiseta Universitario">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
                             <h5 class="card-title text-center">S/. 210.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form action="shop.php" method="post">
+                                <input type="hidden" name="product_id" value="1">
+                                <input type="hidden" name="product_name" value="Camiseta Local Universitario 24/25">
+                                <input type="hidden" name="product_price" value="210.00">
+                                    <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                    <input type="hidden" name="product_quantity" id="quantity1" value="1">
+                                <button type="submit" name="add_to_cart" class="btn btn-outline-primary btn-cart ms-4">
+                                    <i class="fa-solid fa-cart-shopping"></i> 
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="/imgs/alianza.webp" class="card-img-top img-catalog" alt="...">
+                        <img src="/imgs/alianza.webp" class="card-img-top img-catalog" alt="Camiseta Alianza">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form action="shop.php" method="post">
+                                <input type="hidden" name="product_id" value="2">
+                                <input type="hidden" name="product_name" value="Camiseta Local Alianza Lima 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                    <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                    <input type="hidden" name="product_quantity" id="quantity1" value="1">
+                                <button type="submit" name="add_to_cart" class="btn btn-outline-primary btn-cart ms-4">
+                                    <i class="fa-solid fa-cart-shopping"></i> 
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                    <img src="/imgs/cristal.avif" class="card-img-top img-catalog" alt="...">
+                        <img src="/imgs/cristal.avif" class="card-img-top img-catalog" alt="Camiseta Cristal">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Sporting Cristal 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form action="shop.php" method="post">
+                                <input type="hidden" name="product_id" value="3">
+                                <input type="hidden" name="product_name" value="Camiseta Local Sporting Cristal 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                    <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                    <input type="hidden" name="product_quantity" id="quantity1" value="1">
+                                <button type="submit" name="add_to_cart" class="btn btn-outline-primary btn-cart ms-4">
+                                    <i class="fa-solid fa-cart-shopping"></i> 
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                    <img src="/imgs/cusco.jpg" class="card-img-top img-catalog" alt="...">
+                        <img src="/imgs/cusco.jpg" class="card-img-top img-catalog" alt="Camiseta Cusco">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form action="shop.php" method="post">
+                                <input type="hidden" name="product_id" value="4">
+                                <input type="hidden" name="product_name" value="Camiseta Local Cusco 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                    <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                    <input type="hidden" name="product_quantity" id="quantity1" value="1">
+                                <button type="submit" name="add_to_cart" class="btn btn-outline-primary btn-cart ms-4">
+                                    <i class="fa-solid fa-cart-shopping"></i> 
+                                </button>
+                            </form>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <div class="row">
