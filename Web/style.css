@@ -9,12 +9,14 @@
     --bg-color-primary:#081625;
     --bg-light:#fdf6d0;
     --bg-light-blue:#659adb;
+    --bg-light-secondary:#4877b0;
 }
 *{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 html{
     scroll-behavior: smooth;
+    background-color: var(--bg-color-primary);
 }
 body{
     height: 100vh;
@@ -177,32 +179,17 @@ nav .offcanvas{
     color:rgb(56, 178, 56);
 }
 .user-buttons{
-    list-style-type: none;
-    align-items: center;
-    width: 70%;
-    margin: 0 auto;
-    height: 16%;
+    width: 20%;
+    margin-left: 180px;
 }
-.user-item {
+.user-item{
     display: flex;
     justify-content: center;
-    align-items: center;  
-    height: 70px;  
-    padding: 10px; 
-    border-radius: 50%; 
-}
-.fa-user{
-    padding-left: 10px;
+    align-items: center;
+    border-radius: 50%;
 }
 .user-buttons i{
-    font-size: 2rem;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-}
-.user-buttons a:hover{
-    background-color: var(--bg-secondary);
+    font-size: 2.3rem;
 }
 .catalog{
     min-height: 100vh;
@@ -210,7 +197,35 @@ nav .offcanvas{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(210deg, var(--bg-light-secondary), var(--bg-secondary));
+}
+.img-catalog{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.subtitle-catalog{
+    color: var(--texts-principal);
+    font-size: 2rem;
+    font-family: var(--font-titles);
+}
+.card{
     background-color: var(--bg-color-primary);
+    color: var(--texts-principal);
+    transition: all 0.5s ease;
+    border: none;
+}
+.card:hover{
+    box-shadow: 2px 2px 13px var(--bg-light);
+}
+.card-text{
+    color: var(--texts-principal);
+}
+.btn-cart{
+    width: 30%;
+}
+.btn-cart i{
+    font-size: 1.6rem;
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
@@ -244,5 +259,33 @@ nav .offcanvas{
     }
     .whatsapp-link{
         display: none;
+    }
+    .btn-detalles{
+        width: 50%;
+    }
+    .user-buttons{
+        list-style-type: none;
+        align-items: center;
+        width: 70%;
+        margin: 10px auto;
+        height: 16%;
+        padding-top: 20px;
+    }
+    .user-item { 
+        height: 70px;  
+        padding: 10px; 
+    }
+    .fa-user{
+        padding-left: 10px;
+    }
+    .user-buttons i{
+        font-size: 2rem;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+    }
+    .user-buttons a:hover{
+        background-color: var(--bg-secondary);
     }
 }
