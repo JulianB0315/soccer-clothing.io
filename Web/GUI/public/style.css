@@ -10,6 +10,7 @@
     --bg-light:#fdf6d0;
     --bg-light-blue:#659adb;
     --bg-light-secondary:#4877b0;
+    --bg-dark:#1d1d20;
 }
 *{
     /* border: 1px solid blue; */
@@ -227,6 +228,40 @@ nav .offcanvas{
 .btn-cart i{
     font-size: 1.6rem;
 }
+.galeria{
+    height: 100vh;
+    width: 100%;
+    /* background-color: aquamarine; */
+}
+.carrusel-galeria{
+    width: 60%;
+    margin: 200px auto;
+    height: 68%;
+    /* background-color: aqua; */
+}
+.carousel-item{
+    height: 60vh;
+    width: 100%;
+}
+.carrusel-img{
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+}
+.img-caption{
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
+    background-color: var(--bg-dark);
+}
+.img-msg{
+    color: var(--texts-principal);
+    font-size: 2.5rem;
+}
+#galeria{
+    scroll-margin-top: 260px;
+}
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
         width:30%;
@@ -287,5 +322,28 @@ nav .offcanvas{
     }
     .user-buttons a:hover{
         background-color: var(--bg-secondary);
+    }
+    .carrusel-galeria{
+        width: 90%;
+        height: 40%;
+        margin: 250px auto;
+    }
+    .carousel-item{
+        height: 40vh;
+    }
+    .carrusel-img{
+        /* object-fit: contain; */
+        height: 180px;
+    }
+    .img-caption{
+        height: 30%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        background-color: var(--bg-dark);
+    }
+    .img-msg{
+        color: var(--texts-principal);
+        font-size: 2rem;
     }
 }
