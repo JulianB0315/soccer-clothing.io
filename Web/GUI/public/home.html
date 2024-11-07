@@ -40,7 +40,7 @@
                             <a class="nav-link" href="#">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="contacto">Contacto</a>
+                            <a class="nav-link" href="#contacto">Contacto</a>
                         </li>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" href="#">
@@ -330,12 +330,79 @@
             </button>
         </div>
     </section>
-    <section class="form-contacto" id="contacto">
-        
+    <section class="form-contacto" id="contacto"> 
+        <h2 class="text-center my-5 my-md-3 form-title">¿Quieres hacernos una consulta?</h2>
+        <div class="form-container">
+            <form action="contacto.php" method="post" class="contact-form">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required></textarea>
+                </div>
+                <button type="submit" name="enviar" class="btn btn-primary btn-form">Enviar</button>
+            </form>
+        </div>
     </section>
     <!-- Pie de pagina / Footer -->
     <footer class="footer">
-
+        <div class="footer-container">
+            <div class="footer-seccion contact-info">
+                <h4 class="footer-title">Método de Contacto</h4>
+                <ul>
+                    <li><strong>Email:</strong> contacto@futbolera.com</li>
+                    <li><strong>Teléfono:</strong> +51 234 567 890</li>
+                    <li><strong>Dirección:</strong> Calle Francisco Cabrera 123, Chiclayo, Perú</li>
+                </ul>
+            </div>
+            <div class="footer-seccion links-footer">
+                <h4 class="footer-title">Sobre Nosotros</h4>
+                <ul>
+                    <li><a href="#">Quiénes Somos</a></li>
+                    <li><a href="#">Formas de Pago</a></li>
+                    <li><a href="#">Guía de tallas</a></li>
+                    <li><a href="#">Cambios y Devoluciones</a></li>
+                    <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-seccion social-media">
+                <h4 class="footer-title">Síguenos</h4>
+                <ul>
+                    <li><a href="#" target="_blank">
+                        <i class="fa-brands fa-facebook fa-xl"> </i>
+                    </a></li>
+                    <li><a href="#" target="_blank">
+                        <i class="fa-brands fa-instagram fa-xl"></i>
+                    </a></li>
+                    <li><a href="#" target="_blank">
+                        <i class="fa-brands fa-x-twitter fa-xl"></i>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
+        </div>
+        <!-- <div class="container container-footer">
+            <div class="row row-footer">
+                <div class="col-md-4 col-lg-3 col-footer">
+                    <h5 class="footer-subtitle text-center">Redes Sociales</h5>
+                </div>
+                <div class="col-md-4 col-lg-3 col-footer">
+                    <h5 class="footer-subtitle text-center">Métodos de Contacto</h5>
+                </div>
+                <div class="col-md-4 col-lg-3 col-footer">
+                    <h5 class="footer-subtitle text-center">Sobre Nosotros</h5>
+                </div>
+        </div> -->
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
