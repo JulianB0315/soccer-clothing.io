@@ -1,8 +1,11 @@
 :root{
+    /* Primera combinacion que se propuso */
     /* --bg-color-primary:#2e4644;
     --texts-principal:#d2d1d2;
     --bg-secondary:#8b9c94;
     --bg-thirdy:#427d61; */
+
+    /* Paleta de colores actual */
     --texts-principal:#fdf6d0;
     --bg-secondary:#264667;
     --bg-thirdy:#123254;
@@ -12,9 +15,13 @@
     --bg-light-secondary:#4877b0;
     --bg-dark:#1d1d20;
     --font-titles:'Anton', sans-serif;
+    --bg-accent: #3498db;
+    --bg-warm: #f7d2c4;
 }
 *{
-    border: 1px solid blue;
+    border: 1px solid transparent; 
+    /* Esto me esta ayudando a ver los containers asi que dejenlo XD */
+    /* Actualizacion, no saquen esto porque lo necesitamos si no se recortan el tamaño de los section galeria y contacto */
 }
 html{
     scroll-behavior: smooth;
@@ -57,7 +64,9 @@ nav .offcanvas{
     border: none;
     z-index: 3;
 }
-.dropdown-item{
+/* Esto queda documentado ya que no estoy usando dropdowns en el nav, pero por si acaso dejarlo ahi */
+
+/* .dropdown-item{
     transform:background-color .1s ease;
 } 
 .dropdown-item:hover{
@@ -72,7 +81,7 @@ nav .offcanvas{
     .dropdown:hover .dropdown-menu{
         display: block;
     }
-}
+} */
 .offcanvas-title, .nav-link, .dropdown-item,.nav-first, .offcanvas-title{
     color:var(--texts-principal);
 }
@@ -127,7 +136,6 @@ nav .offcanvas{
 .container-main{
     width: 40%;
     height: 500px;
-    /* background-color: green; */
     margin-top: 130px;
     display: none;
 }
@@ -147,7 +155,6 @@ nav .offcanvas{
 .container-clothes{
     width: 550px;
     height: 500px;
-    /* background-color: gray; */
     margin-top: 130px;
 }
 .clothe-img-brand{
@@ -233,7 +240,7 @@ nav .offcanvas{
     height: 153vh;
     width: 100%;
     scroll-margin-top: 100px;
-    /* background-color: aquamarine; */
+    background-image: radial-gradient(circle, var(--bg-warm), var(--bg-light-blue), var(--bg-color-primary));
 }
 .galeria-titulo{
     color: var(--texts-principal);
@@ -244,7 +251,6 @@ nav .offcanvas{
     width: 60%;
     margin: 60px auto;
     height: 40%;
-    /* background-color: aqua; */
 }
 .carousel-item{
     height: 60vh;
@@ -270,18 +276,18 @@ nav .offcanvas{
 .form-contacto{
     height: 100vh;
     width: 100%;
-    /* background-color: #659adb; */
     scroll-margin-top: 100px;
+    background-image: radial-gradient(circle, var(--bg-light-blue), var(--bg-warm));
+    border-bottom: 1px solid var(--bg-warm);
 }
 .form-title{
-    color: var(--texts-principal);
+    color: var(--bg-thirdy);
     font-size: 3rem;
     font-family: var(--font-titles);
 }
 .form-container{
     width: 80%;
     height: 500px;
-    /* background-color: green; */
     margin: 20px auto;
     padding: 20px;
     display: flex;
@@ -290,7 +296,6 @@ nav .offcanvas{
 }
 .contact-form{
     width: 50%;
-    /* background: #000; */
     height: 100%;
     border-radius: 30px;
     box-shadow: 2px 2px 13px var(--bg-light);
@@ -300,13 +305,11 @@ nav .offcanvas{
     width: 100%;
 }
 .form-label{
-    color: var(--texts-principal);
-    /* font-size: 1.2rem; */
+    color: var(--bg-thirdy);
 }
 .footer{
     width: 100%;
     height: 400px;
-    background-color: var(--bg-light);
 }
 .container-footer{
     width: 90%;
@@ -317,11 +320,6 @@ nav .offcanvas{
     align-items: center;
     flex-direction: column;
 }
-/* .row-footer{
-    width: 100%;
-    justify-content: space-evenly;
-    height: 90%;
-} */
 .footer-container {
     display: flex;
     justify-content: space-around;
@@ -334,43 +332,47 @@ nav .offcanvas{
     min-width: 250px;
 }
 
-.footer-seccion h4 {
+.footer-title {
     font-size: 1.4rem;
     margin-bottom: 10px;
-    color: #f39c12;
+    margin-top: 10px;
+    color: var(--bg-light-blue);
 }
 
-.footer-seccion ul {
+.footer-list {
     list-style: none;
     padding: 0;
 }
 
-.footer-seccion ul li {
+.footer-list li {
     margin: 10px 0;
 }
 
-.footer-seccion ul li a {
+.footer-link {
     text-decoration: none;
     color: #fff;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
-
+.footer-info{
+    color:#fff;
+}
 .footer-seccion ul li a:hover {
-    color: #f39c12;
+    color: var(--texts-principal);
 }
-
 .social-media i {
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
-
 .footer-copy {
     margin-top: 20px;
     font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .footer-copy p {
-    margin: 0;
+    color: #fff;
+    text-align: center;
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
@@ -442,7 +444,6 @@ nav .offcanvas{
         height: 40vh;
     }
     .carrusel-img{
-        /* object-fit: contain; */
         height: 180px;
     }
     .img-caption{
@@ -465,5 +466,11 @@ nav .offcanvas{
         width: 90%;
         /* background: #000; */
         height: 100%;
+    }
+    .footer{
+        height: auto;
+    }
+    .footer-copy{
+        margin-top: 10px;
     }
 }
