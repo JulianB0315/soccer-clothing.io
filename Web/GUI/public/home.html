@@ -10,13 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Gravitas+One&display$family=Gayathri=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light fw-semibold fs-2" href="#">
+            <a class="navbar-brand text-light fw-semibold fs-2" href="#main">
                 <img src="/imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70" class="d-inline-block align-text-center">
                 Futbolera
             </a>
@@ -26,7 +26,6 @@
             <section class="offcanvas offcanvas-end" id="offCanvas" tabindex="-1">
                 <div clasS="offcanvas-header" data-bs-theme="principal">
                     <h5 class="offcanvas-title fs-1 p-3">Futbolera</h5>
-                    
                     <button class="btn-close bg-primary" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
                 </div>
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
@@ -41,7 +40,7 @@
                             <a class="nav-link" href="#">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="#contacto">Contacto</a>
                         </li>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" href="#">
@@ -70,7 +69,7 @@
         </div> 
     </nav>
     <!-- Main -->
-    <main class="main-content d-flex position-relative flex-wrap">
+    <main class="main-content d-flex position-relative flex-wrap" id="main">
         <!-- Container para subdividir en dos secciones el main -->
         <section class="container d-flex align-items-center justify-content-center container-main col-6 col-md-12">
             <!-- Fila que lleva un pequeño mensaje introduciendo la empresa y que lleva a la sección de catálogo -->
@@ -243,6 +242,9 @@
     </section>
     <!-- Galería de imagenes -->
     <section class="galeria" id="galeria">
+        <h3 class="galeria-titulo mt-5 ms-5 mt-md-5 ms-md-4">
+            Todo del fútbol, en un solo lugar
+        </h3>
         <div id="carouselExampleCaptions" class="carousel slide carrusel-galeria" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -285,11 +287,122 @@
                 <span class="visually-hidden">Siguiente</span>
             </button>
         </div>
+        <div id="carouselRopas" class="carousel slide carrusel-galeria" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/imgs/slider-home/casaca-mun.avif" class="d-block carrusel-img" alt="Barcelona Kit 24/25">
+                    <div class="img-caption d-block w-100 d-flex">
+                        <p class="img-msg">Todo en casacas y buzos</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/imgs/slider-home/mujer-alemania.avif" class="d-block w-100 carrusel-img" alt="Real Madrid Kit 24/25">
+                    <div class="img-caption d-block w-100 d-flex">
+                        <p class="img-msg">Para nuestras jugadoras</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/imgs/slider-home/niños-liverpool.webp" class="d-block w-100 carrusel-img" alt="Milan Kit 24/25">
+                    <div class="img-caption d-block w-100 d-flex">
+                        <p class="img-msg">Para los pequeños</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/imgs/slider-home/chimpun.jpg" class="d-block w-100 carrusel-img" alt="Man. United Kit 24/25">
+                    <div class="img-caption d-block w-100 d-flex">
+                        <p class="img-msg">Todo en Chimpunes</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/imgs/slider-home/chimpunes-puma.avif" class="d-block w-100 carrusel-img" alt="Inter Kit 24/25">
+                    <div class="img-caption d-block w-100 d-flex">
+                        <p class="img-msg">Chimpunes sin tacos</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselRopas" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselRopas" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
     </section>
-
+    <section class="form-contacto" id="contacto"> 
+        <h2 class="text-center my-5 my-md-3 form-title">¿Quieres hacernos una consulta?</h2>
+        <div class="form-container">
+            <form action="contacto.php" method="post" class="contact-form">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required></textarea>
+                </div>
+                <button type="submit" name="enviar" class="btn btn-primary btn-form">Enviar</button>
+            </form>
+        </div>
+    </section>
     <!-- Pie de pagina / Footer -->
     <footer class="footer">
-
+        <div class="footer-container">
+            <div class="footer-seccion contact-info">
+                <h4 class="footer-title">Método de Contacto</h4>
+                <ul>
+                    <li><strong>Email:</strong> contacto@futbolera.com</li>
+                    <li><strong>Teléfono:</strong> +51 234 567 890</li>
+                    <li><strong>Dirección:</strong> Calle Francisco Cabrera 123, Chiclayo, Perú</li>
+                </ul>
+            </div>
+            <div class="footer-seccion links-footer">
+                <h4 class="footer-title">Sobre Nosotros</h4>
+                <ul>
+                    <li><a href="#">Quiénes Somos</a></li>
+                    <li><a href="#">Formas de Pago</a></li>
+                    <li><a href="#">Guía de tallas</a></li>
+                    <li><a href="#">Cambios y Devoluciones</a></li>
+                    <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-seccion social-media">
+                <h4 class="footer-title">Síguenos</h4>
+                <ul>
+                    <li><a href="#" target="_blank">
+                        <i class="fa-brands fa-facebook fa-xl"> </i>
+                    </a></li>
+                    <li><a href="#" target="_blank">
+                        <i class="fa-brands fa-instagram fa-xl"></i>
+                    </a></li>
+                    <li><a href="#" target="_blank">
+                        <i class="fa-brands fa-x-twitter fa-xl"></i>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
+        </div>
+        <!-- <div class="container container-footer">
+            <div class="row row-footer">
+                <div class="col-md-4 col-lg-3 col-footer">
+                    <h5 class="footer-subtitle text-center">Redes Sociales</h5>
+                </div>
+                <div class="col-md-4 col-lg-3 col-footer">
+                    <h5 class="footer-subtitle text-center">Métodos de Contacto</h5>
+                </div>
+                <div class="col-md-4 col-lg-3 col-footer">
+                    <h5 class="footer-subtitle text-center">Sobre Nosotros</h5>
+                </div>
+        </div> -->
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

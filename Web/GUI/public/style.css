@@ -11,9 +11,10 @@
     --bg-light-blue:#659adb;
     --bg-light-secondary:#4877b0;
     --bg-dark:#1d1d20;
+    --font-titles:'Anton', sans-serif;
 }
 *{
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
 }
 html{
     scroll-behavior: smooth;
@@ -43,7 +44,7 @@ nav .offcanvas{
     box-shadow: none;
 }
 .navbar-brand{
-    font-family: var(--font-titles);
+    font-family: "Bebas Neue", "sans-serif";
     font-weight: 800;
 }
 .navbar-nav{
@@ -136,7 +137,7 @@ nav .offcanvas{
 .main-title{
     color: #fff;
     font-size: 3rem;
-    /* font-family: var(--font-titles); Ignorar esto, todavia no hay una fuente establecida */
+    font-family: var(--font-titles);
 }
 .main-subtitle{
     color: #fff;
@@ -229,14 +230,20 @@ nav .offcanvas{
     font-size: 1.6rem;
 }
 .galeria{
-    height: 100vh;
+    height: 153vh;
     width: 100%;
+    scroll-margin-top: 100px;
     /* background-color: aquamarine; */
+}
+.galeria-titulo{
+    color: var(--texts-principal);
+    font-size: 3rem;
+    font-family: var(--font-titles);
 }
 .carrusel-galeria{
     width: 60%;
-    margin: 200px auto;
-    height: 68%;
+    margin: 60px auto;
+    height: 40%;
     /* background-color: aqua; */
 }
 .carousel-item{
@@ -258,9 +265,112 @@ nav .offcanvas{
 .img-msg{
     color: var(--texts-principal);
     font-size: 2.5rem;
+    font-family: var(--font-titles);
 }
-#galeria{
-    scroll-margin-top: 260px;
+.form-contacto{
+    height: 100vh;
+    width: 100%;
+    /* background-color: #659adb; */
+    scroll-margin-top: 100px;
+}
+.form-title{
+    color: var(--texts-principal);
+    font-size: 3rem;
+    font-family: var(--font-titles);
+}
+.form-container{
+    width: 80%;
+    height: 500px;
+    /* background-color: green; */
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-form{
+    width: 50%;
+    /* background: #000; */
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: 2px 2px 13px var(--bg-light);
+    padding: 20px;
+}
+.btn-form{
+    width: 100%;
+}
+.form-label{
+    color: var(--texts-principal);
+    /* font-size: 1.2rem; */
+}
+.footer{
+    width: 100%;
+    height: 400px;
+    background-color: var(--bg-light);
+}
+.container-footer{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* .row-footer{
+    width: 100%;
+    justify-content: space-evenly;
+    height: 90%;
+} */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-seccion {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-seccion h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #f39c12;
+}
+
+.footer-seccion ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-seccion ul li {
+    margin: 10px 0;
+}
+
+.footer-seccion ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-seccion ul li a:hover {
+    color: #f39c12;
+}
+
+.social-media i {
+    margin-bottom: 20px;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.footer-copy p {
+    margin: 0;
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
@@ -325,8 +435,8 @@ nav .offcanvas{
     }
     .carrusel-galeria{
         width: 90%;
-        height: 40%;
-        margin: 250px auto;
+        height: 25%;
+        margin: 100px auto;
     }
     .carousel-item{
         height: 40vh;
@@ -345,5 +455,15 @@ nav .offcanvas{
     .img-msg{
         color: var(--texts-principal);
         font-size: 2rem;
+    }
+    .form-container{
+        width: 90%;
+        height: 500px;
+        margin: 5px auto;
+    }
+    .contact-form{
+        width: 90%;
+        /* background: #000; */
+        height: 100%;
     }
 }
