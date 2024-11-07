@@ -17,6 +17,7 @@
     --font-titles:'Anton', sans-serif;
     --bg-accent: #3498db;
     --bg-warm: #f7d2c4;
+    --font-texts:"AdihausDIN", sans-serif;
 }
 *{
     border: 1px solid transparent; 
@@ -150,7 +151,7 @@ nav .offcanvas{
 .main-subtitle{
     color: #fff;
     font-size: 1.2rem;
-    /* font-family:var(--font-texts); Ignorar, no hay fuente */
+    font-family:var(--font-texts);
 }
 .container-clothes{
     width: 550px;
@@ -229,6 +230,7 @@ nav .offcanvas{
 }
 .card-text{
     color: var(--texts-principal);
+    font-family: var(--font-texts);
 }
 .btn-cart{
     width: 30%;
@@ -300,6 +302,7 @@ nav .offcanvas{
     border-radius: 30px;
     box-shadow: 2px 2px 13px var(--bg-light);
     padding: 20px;
+    font-family: var(--font-texts);
 }
 .btn-form{
     width: 100%;
@@ -330,6 +333,7 @@ nav .offcanvas{
 .footer-seccion {
     flex: 1;
     min-width: 250px;
+    font-family: var(--font-texts);
 }
 
 .footer-title {
@@ -373,6 +377,7 @@ nav .offcanvas{
 .footer-copy p {
     color: #fff;
     text-align: center;
+    font-family: var(--font-texts);
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
