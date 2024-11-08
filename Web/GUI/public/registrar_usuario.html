@@ -69,10 +69,17 @@
         </div> 
     </nav>
     <section class="form-login">
-        <div class="container login-form-container">
+        <div class="container login-form-container registro-form">
             <div class="formulario">
                 <form action="#">
-                    <h2 class="title-form-login">Iniciar Sesión</h2>
+                    <h2 class="title-form-login">Registrarse</h2>
+                    <div class="input-contenedor">
+                        <span class="material-symbols-outlined">
+                            person
+                            </span>
+                        <input type="text" required class="input-login" id="nombres" name="nombres">
+                        <label for="nombres" class="lbl-nombres-registro">Nombre Completo</label>
+                    </div>
                     <div class="input-contenedor">
                         <span class="material-symbols-outlined">
                             Mail
@@ -87,16 +94,10 @@
                         <input type="password" required class="input-login" id="contraseña" name="contraseña">
                         <label for="contraseña" class="lbl-contraseña">Contraseña</label>
                     </div>
-                    <div class="olvidar">
-                        <label for="#">
-                            <a href="#">Olvidé mi Contraseña</a>
-                        </label>
-                    </div>
                 </form>
                 <div>
-                    <button class="btn-acceder">Acceder</button>
+                    <button class="btn-acceder">Registrarse</button>
                     <div class="registrar">
-                        <p>¿No tienes una cuenta?<a href="./registrar_usuario.html">Crear Cuenta</a></p>
                         <a href="./home.html" class="volver">Volver a la tienda</a>
                     </div>
                 </div>
