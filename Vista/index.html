@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futbolera</title>
-    <link rel="icon" href="/imgs/logo-tienda.webp">
+    <link rel="icon" href="./imgs/logo-tienda.webp">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/Web/GUI/public/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -17,8 +17,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light fw-semibold fs-2" href="./home.html">
-                <img src="/imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70" class="d-inline-block align-text-center">
+            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
+                <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70" class="d-inline-block align-text-center">
                 Futbolera
             </a>
             <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offCanvas" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,19 +35,19 @@
                             <a class="nav-link" href="./novedades.html">Novedades</a>
                         </li>
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="./home.html#galeria">Galería</a>
+                            <a class="nav-link" href="./index.html#galeria">Galería</a>
                         </li>
                         <li class="nav-item p-3 ">
                             <a class="nav-link" href="#">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="./home.html#contacto">Contacto</a>
+                            <a class="nav-link" href="./index.html#contacto">Contacto</a>
                         </li>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" href="./login_usuario.html">
                                 <i class="fa-solid fa-user users-icon py-2"></i>
                             </a>
-                            <a class="nav-link user-item" href="Car_shop.html">
+                            <a class="nav-link user-item" href="./Car_shop.html">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
                             </a>
                         </li>
@@ -84,7 +84,7 @@
         <!-- Segunda columna que lleva la imagen principal -->
         <section class ="container container-clothes col-md-6 col-12 d-flex p-3">
             <div class="container img-container-main d-flex justify-content-center">
-                <img src="/imgs/model.png" alt="T-shirt brand" class="clothe-img-brand">
+                <img src="./imgs/model.png" alt="T-shirt brand" class="clothe-img-brand">
             </div>
         </section>
         <!-- Botón de whatsapp fijado siempre a la pantalla -->
@@ -93,6 +93,7 @@
         </a>
     </main>
     <!-- Catalogo Pequeño -->
+    <!-- ARREGLA ESTA WBD JULIAN BURRAZO -->
     <section class="catalog">
         <!-- Contenedor para subdividir el catalogo -->
         <div class="container">
@@ -107,16 +108,14 @@
                         <!-- Cartas de los equipos peruanos subdividas en 3 columnas y en pantallas pequeños adaptable a solo 2 columnas -->
                         <div class="col-md-6 col-lg-3 mb-4">
                             <div class="card">
-                                <img src="/imgs/catalogo/universitario24.jpg" class="card-img-top img-catalog" alt="Camiseta Universitario">
+                                <img src="./imgs/catalogo/universitario24.jpg" class="card-img-top img-catalog" alt="Camiseta Universitario">
                                 <div class="card-body">
                                     <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
                                     <h5 class="card-title text-center">S/. 210.00</h5>
-
                                     <input type="hidden" name="product_id" value="1" class="product-id">
                                     <input type="hidden" name="product_name" value="Camiseta Local Universitario 24/25" class="product-name">
                                     <input type="hidden" name="product_price" value="210.00" class="product-price">
                                     <input type="hidden" name="product_quantity" value="1" class="product-quantity">
-
                                     <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                                     <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                         <i class="fa-solid fa-cart-shopping"></i>
@@ -127,7 +126,7 @@
 
                         <div class="col-md-6 col-lg-3 mb-4">
                             <div class="card">
-                                <img src="/imgs/catalogo/alianza.webp" class="card-img-top img-catalog" alt="Camiseta Alianza">
+                                <img src="./imgs/catalogo/alianza.webp" class="card-img-top img-catalog" alt="Camiseta Alianza">
                                 <div class="card-body">
                                     <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
                                     <h5 class="card-title text-center">S/. 240.00</h5>
@@ -146,7 +145,7 @@
 
                         <div class="col-md-6 col-lg-3 mb-4">
                             <div class="card">
-                                <img src="/imgs/catalogo/cristal.avif" class="card-img-top img-catalog" alt="Camiseta Cristal">
+                                <img src="./imgs/catalogo/cristal.avif" class="card-img-top img-catalog" alt="Camiseta Cristal">
                                 <div class="card-body">
                                     <p class="card-text text-center">Camiseta Local Sporting Cristal 24/25</p>
                                     <h5 class="card-title text-center">S/. 240.00</h5>
@@ -165,7 +164,7 @@
 
                         <div class="col-md-6 col-lg-3 mb-4">
                             <div class="card">
-                                <img src="/imgs/catalogo/cusco.jpg" class="card-img-top img-catalog" alt="Camiseta Cusco">
+                                <img src="./imgs/catalogo/cusco.jpg" class="card-img-top img-catalog" alt="Camiseta Cusco">
                                 <div class="card-body">
                                     <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
                                     <h5 class="card-title text-center">S/. 240.00</h5>
@@ -184,12 +183,12 @@
                     </div>
                     <!-- ... (rest of the catalog content) ... -->
                 </div>
-            </section>
+            </section> 
             <div class="row">
                 <h2 class="subtitle-catalog my-4">Camisetas al menor precio</h2>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="/imgs/catalogo/chelsea.jpg" class="card-img-top img-catalog" alt="...">
+                        <img src="./imgs/catalogo/chelsea.jpg" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Chelsea 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 210.00</h5>
@@ -202,7 +201,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="/imgs/catalogo/mun.avif" class="card-img-top img-catalog" alt="...">
+                        <img src="./imgs/catalogo/mun.avif" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Man. United 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
@@ -215,7 +214,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                    <img src="/imgs/catalogo/dortmund.jpg" class="card-img-top img-catalog" alt="...">
+                    <img src="./imgs/catalogo/dortmund.jpg" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Bor. Dortmund 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
@@ -228,7 +227,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                    <img src="/imgs/catalogo/boca.jpg" class="card-img-top img-catalog" alt="...">
+                    <img src="./imgs/catalogo/boca.jpg" class="card-img-top img-catalog" alt="...">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Boca Juniors 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
@@ -250,31 +249,31 @@
         <div id="carouselExampleCaptions" class="carousel slide carrusel-galeria" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/imgs/slider-home/barcelona.webp" class="d-block carrusel-img" alt="Barcelona Kit 24/25">
+                    <img src="./imgs/slider-home/barcelona.webp" class="d-block carrusel-img" alt="Barcelona Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Força Barça!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/imgs/slider-home/rm.webp" class="d-block w-100 carrusel-img" alt="Real Madrid Kit 24/25">
+                    <img src="./imgs/slider-home/rm.webp" class="d-block w-100 carrusel-img" alt="Real Madrid Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Hala Madrid!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/imgs/slider-home/milan.webp" class="d-block w-100 carrusel-img" alt="Milan Kit 24/25">
+                    <img src="./imgs/slider-home/milan.webp" class="d-block w-100 carrusel-img" alt="Milan Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Sempre Milan</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/imgs/slider-home/munit.webp" class="d-block w-100 carrusel-img" alt="Man. United Kit 24/25">
+                    <img src="./imgs/slider-home/munit.webp" class="d-block w-100 carrusel-img" alt="Man. United Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Sé un Red Devil</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/imgs/slider-home/inter.webp" class="d-block w-100 carrusel-img" alt="Inter Kit 24/25">
+                    <img src="./imgs/slider-home/inter.webp" class="d-block w-100 carrusel-img" alt="Inter Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Orgullo Nerazzurri!</p>
                     </div>
@@ -292,31 +291,31 @@
         <div id="carouselRopas" class="carousel slide carrusel-galeria" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/imgs/slider-home/casaca-mun.avif" class="d-block carrusel-img" alt="Barcelona Kit 24/25">
+                    <img src="./imgs/slider-home/casaca-mun.avif" class="d-block carrusel-img" alt="Barcelona Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Todo en casacas y buzos</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/imgs/slider-home/mujer-alemania.avif" class="d-block w-100 carrusel-img" alt="Real Madrid Kit 24/25">
+                    <img src="./imgs/slider-home/mujer-alemania.avif" class="d-block w-100 carrusel-img" alt="Real Madrid Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Para nuestras jugadoras</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/imgs/slider-home/niños-liverpool.webp" class="d-block w-100 carrusel-img" alt="Milan Kit 24/25">
+                    <img src="./imgs/slider-home/niños-liverpool.webp" class="d-block w-100 carrusel-img" alt="Milan Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Para los pequeños</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/imgs/slider-home/chimpun.jpg" class="d-block w-100 carrusel-img" alt="Man. United Kit 24/25">
+                    <img src="./imgs/slider-home/chimpun.jpg" class="d-block w-100 carrusel-img" alt="Man. United Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Todo en Chimpunes</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/imgs/slider-home/chimpunes-puma.avif" class="d-block w-100 carrusel-img" alt="Inter Kit 24/25">
+                    <img src="./imgs/slider-home/chimpunes-puma.avif" class="d-block w-100 carrusel-img" alt="Inter Kit 24/25">
                     <div class="img-caption d-block w-100 d-flex">
                         <p class="img-msg">Chimpunes sin tacos</p>
                     </div>
@@ -401,6 +400,6 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/Web/GUI/private/car.js"></script>
+    <script src="./car.js"></script>
 </body>
 </html>
