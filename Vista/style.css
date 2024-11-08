@@ -21,7 +21,7 @@
     --font-texts:"AdihausDIN", sans-serif;
 }
 *{
-    border: 1px solid transparent; 
+    border: 1px solid blue; 
     /* Esto me esta ayudando a ver los containers asi que dejenlo XD */
     /* Actualizacion, no saquen esto porque lo necesitamos si no se recortan el tamaño de los section galeria y contacto */
 }
@@ -388,6 +388,11 @@ nav .offcanvas{
     position: relative;
     overflow: hidden;
 }
+
+.btn-novedades {
+    color: green;
+}
+
 .product-card img {
     transition: transform 0.3s ease;
 }
