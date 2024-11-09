@@ -21,7 +21,7 @@
     --font-texts:"AdihausDIN", sans-serif;
 }
 *{
-    border: 1px solid blue; 
+    /* border: 1px solid blue;  */
     /* Esto me esta ayudando a ver los containers asi que dejenlo XD */
     /* Actualizacion, no saquen esto porque lo necesitamos si no se recortan el tamaño de los section galeria y contacto */
 }
@@ -710,4 +710,9 @@ nav .offcanvas{
     .login-form-container {
         width: 50%;
     }
+}
+/* CSS de notificaciones (mejora esto Diego) */
+#notification {
+    z-index: 1050; 
+    width: 250px; 
 }
