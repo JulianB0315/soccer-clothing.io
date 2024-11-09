@@ -1,7 +1,7 @@
 // Función para agregar productos al carrito
-function addToCart() {
-    // Obtener los datos del formulario
-    var form = document.getElementById("addToCartForm");
+function addToCart(productId) {
+    // Obtener el formulario correspondiente al producto
+    var form = document.getElementById("addToCartForm" + productId);
     var formData = new FormData(form);
     
     // Crear un objeto con la información del producto
