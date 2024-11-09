@@ -118,14 +118,14 @@
                                 <div class="card-body">
                                     <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
                                     <h5 class="card-title text-center">S/. 210.00</h5>
-                                    <form id="addToCartForm">
+                                    <form id="addToCartForm1">
                                         <input type="hidden" name="product_id" value="1">
                                         <input type="hidden" name="product_name" value="Camiseta Local Universitario 24/25">
                                         <input type="hidden" name="product_price" value="210.00">
                                         <input type="hidden" name="product_quantity" value="1">
                                         <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                        <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart()">
-                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart(1)">
+                                            <i class="fa-solid fa-cart-shopping"></i> 
                                         </button>
                                     </form>
                                 </div>
@@ -134,20 +134,22 @@
 
                         <div class="col-md-6 col-lg-3 mb-4">
                             <div class="card">
-                                <img src="./imgs/catalogo/alianza.webp" class="card-img-top img-catalog" alt="Camiseta Alianza">
+                                <img src="imgs/catalogo/alianza.webp" class="card-img-top img-catalog" alt="Camiseta Universitario">
                                 <div class="card-body">
                                     <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
                                     <h5 class="card-title text-center">S/. 240.00</h5>
-                                    <input type="hidden" name="product_id" value="2" class="product-id">
-                                    <input type="hidden" name="product_name" value="Camiseta Local Alianza Lima 24/25" class="product-name">
-                                    <input type="hidden" name="product_price" value="240.00" class="product-price">
-                                    <input type="hidden" name="product_quantity" value="1" class="product-quantity">
-                                    <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                    <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </button>
+                                    <form id="addToCartForm2">
+                                        <input type="hidden" name="product_id" value="2">
+                                        <input type="hidden" name="product_name" value="Camiseta Local Alianza Lima 24/25">
+                                        <input type="hidden" name="product_price" value="240.00">
+                                        <input type="hidden" name="product_quantity" value="1">
+                                        <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                        <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart(2)">
+                                            <i class="fa-solid fa-cart-shopping"></i> 
+                                        </button>
+                                    </form>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
 
                         <div class="col-md-6 col-lg-3 mb-4">
