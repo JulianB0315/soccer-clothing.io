@@ -27,7 +27,7 @@ $productos = $query->fetchAll(PDO::FETCH_ASSOC);
     <link href="https://db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
             <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
                 <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70" class="d-inline-block align-text-center">

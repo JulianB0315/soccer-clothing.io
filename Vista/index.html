@@ -49,6 +49,17 @@
                         <li class="nav-item p-3">
                             <a class="nav-link" href="./index.html#contacto">Contacto</a>
                         </li>
+                        <div id="notification"
+                            class="toast align-items-center text-bg-primary border-0"
+            role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Producto añadido al carrito
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="closeNotification()"
+                    aria-label="Close"></button>
+            </div>
+        </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" href="./login_usuario.html">
                                 <i class="fa-solid fa-user users-icon py-2"></i>
@@ -101,22 +112,9 @@
     </main>
     <!-- Catalogo Pequeño -->
     <section class="catalog">
-        <div id="notification"
-            class="toast align-items-center text-bg-primary border-0 position-absolute top-50 start-50 translate-middle"
-            role="alert" aria-live="assertive" aria-atomic="true" style="display:none;">
-            <div class="d-flex">
-                <div class="toast-body">
-                    Producto añadido al carrito
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="closeNotification()"
-                    aria-label="Close"></button>
-            </div>
-        </div>
+        
         <!-- Contenedor para subdividir el catalogo -->
-        <div class="container">
             <!-- Primera fila que lleva el nombre de la sección y las cartas de equipos peruanos -->
-            <!-- Catalogo Pequeño -->
-            <!-- Contenedor para subdividir el catalogo -->
             <div class="container">
                 <div class="row">
                     <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
@@ -155,7 +153,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="col-md-6 col-lg-3 mb-3">
                         <div class="card">
                             <img src="./imgs/catalogo/cristal.avif" class="card-img-top img-catalog"
                                 alt="Camiseta Cristal">

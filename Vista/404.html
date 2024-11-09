@@ -68,47 +68,18 @@
             </section>
         </div> 
     </nav>
-    <section class="form-login">
-        <div class="container login-form-container registro-form">
-            <div class="formulario">
-                <form action="../Controlador/registrar_usuarios.php" method="POST">
-                    <h2 class="title-form-login">Registrarse</h2>
-                    <div class="input-contenedor">
-                        <span class="material-symbols-outlined">
-                            person
-                            </span>
-                        <input type="text" required class="input-login" id="nombres" name="nombres">
-                        <label for="nombres" class="lbl-nombres-registro">Nombre Completo</label>
-                    </div>
-                    <div class="input-contenedor">
-                        <span class="material-symbols-outlined">
-                            call
-                        </span>
-                        <input type="tel" required class="input-login" id="contraseña" name="telf">
-                        <label for="telf" class="lbl-telf">Teléfono</label>
-                    </div>
-                    <div class="input-contenedor">
-                        <span class="material-symbols-outlined">
-                            Mail
-                        </span>
-                        <input type="email" required class="input-login" id="email" name="email-registro">
-                        <label for="email-registro" class="lbl-email">Email</label>
-                    </div>
-                    <div class="input-contenedor">
-                        <span class="material-symbols-outlined">
-                            lock
-                        </span>
-                        <input type="password" required class="input-login" id="contraseña" name="password-registro">
-                        <label for="password-registro" class="lbl-contraseña">Contraseña</label>
-                    </div>
-                    <div>
-                        <input type="submit" class="btn-acceder" value="Registrarse">
-                        <div class="registrar">
-                            <a href="./index.html" class="volver">Volver a la tienda</a>
-                        </div>
-                    </div>
-                </form>
-                
+    <section class="error-section">
+        <div class="container error-container">
+            <div class="row w-100 row-error">
+                <div class="col-12 columna-error">
+                    <h1 class="error-title">ERROR 404</h1>
+                    <p class="error-text">La página solicitada no existe</p>
+                    <p class="error-text">No pudimos encontrar la página que estabas buscando. Por favor, verifica la URL y vuelve a intentarlo.</p>
+                </div>
+                <div class="col-12 columna-error">
+                    <a href="./index.html" class="btn btn-outline-primary align-self-center btn-error">Volver al inicio</a>
+                    <!-- <a href="./index.html" class="btn btn-primary">Volver al inicio</a> -->
+                </div>
             </div>
         </div>
     </section>

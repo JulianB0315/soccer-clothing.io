@@ -1,9 +1,9 @@
 <?php
     include "ConectionMySQL.php";
-    $nombres=$_GET['nombres'];
-    $telf=$_GET['telf'];
-    $email=$_GET['email-registro'];
-    $password=$_GET['password-registro'];
+    $nombres=$_POST['nombres'];
+    $telf=$_POST['telf'];
+    $email=$_POST['email-registro'];
+    $password=$_POST['password-registro'];
 
     $sql="INSERT INTO usuarios (nombres,telf,email,contrasena) VALUES ('$nombres','$telf','$email','$password')";
     $verificar="SELECT * FROM usuarios WHERE email='$email'";

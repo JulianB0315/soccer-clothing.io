@@ -21,7 +21,7 @@
     --font-texts:"AdihausDIN", sans-serif;
 }
 *{
-    /* border: 1px solid blue;  */
+    border: 1px solid transparent; 
     /* Esto me esta ayudando a ver los containers asi que dejenlo XD */
     /* Actualizacion, no saquen esto porque lo necesitamos si no se recortan el tamaño de los section galeria y contacto */
 }
@@ -203,6 +203,7 @@ nav .offcanvas{
     font-size: 2.3rem;
 }
 .catalog{
+    display: relative;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -587,7 +588,92 @@ nav .offcanvas{
 .registrar p a:hover{
     text-decoration: underline;
 }
+/* CSS de notificaciones (mejorao) */
+/* Animacion provisional para la noti, no puedo asegurar q funcionen */
+/* @keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes desaparecer {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+} */
+#notification {
+    z-index: 1050; 
+    width: 250px; 
+    position: absolute;
+    top: 10%; /* Ajusta la posición en el contenedor */
+    left: 63%;
+    animation-duration: .5s;
+}
+/*clases para el javascript */
+/* .aparecer {
+    animation-name: fadeIn;
+}
 
+.desaparecer {
+    animation-name: fadeOut;
+} */
+
+/* -------- Estilos para el error ------- */
+.error-section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-image: radial-gradient(circle, var(--bg-color-primary), var(--bg-thirdy));
+}
+.error-container{
+    text-align: center;
+    width: 70%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row-error{
+    height: 70%;
+}
+.columna-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.columna-error h1{
+    font-size: 4.5rem;
+    color: var(--texts-principal);
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--font-titles);
+}
+.columna-error p{
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-family: var(--font-texts);
+}
+.btn-error{
+    padding:15px;
+    width:50%;
+    color: var(--texts-principal);
+}
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
         width:30%;
@@ -710,9 +796,4 @@ nav .offcanvas{
     .login-form-container {
         width: 50%;
     }
-}
-/* CSS de notificaciones (mejora esto Diego) */
-#notification {
-    z-index: 1050; 
-    width: 250px; 
 }
