@@ -15,7 +15,7 @@ session_start();
     <h2>Carrito de Compras</h2>
     
     <?php if (!empty($_SESSION['cart'])): ?>
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Producto</th>
@@ -49,6 +49,7 @@ session_start();
                 <tr>
                     <td colspan="3" class="text-end"><strong>Total:</strong></td>
                     <td><strong>S/. <?= number_format($total_price, 2) ?></strong></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
