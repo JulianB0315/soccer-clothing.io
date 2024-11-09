@@ -1,38 +1,66 @@
 <?php
 session_start();
-
-// Configuración de la respuesta en JSON
-header('Content-Type: application/json');
-
-// Captura y decodifica los datos enviados por AJAX
-$data = json_decode(file_get_contents("php://input"), true);
-
-// Inicializa el carrito si no existe
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = [];
-}
-if (isset($data['product_id'], $data['product_name'], $data['product_price'], $data['product_quantity'])) {
-    // Validación básica de los datos
-    if (is_numeric($data['product_id']) && is_string($data['product_name']) && is_numeric($data['product_price']) && is_numeric($data['product_quantity'])) {
-        // Estructura de producto a añadir
-        $product = [
-            "id" => $data['product_id'],
-            "name" => $data['product_name'],
-            "price" => $data['product_price'],
-            "quantity" => $data['product_quantity'],
-        ];
-
-        // Añade el producto a la sesión
-        $_SESSION['cart'][] = $product;
-
-        // Respuesta en caso de éxito
-        echo json_encode(["success" => true]);
-    } else {
-        // Respuesta en caso de error de validación
-        echo json_encode(["success" => false, "error" => "Invalid data format"]);
-    }
-} else {
-    // Respuesta en caso de error
-    echo json_encode(["success" => false, "error" => "Missing data"]);
-}
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+    <h2>Carrito de Compras</h2>
+    
+    <?php if (!empty($_SESSION['cart'])): ?>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $total_price = 0;
+                foreach ($_SESSION['cart'] as $item):
+                    $item_total = $item['price'] * $item['quantity'];
+                    $total_price += $item_total;
+                ?>
+                <tr>
+                    <td><?= htmlspecialchars($item['name']) ?></td>
+                    <td>S/. <?= number_format($item['price'], 2) ?></td>
+                    <td><?= htmlspecialchars($item['quantity']) ?></td>
+                    <td>S/. <?= number_format($item_total, 2) ?></td>
+                    <td>
+                        <!-- Formulario para eliminar el producto -->
+                        <form action="remove_from_cart.php" method="post" style="display:inline;">
+                            <input type="hidden" name="product_id" value="<?= htmlspecialchars($item['id']) ?>">
+                            <button type="submit" name="remove_item" class="btn btn-danger btn-sm">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                    <td><strong>S/. <?= number_format($total_price, 2) ?></strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Finalizar compra -->
+        <form action="checkout.php" method="post">
+            <button type="submit" name="checkout" class="btn btn-success">Finalizar Compra</button>
+        </form>
+    <?php else: ?>
+        <p>Tu carrito está vacío.</p>
+    <?php endif; ?>
+</div>
+
+</body>
+</html>
