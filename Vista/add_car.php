@@ -1,46 +1,43 @@
 <?php
 session_start();
 
-// Verificar si se reciben los datos del producto
-if (isset($_POST['product_id']) && isset($_POST['product_name']) && isset($_POST['product_price']) && isset($_POST['product_quantity'])) {
+// Verificar si los datos del producto fueron enviados
+if (isset($_POST['product_id'], $_POST['product_name'], $_POST['product_price'], $_POST['product_quantity'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_quantity = $_POST['product_quantity'];
 
-    // Crear el producto como array
-    $product = [
-        'id' => $product_id,
-        'name' => $product_name,
-        'price' => $product_price,
-        'quantity' => $product_quantity
-    ];
-
-    // Inicializar el carrito si no existe en la sesión
+    // Inicializar el carrito si no existe
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = [];
     }
 
     // Verificar si el producto ya está en el carrito
-    $product_exists = false;
+    $found = false;
     foreach ($_SESSION['cart'] as &$item) {
         if ($item['id'] == $product_id) {
-            // Si existe, actualizar la cantidad
+            // Si ya existe, aumentar la cantidad
             $item['quantity'] += $product_quantity;
-            $product_exists = true;
+            $found = true;
             break;
         }
     }
 
-    // Si no existe, agregar el producto al carrito
-    if (!$product_exists) {
-        $_SESSION['cart'][] = $product;
+    // Si no se encuentra el producto, agregarlo al carrito
+    if (!$found) {
+        $_SESSION['cart'][] = [
+            'id' => $product_id,
+            'name' => $product_name,
+            'price' => $product_price,
+            'quantity' => $product_quantity
+        ];
     }
 
-    // Responder con éxito
-    echo json_encode(['status' => 'success']);
+    // Devolver respuesta en formato JSON
+    echo json_encode(['status' => 'success', 'message' => 'Producto agregado al carrito']);
 } else {
-    // Responder con error
-    echo json_encode(['status' => 'error', 'message' => 'Datos incompletos']);
+    // Si los datos no son correctos
+    echo json_encode(['status' => 'error', 'message' => 'Datos incorrectos']);
 }
 ?>
