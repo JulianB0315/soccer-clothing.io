@@ -47,7 +47,7 @@
                             <a class="nav-link user-item" href="./login_usuario.html">
                                 <i class="fa-solid fa-user users-icon py-2"></i>
                             </a>
-                            <a class="nav-link user-item" href="./Car_shop.html">
+                            <a class="nav-link user-item" href="./shop.php">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
                             </a>
                         </li>
@@ -93,34 +93,43 @@
         </a>
     </main>
     <!-- Catalogo Pequeño -->
-    <!-- ARREGLA ESTA WBD JULIAN BURRAZO -->
     <section class="catalog">
+        <div id="notification" class="toast align-items-center text-bg-primary border-0 position-absolute top-50 start-50 translate-middle" role="alert" aria-live="assertive" aria-atomic="true" style="display:none;">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Producto añadido al carrito
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="closeNotification()" aria-label="Close"></button>
+            </div>
+        </div>
         <!-- Contenedor para subdividir el catalogo -->
         <div class="container">
             <!-- Primera fila que lleva el nombre de la sección y las cartas de equipos peruanos -->
             <!-- Catalogo Pequeño -->
-            <section class="catalog">
                 <!-- Contenedor para subdividir el catalogo -->
                 <div class="container">
                     <div class="row">
                         <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
                         <!-- Cartas de los equipos peruanos subdividas en 3 columnas y en pantallas pequeños adaptable a solo 2 columnas -->
                         <div class="col-md-6 col-lg-3 mb-4">
+                            <!-- Ejemplo de producto con formulario para añadir al carrito -->
                             <div class="card">
-                                <img src="./imgs/catalogo/universitario24.jpg" class="card-img-top img-catalog" alt="Camiseta Universitario">
+                                <img src="imgs/catalogo/universitario24.jpg" class="card-img-top img-catalog" alt="Camiseta Universitario">
                                 <div class="card-body">
                                     <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
                                     <h5 class="card-title text-center">S/. 210.00</h5>
-                                    <input type="hidden" name="product_id" value="1" class="product-id">
-                                    <input type="hidden" name="product_name" value="Camiseta Local Universitario 24/25" class="product-name">
-                                    <input type="hidden" name="product_price" value="210.00" class="product-price">
-                                    <input type="hidden" name="product_quantity" value="1" class="product-quantity">
-                                    <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                    <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </button>
+                                    <form id="addToCartForm">
+                                        <input type="hidden" name="product_id" value="1">
+                                        <input type="hidden" name="product_name" value="Camiseta Local Universitario 24/25">
+                                        <input type="hidden" name="product_price" value="210.00">
+                                        <input type="hidden" name="product_quantity" value="1">
+                                        <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                        <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart()">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </form>
                                 </div>
-                            </div>
+                            </div>                          
                         </div>
 
                         <div class="col-md-6 col-lg-3 mb-4">
@@ -129,7 +138,6 @@
                                 <div class="card-body">
                                     <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
                                     <h5 class="card-title text-center">S/. 240.00</h5>
-
                                     <input type="hidden" name="product_id" value="2" class="product-id">
                                     <input type="hidden" name="product_name" value="Camiseta Local Alianza Lima 24/25" class="product-name">
                                     <input type="hidden" name="product_price" value="240.00" class="product-price">
@@ -153,7 +161,7 @@
                                     <input type="hidden" name="product_name" value="Camiseta Local Sporting Cristal 24/25" class="product-name">
                                     <input type="hidden" name="product_price" value="240.00" class="product-price">
                                     <input type="hidden" name="product_quantity" value="1" class="product-quantity">
-                                    <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                    <a class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                                     <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                         <i class="fa-solid fa-cart-shopping"></i>
                                     </button>
@@ -181,7 +189,7 @@
                         </div>
                     </div>
 
-            </section> 
+             
             <div class="row">
                 <h2 class="subtitle-catalog my-4">Camisetas al menor precio</h2>
                 <div class="col-md-6 col-lg-3 mb-4">
@@ -397,7 +405,7 @@
             <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="carAlert.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./car.js"></script>
 </body>
 </html>
