@@ -6,8 +6,17 @@
     $password=$_GET['password-registro'];
 
     $sql="INSERT INTO usuarios (nombres,telf,email,contrasena) VALUES ('$nombres','$telf','$email','$password')";
-    $execute= mysqli_query($conexion, $sql);
+    $verificar="SELECT * FROM usuarios WHERE email='$email'";
+    $verificacion= mysqli_query($conexion, $verificar);
+    if(mysqli_num_rows($verificacion)>0){
+        echo "<script>
+                alert('El correo ya se encuentra registrado');
+                window.location = '../Vista/registrar_usuario.html';
+            </script>";
+        exit();
+    }
 
+    $execute= mysqli_query($conexion, $sql);
     if($execute){
         echo "<script>
                 alert('Se ha registrado correctamente');
