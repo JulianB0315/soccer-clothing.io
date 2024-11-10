@@ -36,10 +36,10 @@
                             <a class="nav-link" href="./novedades.html">Novedades</a>
                         </li>
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="./index.html#galeria">Galería</a>
+                            <a class="nav-link" href="Galery.php">Galería</a>
                         </li>
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="#">Ofertas</a>
+                            <a class="nav-link" href="ofertas.php">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
                             <a class="nav-link" href="./index.html#contacto">Contacto</a>
@@ -73,33 +73,44 @@
             <div class="formulario">
                 <form action="../Controlador/login_usuarios.php" method="post">
                     <h2 class="title-form-login">Iniciar Sesión</h2>
+                
+                    <!-- Campo de Email -->
                     <div class="input-contenedor">
                         <span class="material-symbols-outlined">
-                            Mail
+                            mail
                         </span>
-                        <input type="email" required class="input-login" id="email" name="email">
+                        <input type="email" required class="input-login" id="email" name="email" >
                         <label for="email" class="lbl-email">Email</label>
                     </div>
+                
+                    <!-- Campo de Contraseña -->
                     <div class="input-contenedor">
                         <span class="material-symbols-outlined">
                             lock
                         </span>
-                        <input type="password" required class="input-login" id="contraseña" name="contrasena">
-                        <label for="contraseña" class="lbl-contraseña">Contraseña</label>
+                        <input type="password" required class="input-login" id="contrasena" name="contrasena">
+                        <label for="contrasena" class="lbl-contraseña">Contraseña</label>
                     </div>
+                
+                    <!-- Enlace para olvidar la contraseña -->
                     <div class="olvidar">
-                        <label for="#">
-                            <a href="#">Olvidé mi Contraseña</a>
+                        <label>
+                            <a href="#">¿Olvidaste tu contraseña?</a>
                         </label>
                     </div>
+                
+                    <!-- Botón de Acceder -->
                     <div>
-                        <button class="btn-acceder">Acceder</button>
+                        <button type="submit" class="btn-acceder">Acceder</button>
+                        
+                        <!-- Enlaces adicionales -->
                         <div class="registrar">
-                            <p>¿No tienes una cuenta?<a href="./registrar_usuario.html">Crear Cuenta</a></p>
+                            <p>¿No tienes una cuenta? <a href="./registrar_usuario.html">Crear Cuenta</a></p>
                             <a href="./index.html" class="volver">Volver a la tienda</a>
                         </div>
                     </div>
                 </form>
+                
                 
             </div>
         </div>
