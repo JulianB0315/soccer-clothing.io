@@ -40,11 +40,36 @@ function showNotification() {
     notification.style.display = "block"; // Mostrar notificación
     setTimeout(function() {
         notification.style.display = "none"; // Ocultar después de 3 segundos
-    }, 3000);
+    }, 300);
 }
 
 // Función para cerrar la notificación
 function closeNotification() {
     var notification = document.getElementById("notification");
     notification.style.display = "none";
+}
+
+// Obtener los valores guardados previamente en sessionStorage
+const idCliente = sessionStorage.getItem('id_cliente');
+const email = sessionStorage.getItem('email');
+
+document.getElementById('cliente-id').innerText = idCliente;
+document.getElementById('cliente-email').innerText = email;
+
+
+// Cuando el usuario intenta salir de la página (cerrar pestaña o navegador)
+window.addEventListener("beforeunload", function () {
+    // Borrar los datos almacenados en sessionStorage
+    sessionStorage.removeItem('id_cliente');
+    sessionStorage.removeItem('email');
+    fetch('../Controlador/cerrar_sesion.php', { method: 'POST' });
+});
+//para el bton de cerrar sesión en el servidor
+function cerrarSesion() {
+    // Eliminar datos de sessionStorage
+    sessionStorage.removeItem('id_cliente');
+    sessionStorage.removeItem('email');
+
+    // Redirigir a la página que cierra la sesión en el servidor
+    window.location.href = '../Controlador/cerrar_sesion.php';
 }
