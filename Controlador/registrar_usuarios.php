@@ -1,35 +1,55 @@
 <?php
-    include "ConectionMySQL.php";
-    $nombres=$_POST['nombres'];
-    $telf=$_POST['telf'];
-    $email=$_POST['email-registro'];
-    $password=$_POST['password-registro'];
+// Incluir el archivo de conexión PDO
+require '../Controlador/ConectionMySQL.php'; // Incluye tu conexión PDO
 
-    $sql="INSERT INTO usuarios (nombres,telf,email,contrasena) VALUES ('$nombres','$telf','$email','$password')";
-    $verificar="SELECT * FROM usuarios WHERE email='$email'";
-    $verificacion= mysqli_query($conexion, $verificar);
-    if(mysqli_num_rows($verificacion)>0){
-        echo "<script>
-                alert('El correo ya se encuentra registrado');
-                window.location = '../Vista/registrar_usuario.html';
-            </script>";
-        exit();
-    }
+// Obtener los datos del formulario
+$nombres = $_POST['nombres'];
+$telf = $_POST['telf'];
+$email = $_POST['email-registro'];
+$password = $_POST['password-registro'];
 
-    $execute= mysqli_query($conexion, $sql);
-    if($execute){
-        echo "<script>
-                alert('Se ha registrado correctamente');
-                window.location = '../Vista/index.html';
-            </script>";
-        
-    }
-    else{
-        echo "<script>
-                alert('Algo falló, inténtalo de nuevo');
-                window.location = '../Vista/index.html';
-            </script>";
-        
-    }
-    mysqli_close($conexion);
+// Verificar si el correo ya está registrado  
+$sql = "SELECT * FROM clientes WHERE email = :email"; // Usamos un parámetro para evitar inyecciones SQL
+$stmt = $pdo->prepare($sql); // Preparamos la consulta
+
+// Vincular el parámetro
+$stmt->bindParam(':email', $email, PDO::PARAM_STR); // Vinculamos el email con el parámetro :email
+
+// Ejecutamos la consulta
+$stmt->execute();
+
+// Verificamos si el email ya está registrado
+if ($stmt->rowCount() > 0) {
+    echo "<script>
+            alert('El correo ya se encuentra registrado');
+            window.location = '../Vista/registrar_usuario.html';
+        </script>";
+    exit();
+}
+
+// Encriptar la contraseña antes de guardarla
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+// Insertar los datos en la base de datos
+$sql_insert = "INSERT INTO clientes (nombres, telefono, email, contrasena) VALUES (:nombres, :telefono, :email, :contrasena)";
+$stmt_insert = $pdo->prepare($sql_insert);
+
+// Vinculamos los parámetros para la inserción
+$stmt_insert->bindParam(':nombres', $nombres, PDO::PARAM_STR);
+$stmt_insert->bindParam(':telefono', $telf, PDO::PARAM_STR);
+$stmt_insert->bindParam(':email', $email, PDO::PARAM_STR);
+$stmt_insert->bindParam(':contrasena', $hashed_password, PDO::PARAM_STR);
+
+// Ejecutar la inserción
+if ($stmt_insert->execute()) {
+    echo "<script>
+            alert('Se ha registrado correctamente');
+            window.location = '../Vista/index.html';
+        </script>";
+} else {
+    echo "<script>
+            alert('Algo falló, inténtalo de nuevo');
+            window.location = '../Vista/registrar_usuario.html';
+        </script>";
+}
 ?>
