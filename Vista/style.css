@@ -614,7 +614,7 @@ nav .offcanvas{
     z-index: 1050; 
     width: 250px; 
     position: absolute;
-    top: 10%; /* Ajusta la posición en el contenedor */
+    top: 10%;
     left: 63%;
     animation-duration: .5s;
 }
@@ -673,6 +673,63 @@ nav .offcanvas{
     padding:15px;
     width:50%;
     color: var(--texts-principal);
+}
+
+/* Css para la parte de ofertas */
+.product-cardO {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.product-cardO img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d9534f;
+}
+.product-old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+.discount-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #d9534f;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+.buy-button {
+    margin-top: 10px;
+}
+/* ----- Estilo para Detalles ------ */
+.row-detalle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.detalle-title{
+    font-size: 3rem;
+    color: var(--texts-principal);
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--font-titles);
+}
+.detalle-text{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 400;
+    font-family: var(--font-texts);
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
@@ -786,6 +843,11 @@ nav .offcanvas{
     .lbl-contraseña{
         left: 35px;
     }
+    #notification {
+        width: 200px; 
+        top: 75%;
+        left: 42%;
+    }
 }
 @media only screen and (max-width: 572px) {
     .login-form-container {
@@ -796,39 +858,4 @@ nav .offcanvas{
     .login-form-container {
         width: 50%;
     }
-}
-/* Css para la parte de ofertas */
-.product-cardO {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-.product-cardO img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-.product-price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #d9534f;
-}
-.product-old-price {
-    text-decoration: line-through;
-    color: #999;
-}
-.discount-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #d9534f;
-    color: white;
-    padding: 5px;
-    font-size: 12px;
-    border-radius: 3px;
-}
-.buy-button {
-    margin-top: 10px;
 }
