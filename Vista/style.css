@@ -614,10 +614,9 @@ nav .offcanvas{
     z-index: 1050; 
     width: 250px; 
     position: absolute;
-    top: 10%; /* Ajusta la posición en el contenedor */
+    top: 10%;
     left: 63%;
     animation-duration: .5s;
-    display: block;
 }
 /*clases para el javascript */
 /* .aparecer {
@@ -788,13 +787,9 @@ nav .offcanvas{
         left: 35px;
     }
     #notification {
-        z-index: 1050; 
         width: 200px; 
-        position: absolute;
-        top: 75%; /* Ajusta la posición en el contenedor */
+        top: 75%;
         left: 42%;
-        animation-duration: .5s;
-        display: block;
     }
 }
 @media only screen and (max-width: 572px) {
