@@ -716,7 +716,20 @@ nav .offcanvas{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+
+}
+.detalle-title{
+    font-size: 3rem;
+    color: var(--texts-principal);
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--font-titles);
+}
+.detalle-text{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 400;
+    font-family: var(--font-texts);
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{

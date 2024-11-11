@@ -112,11 +112,10 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <h5 class="card-title"><?php echo htmlspecialchars($producto['nombre']); ?></h5>
-                    <p class="card-text">Precio: S/. <?php echo htmlspecialchars($producto['precio']); ?></p>
-                    <p class="card-text">Descripción: <?php echo htmlspecialchars($producto['descripcion']); ?></p>
-                    <p class="card-text">Stock disponible: <?php echo htmlspecialchars($producto['stock']); ?></p>
-                    <p class="card-text">Marca: <?php echo htmlspecialchars($producto['marca']); ?></p>
+                    <h5 class="detalle-title"><?php echo htmlspecialchars($producto['nombre']); ?></h5>
+                    <p class="detalle-text">Descripción: <?php echo htmlspecialchars($producto['descripcion']); ?></p>
+                    <p class="detalle-text">Stock disponible: <?php echo htmlspecialchars($producto['stock']); ?></p>
+                    <p class="detalle-text">Marca: <?php echo htmlspecialchars($producto['marca']); ?></p>
                     <a href="Galery.php" class="btn btn-primary">Volver al catálogo</a>
                 </div>
             </div>
