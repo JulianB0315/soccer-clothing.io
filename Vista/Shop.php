@@ -12,10 +12,72 @@ session_start();
 </head>
 
 <body>
-
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
+                <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70"
+                    class="d-inline-block align-text-center">
+                Futbolera
+            </a>
+            <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offCanvas" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <section class="offcanvas offcanvas-end" id="offCanvas" tabindex="-1">
+                <div clasS="offcanvas-header" data-bs-theme="principal">
+                    <h5 class="offcanvas-title fs-1 p-3">Futbolera</h5>
+                    <button class="btn-close bg-primary" type="button" aria-label="Close"
+                        data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+                    <ul class="navbar-nav fs-5 justify-content-evenly">
+                        <li class="nav-item p-3 ">
+                            <a class="nav-link" href="./novedades.html">Novedades</a>
+                        </li>
+                        <li class="nav-item p-3 ">
+                            <a class="nav-link" href="./Catalogo.php">Catálogo</a>
+                        </li>
+                        <li class="nav-item p-3 ">
+                            <a class="nav-link" href="ofertas.php">Ofertas</a>
+                        </li>
+                        <li class="nav-item p-3">
+                            <a class="nav-link" href="./index.html#contacto">Contacto</a>
+                        </li>
+                        <div id="notification" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                    Producto añadido al carrito
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto btn-close-noti" onclick="closeNotification()" aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <li class="user-buttons d-flex justify-content-evenly p-2 ">
+                            <a class="nav-link user-item" href="./login_usuario.html">
+                                <i class="fa-solid fa-user users-icon py-2"></i>
+                            </a>
+                            <a class="nav-link user-item" href="./shop.php">
+                                <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-lg-none align-self-center py-3 d-flex icons-socials">
+                        <a href="" class="nav-link">
+                            <i class="px-2 py-4  fa-brands fa-facebook-f fa-lg text-center"></i>
+                        </a>
+                        <a href="" class="nav-link">
+                            <i class="ps-1 py-4 fa-brands fa-whatsapp fa-lg text-center"></i>
+                        </a>
+                        <a href="" class="nav-link">
+                            <i class="px-2 py-4 fa-brands fa-instagram fa-lg text-center"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </nav>
     <div class="container my-5">
         <h2>Carrito de Compras</h2>
-
         <?php if (!empty($_SESSION['cart'])): ?>
             <table class="table table-bordered">
                 <thead>
@@ -55,7 +117,6 @@ session_start();
                     </tr>
                 </tbody>
             </table>
-
             <!-- Finalizar compra -->
             <form action="guardar_carrito.php" method="post">
                 <button type="submit" name="checkout" class="btn btn-success">Finalizar Compra</button>
