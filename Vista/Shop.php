@@ -16,7 +16,6 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
@@ -82,9 +81,10 @@ session_start();
             </section>
         </div>
     </nav>
-    <div class="container my-5">
-        <h2>Carrito de Compras</h2>
-        <?php if (!empty($_SESSION['cart'])): ?>
+    <main class="main-content d-flex position-relative flex-wrap" id="main">
+        <div class="container my-5">
+            <h2>Carrito de Compras</h2>
+            <?php if (!empty($_SESSION['cart'])): ?>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -127,10 +127,15 @@ session_start();
             <form action="guardar_carrito.php" method="post">
                 <button type="submit" name="checkout" class="btn btn-success">Finalizar Compra</button>
             </form>
-        <?php else: ?>
-            <p>Tu carrito está vacío.</p>
-        <?php endif; ?>
-    </div>
+            <?php else: ?>
+                <p>Tu carrito está vacío.</p>
+            <?php endif; ?>
+        </div>
+        <!-- Botón de whatsapp fijado siempre a la pantalla -->
+        <a href="#" class="whatsapp-link" target="_blank">
+            <i class="fa-brands fa-whatsapp py-4 whatsapp-icon"></i>
+        </a>
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="row">
