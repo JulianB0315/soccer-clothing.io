@@ -82,10 +82,10 @@ session_start();
         </div>
     </nav>
     <main class="main-content d-flex position-relative flex-wrap" id="main">
-        <div class="container my-5">
-            <h2>Carrito de Compras</h2>
+        <div class="container my-5 carrito-container">
+            <h2 class="carrito-title">Carrito de Compras</h2>
             <?php if (!empty($_SESSION['cart'])): ?>
-            <table class="table table-bordered">
+            <table class="table table-bordered carrito-tabla">
                 <thead>
                     <tr>
                         <th>Producto</th>
