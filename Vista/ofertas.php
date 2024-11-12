@@ -69,15 +69,15 @@ try {
                         </li>
                         <div id="notification"
                             class="toast align-items-center text-bg-primary border-0"
-            role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    Producto añadido al carrito
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="closeNotification()"
-                    aria-label="Close"></button>
-            </div>
-        </div>
+                            role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                    Producto añadido al carrito
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="closeNotification()"
+                                    aria-label="Close"></button>
+                            </div>
+                        </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" href="./login_usuario.html">
                                 <i class="fa-solid fa-user users-icon py-2"></i>
@@ -120,29 +120,26 @@ try {
                             <div class="card product-cardO position-relative">
                                 <div class="discount-label">AHORRA S/. 90.00</div>
                                 <form id="addToCartForm<?php echo $producto['id_producto']; ?>">
-                                <input type="hidden" name="product_id" value="<?php echo $producto['id_producto']; ?>">
-                                <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
-                                <input type="hidden" name="product_price" value="<?php echo number_format($producto['precio'], 2); ?>">
-                                <input type="hidden" name="product_quantity" value="1">
-                                <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-fluid" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo htmlspecialchars($producto['nombre']); ?></h5>
-                                    <p class="card-text product-price"><?php echo number_format($producto['precio'], 2); ?>
-                                        <span class="product-old-price"><?php echo number_format($producto['precio'] + 90, 2); ?></span>
-                                    </p>
-                                    <button type="button" class="btn btn-dark" onclick="addToCart(<?php echo $producto['id_producto']; ?>)">Añadir al Carrito</button>
+                                    <input type="hidden" name="product_id" value="<?php echo $producto['id_producto']; ?>">
+                                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                    <input type="hidden" name="product_price" value="<?php echo number_format($producto['precio'], 2); ?>">
+                                    <input type="hidden" name="product_quantity" value="1">
+                                    <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-fluid" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo htmlspecialchars($producto['nombre']); ?></h5>
+                                        <p class="card-text product-price"><?php echo number_format($producto['precio'], 2); ?>
+                                            <span class="product-old-price"><?php echo number_format($producto['precio'] + 90, 2); ?></span>
+                                        </p>
+                                        <button type="button" class="btn btn-dark" onclick="addToCart(<?php echo $producto['id_producto']; ?>)">Añadir al Carrito</button>
                                 </form>
-                                </div>
                             </div>
                         </div>
-                <?php
+            </div>
+    <?php
                     }
                 }
-                ?>
-            </div>
+    ?>
         </div>
-        <div class="text-center mb-4 col-sm-6 col-md-12">
-            <button class="btn btn-outline-primary btn-lg">Ver todas las ofertas</button>
         </div>
 
         <!-- Botón de whatsapp fijado siempre a la pantalla -->

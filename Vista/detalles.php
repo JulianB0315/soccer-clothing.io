@@ -13,7 +13,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
     try {
         // Preparar la consulta para obtener el producto por su ID
-        $stmt = $pdo->prepare("SELECT * FROM Productos WHERE id_producto = :id");
+        $stmt = $pdo->prepare("SELECT * FROM productos WHERE id_producto = :id");
         $stmt->execute([':id' => $id]);
         $producto = $stmt->fetch(PDO::FETCH_ASSOC);
 

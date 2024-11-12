@@ -102,9 +102,11 @@ try {
         </div>
     </nav>
     <main class="main-content d-flex position-relative flex-wrap" id="main">
+    <div class="container my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap">
         <!-- No toque esto diego cabron -->
         <div class="container">
             <div class="row">
+            <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
                 <?php
                 // Verifica que haya productos disponibles
                 if (empty($productos)) {
@@ -137,6 +139,7 @@ try {
                 }
                 ?>
             </div>
+        </div>
         </div>
             <!-- Botón de whatsapp fijado siempre a la pantalla -->
         <a href="#" class="whatsapp-link" target="_blank">
