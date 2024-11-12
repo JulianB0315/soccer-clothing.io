@@ -35,7 +35,7 @@ try {
 } catch (PDOException $e) {
     echo "Error al consultar la base de datos: " . $e->getMessage();
 }
-?>  
+?>   
 
 
 
@@ -208,10 +208,13 @@ try {
                                             </div>
                                             <!-- Form Group (birthday)-->
                                         </div>
-                                        <!--Save changes button-->
-                                        <button class="btn btn-primary me-3" type="button" onclick="habilitarCampos()">Editar perfil</button>
-                                        <button class="btn btn-primary" type="button" id="guardarCambios" disabled onclick="deshabilitarCampos()">Guardar cambios</button>
-                                    </form>
+                                        <div class="d-flex align-items-center">
+                                            <!--Save changes button-->
+                                            <button class="btn btn-primary me-3" type="button" onclick="habilitarCampos()">Editar perfil</button>
+                                            <button class="btn btn-primary me-3 " type="button" id="guardarCambios" disabled onclick="deshabilitarCampos()">Guardar cambios</button>
+                                            <button class="btn btn-primary me-3 " type="button" id="cancelarCambios" disabled onclick="deshabilitarCampos()">Cancelar cambios</button>
+                                        </div>
+                                        </form>
                                 </div>
                             </div>
                         </div>
@@ -231,6 +234,7 @@ try {
 
             // Se supone q con este se habilita el para guardar cambios
             document.getElementById('guardarCambios').disabled = false;
+            document.getElementById('cancelarCambios').disabled = false;
         }
 
         // Función para deshabilitar
@@ -240,6 +244,7 @@ try {
 
             // Se supone q con este se deshabilita el para guardar cambios
             document.getElementById('guardarCambios').disabled = true;
+            document.getElementById('cancelarCambios').disabled = true;
         }
     </script>
     <!-- Pie de pagina / Footer -->
