@@ -521,13 +521,141 @@ nav .offcanvas{
     justify-content: space-evenly;
     align-items: center;
 }
-.icons-socials i{
+
+.fa-user{
+    padding-left: 10px;
+}
+
+.user-buttons i{
     font-size: 2rem;
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
     transition: background-color 0.3s ease;
 }
-.icons-socials i:hover{
+.user-buttons a:hover{
     background-color: var(--bg-secondary);
-} 
+}
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+ }
+
+
+ @media only screen and (max-width:992px){
+    .navbar-nav >.nav-item >.nav-link::after{
+        width:30%;
+    }
+    .container-main{
+        width:80%;
+    }
+    .main-title{
+        font-size: 2.2rem;
+    }
+    .main-subtitle{
+        font-size: 1rem;
+    }
+    .btn-catalog{
+        height:40px;
+        text-align: center;
+        padding:5px;
+    }
+    .container-clothes{
+        width:100%;
+    }
+    .img-container-main{
+        width: 100%;
+        min-width: 80%;
+    }
+    .clothe-img-brand{
+        height:auto;
+        width:100%;
+        max-width: 400px;
+    }
+    .whatsapp-link{
+        display: none;
+    }
+    .btn-detalles{
+        width: 50%;
+    }
+    .user-buttons{
+        list-style-type: none;
+        align-items: center;
+        width: 70%;
+        margin: 10px auto;
+        height: 16%;
+        padding-top: 20px;
+    }
+    .user-item { 
+        height: 70px;  
+        padding: 10px; 
+    }
+    .fa-user{
+        padding-left: 10px;
+    }
+    .user-buttons i{
+        font-size: 2rem;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+    }
+    .user-buttons a:hover{
+        background-color: var(--bg-secondary);
+    }
+    .carrusel-galeria{
+        width: 90%;
+        height: 25%;
+        margin: 100px auto;
+    }
+    .carousel-item{
+        height: 40vh;
+    }
+    .carrusel-img{
+        height: 180px;
+    }
+    .img-caption{
+        height: 30%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        background-color: var(--bg-dark);
+    }
+    .img-msg{
+        color: var(--texts-principal);
+        font-size: 2rem;
+    }
+    .form-container{
+        width: 90%;
+        height: 500px;
+        margin: 5px auto;
+    }
+    .contact-form{
+        width: 90%;
+        /* background: #000; */
+        height: 100%;
+    }
+    .footer{
+        height: auto;
+    }
+    .footer-copy{
+        margin-top: 10px;
+    }
+    
+    .login-form-container{
+        width: 50%;
+    }
+    .lbl-nombres-registro{
+        left: 65px;
+    }
+    .lbl-email{
+        left: 15px;
+    }
+    .lbl-contraseña{
+        left: 35px;
+    }
+    #notification {
+        width: 200px; 
+        top: 75%;
+        left: 42%;
+    }
+}
