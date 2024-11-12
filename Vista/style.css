@@ -133,6 +133,8 @@ nav .offcanvas{
     height: auto;
     width: 100%;
     flex-direction:row;
+    justify-content: center;
+    align-items: center;
     background: radial-gradient(circle at 60% 50%, var(--bg-color-primary), var(--bg-thirdy));
 }
 .container-main{
@@ -284,6 +286,10 @@ nav .offcanvas{
     scroll-margin-top: 100px;
     background-image: radial-gradient(circle, var(--bg-light-blue), var(--bg-warm));
     border-bottom: 1px solid var(--bg-warm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .form-title{
     color: var(--bg-thirdy);

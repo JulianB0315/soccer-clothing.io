@@ -59,7 +59,7 @@ try {
                             <a class="nav-link" href="./novedades.html">Novedades</a>
                         </li>
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="Galery.php">Galería</a>
+                            <a class="nav-link" href="./Catalogo.php">Catálogo</a>
                         </li>
                         <li class="nav-item p-3 ">
                             <a class="nav-link" href="ofertas.php">Ofertas</a>

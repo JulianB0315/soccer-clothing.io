@@ -44,8 +44,9 @@ $stmt_insert->bindParam(':contrasena', $hashed_password, PDO::PARAM_STR);
 if ($stmt_insert->execute()) {
     echo "<script>
             alert('Se ha registrado correctamente');
-            window.location = '../Vista/index.html';
+            window.location = '../Vista/login_usuario.html'; 
         </script>";
+        // Redirigir a la página de inicio de sesión (corregido)
 } else {
     echo "<script>
             alert('Algo falló, inténtalo de nuevo');
