@@ -1,14 +1,15 @@
 <?php
 session_start();
+require '../Controlador/ConectionMySQL.php';
 // para poder saber que usuario esta iniciado
 $id_cliente = $_SESSION['id_cliente'];
 
 // Obtener los datos cambiados 
-$nombres = $_POST['nombres'];
-$apellido = $_POST['apellido'];
-$email = $_POST['email'];
-$telefono = $_POST['telefono'];
-$direccion = $_POST['direccion'];
+$nombres = $_POST['inputFirstName'];
+$apellido = $_POST['inputLastName'];
+$email = $_POST['inputEmailAddress'];
+$telefono = $_POST['inputPhone'];
+$direccion = $_POST['inputLocation'];
 
 // Actualizar los datos en la DB
 $query = "UPDATE clientes SET nombres = ?, apellido = ?, email = ?, telefono = ?, direccion = ? WHERE id_cliente = ?";
