@@ -138,7 +138,7 @@ try {
                     <!-- Account page navigation-->
                     <nav class="nav nav-borders">
                         <a class="nav-link active ms-0" href="#">Perfil</a>
-                        <a class="nav-link" href="#">Historial</a>
+                        <a class="nav-link" href="./historialUser.php">Historial</a>
                     </nav>
                     <hr class="mt-0 mb-4" />
                     <div class="row">

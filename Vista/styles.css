@@ -659,3 +659,126 @@ nav .offcanvas{
         left: 42%;
     }
 }
+
+.table-responsive, .dataTable-wrapper .dataTable-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  @media (max-width: 575.98px) {
+    .table-responsive-sm {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .table-responsive-md {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .table-responsive-lg {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @media (max-width: 1199.98px) {
+    .table-responsive-xl {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @media (max-width: 1499.98px) {
+    .table-responsive-xxl {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  .form-label {
+    margin-bottom: 0.5rem;
+  }
+
+  
+.table-billing-history {
+    font-size: 0.85rem;
+  }
+  .table-billing-history thead th {
+    border-top: none;
+  }
+  .table-billing-history th,
+  .table-billing-history td {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.375rem;
+    padding-right: 1.375rem;
+  }
+  .card > .card-header + .list-group,
+.card > .list-group + .card-footer {
+  border-top: 0;
+}
+
+
+.card-header {
+    padding: 1rem 1.35rem;
+    margin-bottom: 0;
+    background-color: rgba(33, 40, 50, 0.03);
+    border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+  }
+  .card-header:first-child {
+    border-radius: 0.35rem 0.35rem 0 0;
+  }
+
+  
+.card-header-tabs {
+    margin-right: -0.675rem;
+    margin-bottom: -1rem;
+    margin-left: -0.675rem;
+    border-bottom: 0;
+  }
+  .card-header-tabs .nav-link.active {
+    background-color: #fff;
+    border-bottom-color: #fff;
+  }
+  
+  .card-header-pills {
+    margin-right: -0.675rem;
+    margin-left: -0.675rem;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.35rem;
+  }
+  .badge:empty {
+    display: none;
+  }
+  
+  .btn .badge {
+    position: relative;
+    top: -1px;
+  }
+
+  .bg-gray-200 {
+    background-color: #e0e5ec !important;
+  }
+
+  
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
