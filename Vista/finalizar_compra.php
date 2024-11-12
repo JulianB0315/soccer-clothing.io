@@ -142,5 +142,52 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
         <!-- Botón para volver a la tienda -->
         <a href="index.html" class="btn btn-primary mt-3">Volver a la tienda</a>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-seccion contact-info">
+                    <h4 class="footer-title">Método de Contacto</h4>
+                    <ul class="footer-list">
+                        <li class="footer-info"><strong>Email:</strong> contacto@futbolera.com</li>
+                        <li class="footer-info"><strong>Teléfono:</strong> +51 234 567 890</li>
+                        <li class="footer-info"><strong>Dirección:</strong> Calle Francisco Cabrera 123, Chiclayo, Perú
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-seccion links-footer">
+                    <h4 class="footer-title">Síguenos</h4>
+                    <ul class="footer-list social-media">
+                        <li><a class="footer-link" href="#" target="_blank">
+                                <i class="fa-brands fa-facebook fa-2xl"> </i>
+                                Futbolera.pe
+                            </a></li>
+                        <li><a class="footer-link" href="#" target="_blank">
+                                <i class="fa-brands fa-instagram fa-2xl"></i>
+                                Futbolera.pe
+                            </a></li>
+                        <li><a class="footer-link" href="#" target="_blank">
+                                <i class="fa-brands fa-x-twitter fa-2xl"></i>
+                                Futbolera.pe
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-seccion">
+                    <h4 class="footer-title">Sobre Nosotros</h4>
+                    <ul class="footer-list">
+                        <li><a class="footer-link" href="#">Quiénes Somos</a></li>
+                        <li><a class="footer-link" href="#">Formas de Pago</a></li>
+                        <li><a class="footer-link" href="#">Guía de tallas</a></li>
+                        <li><a class="footer-link" href="#">Cambios y Devoluciones</a></li>
+                        <li><a class="footer-link" href="#">Preguntas Frecuentes (FAQ)</a></li>
+                        <li><a class="footer-link" href="#">Términos y condiciones</a></li>
+                        <li><a class="footer-link" href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>

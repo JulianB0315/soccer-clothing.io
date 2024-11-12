@@ -12,7 +12,7 @@ session_start();
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
             <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
                 <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70"
@@ -125,5 +125,52 @@ session_start();
             <p>Tu carrito está vacío.</p>
         <?php endif; ?>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-seccion contact-info">
+                    <h4 class="footer-title">Método de Contacto</h4>
+                    <ul class="footer-list">
+                        <li class="footer-info"><strong>Email:</strong> contacto@futbolera.com</li>
+                        <li class="footer-info"><strong>Teléfono:</strong> +51 234 567 890</li>
+                        <li class="footer-info"><strong>Dirección:</strong> Calle Francisco Cabrera 123, Chiclayo, Perú
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-seccion links-footer">
+                    <h4 class="footer-title">Síguenos</h4>
+                    <ul class="footer-list social-media">
+                        <li><a class="footer-link" href="#" target="_blank">
+                                <i class="fa-brands fa-facebook fa-2xl"> </i>
+                                Futbolera.pe
+                            </a></li>
+                        <li><a class="footer-link" href="#" target="_blank">
+                                <i class="fa-brands fa-instagram fa-2xl"></i>
+                                Futbolera.pe
+                            </a></li>
+                        <li><a class="footer-link" href="#" target="_blank">
+                                <i class="fa-brands fa-x-twitter fa-2xl"></i>
+                                Futbolera.pe
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-seccion">
+                    <h4 class="footer-title">Sobre Nosotros</h4>
+                    <ul class="footer-list">
+                        <li><a class="footer-link" href="#">Quiénes Somos</a></li>
+                        <li><a class="footer-link" href="#">Formas de Pago</a></li>
+                        <li><a class="footer-link" href="#">Guía de tallas</a></li>
+                        <li><a class="footer-link" href="#">Cambios y Devoluciones</a></li>
+                        <li><a class="footer-link" href="#">Preguntas Frecuentes (FAQ)</a></li>
+                        <li><a class="footer-link" href="#">Términos y condiciones</a></li>
+                        <li><a class="footer-link" href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
