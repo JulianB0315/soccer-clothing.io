@@ -34,7 +34,7 @@ try {
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
             <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
                 <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70"
@@ -102,19 +102,19 @@ try {
         </div>
     </nav>
     <main class="main-content d-flex position-relative flex-wrap" id="main">
-    <div class="container my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap">
+        <div class="container my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap">
         <!-- No toque esto diego cabron -->
-        <div class="container">
-            <div class="row">
-            <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
-                <?php
-                // Verifica que haya productos disponibles
-                if (empty($productos)) {
-                    echo "<p>No hay productos disponibles.</p>";
-                } else {
-                    // Bucle para mostrar todos los productos
-                    foreach ($productos as $producto) {
-                ?>
+            <div class="container">
+                <div class="row">
+                    <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
+                    <?php
+                    // Verifica que haya productos disponibles
+                    if (empty($productos)) {
+                        echo "<p>No hay productos disponibles.</p>";
+                    } else {
+                        // Bucle para mostrar todos los productos
+                        foreach ($productos as $producto) {
+                        ?>
                         <div class="col-md-4 mb-4">
                             <div class="card">
                                 <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-catalog" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
@@ -134,19 +134,18 @@ try {
                                 </div>
                             </div>
                         </div>
-                <?php
+                    <?php
+                        }
                     }
-                }
-                ?>
+                    ?>
+                </div>
             </div>
-        </div>
         </div>
             <!-- Botón de whatsapp fijado siempre a la pantalla -->
         <a href="#" class="whatsapp-link" target="_blank">
             <i class="fa-brands fa-whatsapp py-4 whatsapp-icon"></i>
         </a>
     </main>
-
     <!-- Pie de pagina / Footer -->
     <footer class="footer">
         <div class="container">

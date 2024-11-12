@@ -855,6 +855,17 @@ nav .offcanvas{
         left: 42%;
     }
 }
+@media only screen and (max-width: 430px) {
+    .columna-error h1{
+        font-size: 3.5rem;
+    }
+    .columna-error p{
+        font-size: 1.2rem;
+    }
+    .btn-error{
+        width:100%;
+    }
+}
 @media only screen and (max-width: 572px) {
     .login-form-container {
         width: 90%;
@@ -864,40 +875,5 @@ nav .offcanvas{
     .login-form-container {
         width: 50%;
     }
-}
-/* Css para la parte de ofertas */
-.product-cardO {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-.product-cardO img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-.product-price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #d9534f;
-}
-.product-old-price {
-    text-decoration: line-through;
-    color: #999;
-}
-.discount-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #d9534f;
-    color: white;
-    padding: 5px;
-    font-size: 12px;
-    border-radius: 3px;
-}
-.buy-button {
-    margin-top: 10px;
 }
 
