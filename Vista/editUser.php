@@ -14,6 +14,64 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
+                <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70"
+                    class="d-inline-block align-text-center">
+                Futbolera
+            </a>
+            <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offCanvas" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <section class="offcanvas offcanvas-end" id="offCanvas" tabindex="-1">
+                <div clasS="offcanvas-header" data-bs-theme="principal">
+                    <h5 class="offcanvas-title fs-1 p-3">Futbolera</h5>
+                    <button class="btn-close bg-primary" type="button" aria-label="Close"
+                        data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
+                    <ul class="navbar-nav fs-5 justify-content-evenly">
+                        <li class="nav-item p-3 ">
+                            <a class="nav-link" href="./novedades.html">Novedades</a>
+                        </li>
+                        <li class="nav-item p-3 ">
+                            <a class="nav-link" href="Galery.php">Galería</a>
+                        </li>
+                        <li class="nav-item p-3 ">
+                            <a class="nav-link" href="ofertas.php">Ofertas</a>
+                        </li>
+                        <li class="nav-item p-3">
+                            <a class="nav-link" href="./index.html#contacto">Contacto</a>
+                        </li>
+                        <li class="user-buttons d-flex justify-content-evenly p-2 ">
+                            <a class="nav-link user-item" href="./login_usuario.html">
+                                <i class="fa-solid fa-user users-icon py-2"></i>
+                            </a>
+                            <a class="nav-link user-item" href="#">
+                                <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-lg-none align-self-center py-3 d-flex icons-socials">
+                        <a href="" class="nav-link">
+                            <i class="px-2 py-4  fa-brands fa-facebook-f fa-lg text-center"></i>
+                        </a>
+                        <a href="" class="nav-link">
+                            <i class="ps-1 py-4 fa-brands fa-whatsapp fa-lg text-center"></i>
+                        </a>
+                        <a href="" class="nav-link">
+                            <i class="px-2 py-4 fa-brands fa-instagram fa-lg text-center"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </nav>
+    <!--Comienzo de la pagina de editar perfil-->
         <div id="layoutSidenav_content">
             <main>
                 <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
@@ -45,7 +103,7 @@
                                 <div class="card-header">Foto de Perfil</div>
                                 <div class="card-body text-center">
                                     <!-- Profile picture image-->
-                                    <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="" />
+                                    <img class="img-account-profile rounded-circle mb-2" src="../Vista/imgs/novedades/modelo1.webp" alt="" />
                                     <!-- Profile picture help block-->
                                     <div class="small font-italic text-muted mb-4">JPG o PNG no mayor de 5 MB</div>
                                     <!-- Profile picture upload button-->
@@ -118,8 +176,9 @@
                     </div>
                 </div>
             </main>
-                <!-- Pie de pagina / Footer -->
-    <footer class="footer">
+        </div>
+    <!-- Pie de pagina / Footer -->
+<footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 footer-seccion contact-info">
@@ -165,7 +224,7 @@
         <div class="footer-copy">
             <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
         </div>
-    </footer>
+</footer>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
