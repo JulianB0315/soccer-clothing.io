@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de conexión PDO
-require '../Controlador/ConectionMySQL.php'; // Incluye tu conexión PDO
+require '../Controlador/ConectionMySQL.php'; 
 
 // Obtener los datos del formulario
 $nombres = $_POST['nombres'];
