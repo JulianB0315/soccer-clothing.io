@@ -40,7 +40,7 @@ function showNotification() {
     notification.style.display = "block"; // Mostrar notificación
     setTimeout(function() {
         notification.style.display = "none"; // Ocultar después de 3 segundos
-    }, 300);
+    }, 3000);
 }
 
 // Función para cerrar la notificación
@@ -48,6 +48,16 @@ function closeNotification() {
     var notification = document.getElementById("notification");
     notification.style.display = "none";
 }
+
+// Función para vaciar el carrito
+function clearCart() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "shop.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("action=clear_cart");
+}
+
+// Detectar cuando se cierre la ventana o pestaña
 
 // Obtener los valores guardados previamente en sessionStorage
 const idCliente = sessionStorage.getItem('id_cliente');
@@ -73,3 +83,4 @@ function cerrarSesion() {
     // Redirigir a la página que cierra la sesión en el servidor
     window.location.href = '../Controlador/cerrar_sesion.php';
 }
+
