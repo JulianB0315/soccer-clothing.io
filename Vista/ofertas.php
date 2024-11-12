@@ -104,7 +104,7 @@ try {
     </nav>
     <!-- Main -->
     <main class="main-content d-flex position-relative flex-wrap" id="main">
-        <div class="container my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap">
+        <div class="container-fluid my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap ofertas-container" style="min-width: 80vh;">
             <!--Contenido para las novedades-->
             <div class="row justify-content-center">
                 <?php
@@ -116,7 +116,7 @@ try {
                     foreach ($productos as $producto) {
                 ?>
                         <!-- Productos -->
-                        <div class="col-md-3 pt-5" aria-label="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                        <div class="col-lg-3 col-md-6 col-sm-12 pt-5" aria-label="<?php echo htmlspecialchars($producto['nombre']); ?>">
                             <div class="card product-cardO position-relative">
                                 <div class="discount-label">AHORRA S/. 90.00</div>
                                 <form id="addToCartForm<?php echo $producto['id_producto']; ?>">
@@ -135,13 +135,11 @@ try {
                             </div>
                         </div>
             </div>
-    <?php
+            <?php
                     }
                 }
-    ?>
+            ?>
         </div>
-        </div>
-
         <!-- Botón de whatsapp fijado siempre a la pantalla -->
         <a href="#" class="whatsapp-link" target="_blank">
             <i class="fa-brands fa-whatsapp py-4 whatsapp-icon"></i>
