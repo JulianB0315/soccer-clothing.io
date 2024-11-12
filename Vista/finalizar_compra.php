@@ -82,7 +82,7 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
     <h4 class="mt-4">Gracias por tu compra, <?php echo htmlspecialchars($cliente['nombres']); ?>!</h4>
 
     <!-- Botón para volver a la tienda -->
-    <a href="shop.php" class="btn btn-primary mt-3">Volver a la tienda</a>
+    <a href="index.html" class="btn btn-primary mt-3">Volver a la tienda</a>
 </div>
 
 </body>

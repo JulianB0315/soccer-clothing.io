@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_image'])) {
             $stmt->execute(['imagen_perfil' => $filePath, 'id_cliente' => $id_cliente]);
 
             echo "<script>
-            alert('Error: Se cargo bien la imagen');
+            alert('Se cargo bien la imagen');
             window.location = '../Vista/editUser.php'; 
             </script>";
         } catch (PDOException $e) {

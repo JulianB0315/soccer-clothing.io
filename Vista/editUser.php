@@ -8,8 +8,8 @@ try {
     if (isset($_SESSION['id_cliente'])) {
         $id_cliente = $_SESSION['id_cliente'];
 
-        // Consulta para obtener los datos del cliente
-        $query = "SELECT id_cliente, nombres, apellido, email, telefono, direccion, apodo FROM clientes WHERE id_cliente = :id_cliente";
+        // Consulta para obtener los datos del cliente incluyendo imagen_perfil
+        $query = "SELECT id_cliente, nombres, apellido, email, telefono, direccion, apodo, imagen_perfil FROM clientes WHERE id_cliente = :id_cliente";
         $stmt = $pdo->prepare($query); // Usamos PDO
         $stmt->execute(['id_cliente' => $id_cliente]);
 
@@ -21,6 +21,9 @@ try {
             alert('Por favor iniciar sesión');
             window.location = '../Vista/login_usuario.html'; 
             </script>";
+        } else {
+            // Verificar si existe la imagen de perfil, si no, asignar la imagen por defecto
+            $imagenPerfil = $cliente['imagen_perfil'] ? $cliente['imagen_perfil'] : '../Vista/imgs/novedades/modelo1.webp';
         }
     } else {
         echo "<script>
@@ -32,6 +35,7 @@ try {
     echo "Error al consultar la base de datos: " . $e->getMessage();
 }
 ?>
+
 
 
 
@@ -142,7 +146,7 @@ try {
                             <div class="card-header">Foto de Perfil</div>
                             <div class="card-body text-center">
                                 <!-- Profile picture image-->
-                                <img class="img-account-profile rounded-circle mb-2" id="profilePic" src="../Vista/imgs/novedades/modelo1.webp" alt="" />
+                                <img class="img-account-profile rounded-circle mb-2" id="profilePic" src="<?php echo $imagenPerfil; ?>" alt="" />
                                 <!-- Profile picture help block-->
                                 <div class="small font-italic text-muted mb-4">JPG o PNG no mayor de 5 MB</div>
                                 <!-- Profile picture upload form-->
