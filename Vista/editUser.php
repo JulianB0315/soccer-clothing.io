@@ -1,8 +1,9 @@
+
 <?php
 session_start();
 require '../Controlador/ConectionMySQL.php';
 
-// Verificar si id_cliente está en la sesión
+ // Verificar si id_cliente está en la sesión
 try {
     // Verificar si id_cliente está en la sesión
     if (isset($_SESSION['id_cliente'])) {
@@ -34,7 +35,7 @@ try {
 } catch (PDOException $e) {
     echo "Error al consultar la base de datos: " . $e->getMessage();
 }
-?> 
+?>  
 
 
 
@@ -220,8 +221,27 @@ try {
         </div>
     </main>
 
-    </main>
+    <!-- Scripts  para los botones -->
 
+    <script>
+        // Función para habilitar los cosos del form
+        function habilitarCampos() {
+            const inputs = document.querySelectorAll('input.form-control');
+            inputs.forEach(input => input.disabled = false);
+
+            // Se supone q con este se habilita el para guardar cambios
+            document.getElementById('guardarCambios').disabled = false;
+        }
+
+        // Función para deshabilitar
+        function deshabilitarCampos() {
+            const inputs = document.querySelectorAll('input.form-control');
+            inputs.forEach(input => input.disabled = true);
+
+            // Se supone q con este se deshabilita el para guardar cambios
+            document.getElementById('guardarCambios').disabled = true;
+        }
+    </script>
     <!-- Pie de pagina / Footer -->
     <footer class="footer">
         <div class="container">
