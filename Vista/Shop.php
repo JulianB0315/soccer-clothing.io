@@ -85,7 +85,7 @@ session_start();
         <div class="container carrito-container">
             <h2 class="carrito-title">Carrito de Compras</h2>
             <?php if (!empty($_SESSION['cart'])): ?>
-            <table class="table table-bordered carrito-tabla">
+            <table class="table carrito-tabla">
                 <thead>
                     <tr>
                         <th>Producto</th>

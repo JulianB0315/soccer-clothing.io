@@ -18,10 +18,11 @@
     --bg-accent: #3498db;
     --bg-warm: #f7d2c4;
     --text-muted: #666666;
+    --text-light: #9ec2e0;
     --font-texts:"AdihausDIN", sans-serif;
 }
 *{
-    border: 1px solid blue; 
+    border: 1px solid transparent; 
     /* Esto me esta ayudando a ver los containers asi que dejenlo XD */
     /* Actualizacion, no saquen esto porque lo necesitamos si no se recortan el tamaño de los section galeria y contacto */
 }
@@ -754,18 +755,18 @@ nav .offcanvas{
     font: normal 400 1.8rem/2 var(--font-texts);
     color: var(--texts-principal);
 }
-.carrito-tabla{
+.carrito-tabla, .compra-tabla{
     text-align: center;
 
 }
-.carrito-tabla th{
+.carrito-tabla th, .compra-tabla th{
     font-size: 1.4rem;
     color: var(--texts-principal);
     font-family: var(--font-titles);
     background-color: var(--bg-secondary);
     font-weight: 200;
 }
-.carrito-tabla td{
+.carrito-tabla td, .compra-tabla td{
     font-size: 1.2rem;
     color: var(--bg-color-primary);
     font-family: var(--font-texts);
@@ -778,6 +779,23 @@ td.marcado{
 }
 .btn-comprar{
     width: 100%;
+}
+/* ----- Estilos para la compra ------ */
+.container-compra{
+    padding: 10px;
+    margin: 200px auto;
+}
+.compra-title{
+    font: normal 800 2.5rem/1 var(--font-titles);
+    color: var(--texts-principal);
+}
+.compra-subtitle{
+    font: normal 400 2rem/2 var(--font-titles);
+    color: var(--bg-warm);
+}
+.container-compra p{
+    font: normal 400 1.2rem/2 var(--font-texts);
+    color: var(--text-light);
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
