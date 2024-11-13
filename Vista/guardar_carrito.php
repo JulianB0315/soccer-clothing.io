@@ -2,9 +2,19 @@
 session_start();
 require '../Controlador/ConectionMySQL.php';
 
-// Verificar que el carrito no está vacío
-if (empty($_SESSION['cart']) || !isset($_SESSION['id_cliente'])) {
-    echo "No hay productos en el carrito o no has iniciado sesión.";
+// Verificar que el carrito no está vacío o no está logueado 
+if (empty($_SESSION['cart'])) {
+    echo  "<script>
+            alert('No hay productos en el carrito');
+            window.location = './Vista/Calatalogo.php'; 
+          </script>";
+    exit();
+}
+if (!isset($_SESSION['id_cliente'])) {
+    echo  "<script>
+            alert('Por favor iniciar sesión');
+            window.location = './Vista/login_usuario.html'; 
+          </script>";
     exit();
 }
 
@@ -40,4 +50,3 @@ try {
 } catch (PDOException $e) {
     die("Error al procesar el carrito: " . $e->getMessage());
 }
-
