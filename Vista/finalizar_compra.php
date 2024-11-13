@@ -4,8 +4,11 @@ require '../Controlador/ConectionMySQL.php';
 
 // Verificar que el cliente ha iniciado sesión
 if (!isset($_SESSION['id_cliente'])) {
-    echo "No has iniciado sesión.";
-    exit();
+    echo  "<script>
+            alert('Por favor iniciar sesión');
+            window.location = '../Vista/login_usuario.html'; 
+          </script>";
+          exit();
 }
 
 // Obtener los detalles del pedido
