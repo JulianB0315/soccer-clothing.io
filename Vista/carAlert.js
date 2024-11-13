@@ -57,15 +57,26 @@ function clearCart() {
     xhr.send("action=clear_cart");
 }
 
-// Detectar cuando se cierre la ventana o pestaña
-
+/*Cargar los datos del cliente */
 // Obtener los valores guardados previamente en sessionStorage
 const idCliente = sessionStorage.getItem('id_cliente');
 const email = sessionStorage.getItem('email');
 
-document.getElementById('cliente-id').innerText = idCliente;
-document.getElementById('cliente-email').innerText = email;
+document.addEventListener("DOMContentLoaded", function() {
+    const userLink = document.getElementById('user-link');
 
+    // Verifica si el enlace existe en el DOM
+    if (userLink) {
+        // Añadir el evento de clic
+        userLink.addEventListener('click', function() {
+            // Obtener el id del cliente desde sessionStorage
+            const idCliente = sessionStorage.getItem('id_cliente');
+            
+            // Imprimir el id en la consola
+            console.log("ID del cliente:", idCliente);
+        });
+    }
+});
 
 // Cuando el usuario intenta salir de la página (cerrar pestaña o navegador)
 window.addEventListener("beforeunload", function () {
@@ -83,4 +94,3 @@ function cerrarSesion() {
     // Redirigir a la página que cierra la sesión en el servidor
     window.location.href = '../Controlador/cerrar_sesion.php';
 }
-
