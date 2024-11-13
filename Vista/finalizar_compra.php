@@ -198,5 +198,6 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
             <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

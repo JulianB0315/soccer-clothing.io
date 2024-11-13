@@ -21,7 +21,7 @@
     --font-texts:"AdihausDIN", sans-serif;
 }
 *{
-    border: 1px solid transparent; 
+    border: 1px solid blue; 
     /* Esto me esta ayudando a ver los containers asi que dejenlo XD */
     /* Actualizacion, no saquen esto porque lo necesitamos si no se recortan el tamaño de los section galeria y contacto */
 }
@@ -736,6 +736,48 @@ nav .offcanvas{
     color: #fff;
     font-weight: 400;
     font-family: var(--font-texts);
+}
+/* ----- Estilos para el carrito ------ */
+.carrito-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin: 200px auto;
+}
+.carrito-title{
+    font: normal bold 3.5rem/1 var(--font-titles);
+    color: var(--texts-principal);
+}
+.carrito-vacio{
+    font: normal 400 1.8rem/2 var(--font-texts);
+    color: var(--texts-principal);
+}
+.carrito-tabla{
+    text-align: center;
+
+}
+.carrito-tabla th{
+    font-size: 1.4rem;
+    color: var(--texts-principal);
+    font-family: var(--font-titles);
+    background-color: var(--bg-secondary);
+    font-weight: 200;
+}
+.carrito-tabla td{
+    font-size: 1.2rem;
+    color: var(--bg-color-primary);
+    font-family: var(--font-texts);
+}
+td.marcado{
+    background-color: var(--bg-light-blue);
+}
+.finalizar-compra-form{
+    width: 30%;
+}
+.btn-comprar{
+    width: 100%;
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
