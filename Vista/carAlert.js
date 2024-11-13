@@ -62,29 +62,9 @@ function clearCart() {
 const idCliente = sessionStorage.getItem('id_cliente');
 const email = sessionStorage.getItem('email');
 
-document.addEventListener("DOMContentLoaded", function() {
-    const userLink = document.getElementById('user-link');
+document.getElementById('cliente-id').innerText = idCliente;
+document.getElementById('cliente-email').innerText = email;
 
-    // Verifica si el enlace existe en el DOM
-    if (userLink) {
-        // Añadir el evento de clic
-        userLink.addEventListener('click', function() {
-            // Obtener el id del cliente desde sessionStorage
-            const idCliente = sessionStorage.getItem('id_cliente');
-            
-            // Imprimir el id en la consola
-            console.log("ID del cliente:", idCliente);
-        });
-    }
-});
-
-// Cuando el usuario intenta salir de la página (cerrar pestaña o navegador)
-window.addEventListener("beforeunload", function () {
-    // Borrar los datos almacenados en sessionStorage
-    sessionStorage.removeItem('id_cliente');
-    sessionStorage.removeItem('email');
-    fetch('../Controlador/cerrar_sesion.php', { method: 'POST' });
-});
 //para el bton de cerrar sesión en el servidor
 function cerrarSesion() {
     // Eliminar datos de sessionStorage
