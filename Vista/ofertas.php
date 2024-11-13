@@ -1,6 +1,15 @@
 <?php
 session_start();
 
+//Verifica el inicio de sesión 
+if (!isset($_SESSION['id_cliente'])) {
+
+    $link = "./login_usuario.html";
+} else {
+
+    $link = "editUser.php";
+}
+
 require '../Controlador/ConectionMySQL.php';
 
 // Verifica si la variable $pdo está definida
@@ -37,7 +46,7 @@ try {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
+            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.php">
                 <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70"
                     class="d-inline-block align-text-center">
                 Futbolera
@@ -56,7 +65,7 @@ try {
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="./novedades.html">Novedades</a>
+                            <a class="nav-link" href="./novedades.php">Novedades</a>
                         </li>
                         <li class="nav-item p-3 ">
                             <a class="nav-link" href="./Catalogo.php">Catálogo</a>
@@ -65,7 +74,7 @@ try {
                             <a class="nav-link" href="ofertas.php">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="./index.html#contacto">Contacto</a>
+                            <a class="nav-link" href="./index.php#contacto">Contacto</a>
                         </li>
                         <div id="notification"
                             class="toast align-items-center text-bg-primary border-0"
@@ -79,7 +88,7 @@ try {
                             </div>
                         </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
-                            <a class="nav-link user-item" href="./login_usuario.html">
+                            <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
                                 <i class="fa-solid fa-user users-icon py-2"></i>
                             </a>
                             <a class="nav-link user-item" href="./shop.php">
@@ -135,10 +144,10 @@ try {
                             </div>
                         </div>
             </div>
-            <?php
+    <?php
                     }
                 }
-            ?>
+    ?>
         </div>
         <!-- Botón de whatsapp fijado siempre a la pantalla -->
         <a href="#" class="whatsapp-link" target="_blank">

@@ -26,7 +26,7 @@ if ($cliente) {
                 sessionStorage.setItem('id_cliente', '" . $cliente['id_cliente'] . "');
                 sessionStorage.setItem('email', '" . $email . "');
                 alert('Bienvenido a fulbolera');
-                window.location = '../Vista/index.html';
+                window.location = '../Vista/index.php';
               </script>";
         exit();
     } else {
