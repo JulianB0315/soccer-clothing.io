@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['id_cliente'])) {
+    // Si no está iniciada la sesión, mantener el enlace al login
+    $link = "./login_usuario.html";
+} else {
+    // Si está iniciada la sesión, cambiar el enlace a 'editUser.php'
+    $link = "editUser.php";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +32,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
+            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.php">
                 <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70"
                     class="d-inline-block align-text-center">
                 Futbolera
@@ -38,7 +51,7 @@
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="./novedades.html">Novedades</a>
+                            <a class="nav-link" href="./novedades.php">Novedades</a>
                         </li>
                         <li class="nav-item p-3 ">
                             <a class="nav-link" href="./Catalogo.php">Catálogo</a>
@@ -47,18 +60,20 @@
                             <a class="nav-link" href="ofertas.php">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="./index.html#contacto">Contacto</a>
+                            <a class="nav-link" href="./index.php#contacto">Contacto</a>
                         </li>
-                        <div id="notification" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div id="notification" class="toast align-items-center text-bg-primary border-0" role="alert"
+                            aria-live="assertive" aria-atomic="true">
                             <div class="d-flex">
                                 <div class="toast-body">
                                     Producto añadido al carrito
                                 </div>
-                                <button type="button" class="btn-close btn-close-white me-2 m-auto btn-close-noti" onclick="closeNotification()" aria-label="Close"></button>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto btn-close-noti"
+                                    onclick="closeNotification()" aria-label="Close"></button>
                             </div>
                         </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
-                            <a class="nav-link user-item" href="./login_usuario.html">
+                            <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
                                 <i class="fa-solid fa-user users-icon py-2"></i>
                             </a>
                             <a class="nav-link user-item" href="./shop.php">
@@ -110,134 +125,133 @@
     <!-- Catalogo Pequeño -->
     <section class="catalog">
         <!-- Contenedor para subdividir el catalogo -->
-            <!-- Primera fila que lleva el nombre de la sección y las cartas de equipos peruanos -->
-            <div class="container">
-                <div class="row">
-                    <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
-                    <!-- Cartas de los equipos peruanos subdividas en 3 columnas y en pantallas pequeños adaptable a solo 2 columnas -->
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <!-- Ejemplo de producto con formulario para añadir al carrito -->
-                        <div class="card">
-                            <img src="imgs/catalogo/universitario24.jpg" class="card-img-top img-catalog"
-                                alt="Camiseta Universitario">
-                            <div class="card-body">
-                                <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
-                                <h5 class="card-title text-center">S/. 210.00</h5>
-                                <input type="hidden" name="product_id" value="1">
-                                <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card">
-                            <img src="imgs/catalogo/alianza.webp" class="card-img-top img-catalog"
-                                alt="Camiseta Universitario">
-                            <div class="card-body">
-                                <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
-                                <h5 class="card-title text-center">S/. 240.00</h5>
-                                <input type="hidden" name="product_id" value="2">
-                                <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 mb-3">
-                        <div class="card">
-                            <img src="./imgs/catalogo/cristal.avif" class="card-img-top img-catalog"
-                                alt="Camiseta Cristal">
-                            <div class="card-body">
-                                <p class="card-text text-center">Camiseta Local Sportin Cristal 24/25</p>
-                                <h5 class="card-title text-center">S/. 240.00</h5>
-                                <input type="hidden" name="product_id" value="3" class="product-id">
-                                <a class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card">
-                            <img src="./imgs/catalogo/cusco.jpg" class="card-img-top img-catalog" alt="Camiseta Cusco">
-                            <div class="card-body">
-                                <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
-                                <h5 class="card-title text-center">S/. 240.00</h5>
-                                <input type="hidden" name="product_id" value="4" class="product-id">
-                                <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                            </div>
+        <!-- Primera fila que lleva el nombre de la sección y las cartas de equipos peruanos -->
+        <div class="container">
+            <div class="row">
+                <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
+                <!-- Cartas de los equipos peruanos subdividas en 3 columnas y en pantallas pequeños adaptable a solo 2 columnas -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <!-- Ejemplo de producto con formulario para añadir al carrito -->
+                    <div class="card">
+                        <img src="imgs/catalogo/universitario24.jpg" class="card-img-top img-catalog"
+                            alt="Camiseta Universitario">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
+                            <h5 class="card-title text-center">S/. 210.00</h5>
+                            <input type="hidden" name="product_id" value="1">
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                            </form>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="imgs/catalogo/alianza.webp" class="card-img-top img-catalog"
+                            alt="Camiseta Universitario">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <input type="hidden" name="product_id" value="2">
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="row">
-                    <h2 class="subtitle-catalog my-4">Camisetas al menor precio</h2>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card">
-                            <img src="./imgs/catalogo/chelsea.jpg" class="card-img-top img-catalog" alt="...">
-                            <div class="card-body">
-                                <p class="card-text text-center">Camiseta Local Chelsea 24/25</p>
-                                <h5 class="card-title text-center mb-3">S/. 210.00</h5>
-                                <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                <button class="btn btn-outline-primary btn-cart ms-4">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                            </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card">
+                        <img src="./imgs/catalogo/cristal.avif" class="card-img-top img-catalog" alt="Camiseta Cristal">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Sportin Cristal 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <input type="hidden" name="product_id" value="3" class="product-id">
+                            <a class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card">
-                            <img src="./imgs/catalogo/mun.avif" class="card-img-top img-catalog" alt="...">
-                            <div class="card-body">
-                                <p class="card-text text-center">Camiseta Local Man. United 24/25</p>
-                                <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                                <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                <button class="btn btn-outline-primary btn-cart ms-4">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card">
-                            <img src="./imgs/catalogo/dortmund.jpg" class="card-img-top img-catalog" alt="...">
-                            <div class="card-body">
-                                <p class="card-text text-center">Camiseta Local Bor. Dortmund 24/25</p>
-                                <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                                <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                <button class="btn btn-outline-primary btn-cart ms-4">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="card">
-                            <img src="./imgs/catalogo/boca.jpg" class="card-img-top img-catalog" alt="...">
-                            <div class="card-body">
-                                <p class="card-text text-center">Camiseta Local Boca Juniors 24/25</p>
-                                <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                                <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                <button class="btn btn-outline-primary btn-cart ms-4">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                            </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./imgs/catalogo/cusco.jpg" class="card-img-top img-catalog" alt="Camiseta Cusco">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
+                            <h5 class="card-title text-center">S/. 240.00</h5>
+                            <input type="hidden" name="product_id" value="4" class="product-id">
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="row">
+                <h2 class="subtitle-catalog my-4">Camisetas al menor precio</h2>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./imgs/catalogo/chelsea.jpg" class="card-img-top img-catalog" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Chelsea 24/25</p>
+                            <h5 class="card-title text-center mb-3">S/. 210.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./imgs/catalogo/mun.avif" class="card-img-top img-catalog" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Man. United 24/25</p>
+                            <h5 class="card-title text-center mb-3">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./imgs/catalogo/dortmund.jpg" class="card-img-top img-catalog" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Bor. Dortmund 24/25</p>
+                            <h5 class="card-title text-center mb-3">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./imgs/catalogo/boca.jpg" class="card-img-top img-catalog" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Camiseta Local Boca Juniors 24/25</p>
+                            <h5 class="card-title text-center mb-3">S/. 240.00</h5>
+                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- Galería de imagenes -->
     <section class="galeria" id="galeria">
@@ -407,7 +421,25 @@
             <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="carAlert.js"></script>
+    <script src="carAlert.js">
+        document.addEventListener("DOMContentLoaded", function() {
+            const userLink = document.getElementById('user-link');
+
+            // Verifica si el enlace existe en el DOM
+            if (userLink) {
+                // Añadir el evento de clic
+                userLink.addEventListener('click', function() {
+                    // Obtener el id del cliente desde sessionStorage
+                    const idCliente = sessionStorage.getItem('id_cliente');
+
+                    // Imprimir el id en la consola
+                    console.log("ID del cliente:", idCliente);
+                });
+            } else {
+                console.log("El enlace de usuario no existe en el DOM");
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
