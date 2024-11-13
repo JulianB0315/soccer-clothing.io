@@ -118,15 +118,15 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
     </nav>
     <main class="main-content d-flex position-relative flex-wrap" id="main">
         <!-- Container para subdividir en dos secciones el main -->
-        <div class="container my-5">
-            <h2 class="mb-4">¡Compra realizada con éxito!</h2>
-            <h4 class="mb-3">Detalles de tu pedido:</h4>
+        <div class="container container-compra">
+            <h2 class="mb-4 compra-title">¡Compra realizada con éxito!</h2>
+            <h4 class="mb-3 compra-subtitle">Detalles de tu pedido:</h4>
             <p><strong>Cliente:</strong> <?php echo htmlspecialchars($cliente['nombres'] . ' ' . $cliente['apellido']); ?></p>
             <p><strong>Email:</strong> <?php echo htmlspecialchars($cliente['email']); ?></p>
             <p><strong>Fecha de Pedido:</strong> <?php echo date("Y-m-d H:i:s", strtotime($pedido['fecha'])); ?></p>
             <p><strong>Total:</strong> S/. <?php echo number_format($pedido['total'], 2); ?></p>
             <h5>Productos Comprados:</h5>
-            <table class="table">
+            <table class="table compra-tabla">
                 <thead>
                     <tr>
                         <th>Producto</th>
@@ -138,15 +138,15 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
                 <tbody>
                     <?php foreach ($productos as $item) { ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($item['producto_nombre']); ?></td>
+                            <td class="marcado"><?php echo htmlspecialchars($item['producto_nombre']); ?></td>
                             <td><?php echo $item['cantidad']; ?></td>
-                            <td>S/. <?php echo number_format($item['precio'], 2); ?></td>
+                            <td class="marcado">S/. <?php echo number_format($item['precio'], 2); ?></td>
                             <td>S/. <?php echo number_format($item['precio'] * $item['cantidad'], 2); ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
-            <h4 class="mt-4">Gracias por tu compra, <?php echo htmlspecialchars($cliente['nombres']); ?>!</h4>
+            <h4 class="mt-4 compra-title">Gracias por tu compra, <?php echo htmlspecialchars($cliente['nombres']); ?>!</h4>
             <!-- Botón para volver a la tienda -->
             <a href="index.html" class="btn btn-primary mt-3">Volver a la tienda</a>
         </div>
@@ -198,5 +198,6 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
             <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

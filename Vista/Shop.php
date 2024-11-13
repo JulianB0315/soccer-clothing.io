@@ -82,10 +82,10 @@ session_start();
         </div>
     </nav>
     <main class="main-content d-flex position-relative flex-wrap" id="main">
-        <div class="container my-5">
-            <h2>Carrito de Compras</h2>
+        <div class="container carrito-container">
+            <h2 class="carrito-title">Carrito de Compras</h2>
             <?php if (!empty($_SESSION['cart'])): ?>
-            <table class="table table-bordered">
+            <table class="table carrito-tabla">
                 <thead>
                     <tr>
                         <th>Producto</th>
@@ -103,9 +103,9 @@ session_start();
                         $total_price += $item_total;
                     ?>
                         <tr>
-                            <td><?= htmlspecialchars($item['name']) ?></td>
+                            <td class="marcado"><?= htmlspecialchars($item['name']) ?></td>
                             <td>S/. <?= number_format($item['price'], 2) ?></td>
-                            <td><?= htmlspecialchars($item['quantity']) ?></td>
+                            <td class="marcado"><?= htmlspecialchars($item['quantity']) ?></td>
                             <td>S/. <?= number_format($item_total, 2) ?></td>
                             <td>
                                 <!-- Formulario para eliminar el producto -->
@@ -118,17 +118,17 @@ session_start();
                     <?php endforeach; ?>
                     <tr>
                         <td colspan="3" class="text-end"><strong>Total:</strong></td>
-                        <td><strong>S/. <?= number_format($total_price, 2) ?></strong></td>
+                        <td class="marcado"><strong>S/. <?= number_format($total_price, 2) ?></strong></td>
                         <td></td>
                     </tr>
                 </tbody>
             </table>
             <!-- Finalizar compra -->
-            <form action="guardar_carrito.php" method="post">
-                <button type="submit" name="checkout" class="btn btn-success">Finalizar Compra</button>
+            <form action="guardar_carrito.php" method="post" class="finalizar-compra-form">
+                <button type="submit" name="checkout" class="btn btn-success btn-comprar">Finalizar Compra</button>
             </form>
             <?php else: ?>
-                <p>Tu carrito está vacío.</p>
+                <p class="carrito-vacio">Tu carrito está vacío.</p>
             <?php endif; ?>
         </div>
         <!-- Botón de whatsapp fijado siempre a la pantalla -->
@@ -183,5 +183,6 @@ session_start();
             <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
