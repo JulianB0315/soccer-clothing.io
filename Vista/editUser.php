@@ -1,5 +1,5 @@
 
-<?php
+<!-- <?php
 session_start();
 require '../Controlador/ConectionMySQL.php';
 
@@ -35,7 +35,7 @@ try {
 } catch (PDOException $e) {
     echo "Error al consultar la base de datos: " . $e->getMessage();
 }
-?>   
+?>    -->
 
 
 
@@ -156,7 +156,6 @@ try {
                                         <button class="btn btn-primary" type="submit">Sube una imagen</button>
                                     </form>
                                 </div>
-    
                             </div>
                         </div>
                         <div class="col-xl-8">
@@ -165,13 +164,16 @@ try {
                                 <div class="card-header">Detalles de la Cuenta</div>
                                 <div class="card-body">
                                     <form method="post" action="guardar_cambios_user.php">
-                                        <!-- Form Group (username)-->
-                                        <div class="mb-3">
-                                            <label class="small mb-1" for="inputUsername">Nombre de Usuario:</label>
-                                            <input class="form-control" id="inputUsername" type="text" placeholder="Ingresa tu nombre de usuario" value="<?php echo htmlspecialchars($cliente['apodo']); ?>" disabled />
-                                        </div>
                                         <!-- Form Row-->
                                         <div class="row gx-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label class="small mb-1" for="inputUsername">Nombre de Usuario:</label>
+                                                <input class="form-control" id="inputUsername" type="text" placeholder="Ingresa tu nombre de usuario" value="<?php echo htmlspecialchars($cliente['apodo']); ?>" disabled /></div>
+                                            <!-- Form Group (last name)-->
+                                            <div class="col-md-6">
+                                                <label class="small mb-1" for="inputLocation">Ubicación:</label>
+                                                <input class="form-control" id="inputLocation" type="text" placeholder="Ingresa tu ubicacion" value="<?php echo htmlspecialchars($cliente['direccion']); ?>" disabled />
+                                            </div>
                                             <!-- Form Group (first name)-->
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputFirstName">Nombre:</label>
@@ -182,28 +184,15 @@ try {
                                                 <label class="small mb-1" for="inputLastName">Apellido:</label>
                                                 <input class="form-control" id="inputLastName" type="text" placeholder="Ingresa tu apellido" value="<?php echo htmlspecialchars($cliente['apellido']); ?>" disabled />
                                             </div>
-                                        </div>
-                                        <!-- Form Row-->
-                                        <div class="row gx-3 mb-3">
-                                            <!-- Form Group (location)-->
                                             <div class="col-md-6">
-                                                <label class="small mb-1" for="inputLocation">Ubicación:</label>
-                                                <input class="form-control" id="inputLocation" type="text" placeholder="Ingresa tu ubicacion" value="<?php echo htmlspecialchars($cliente['direccion']); ?>" disabled />
-                                            </div>
-                                        </div>
-                                        <!-- Form Group (email address)-->
-                                        <div class="mb-3">
-                                            <label class="small mb-1" for="inputEmailAddress">Correo Electronico:</label>
+                                                <label class="small mb-1" for="inputEmailAddress">Correo Electronico:</label>
                                             <input class="form-control" id="inputEmailAddress" type="email" placeholder="Ingresa tu email" value="<?php echo htmlspecialchars($cliente['email']); ?>" disabled />
                                         </div>
-                                        <!-- Form Row-->
-                                        <div class="row gx-3 mb-3">
-                                            <!-- Form Group (phone number)-->
+                                            <!-- Form Group (last name)-->
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputPhone">Numero telefonico:</label>
                                                 <input class="form-control" id="inputPhone" type="tel" placeholder="Ingresa tu numero" value="<?php echo htmlspecialchars($cliente['telefono']); ?>" disabled />
                                             </div>
-                                            <!-- Form Group (birthday)-->
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <!--Save changes button-->
