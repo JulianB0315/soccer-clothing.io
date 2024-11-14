@@ -106,17 +106,19 @@ if (!isset($_SESSION['id_cliente'])) {
             <!-- Columna izquierda -->
             <div class="col-md-3 col-sm-6 pt-5">
                 <div class="product-card">
-                    <img src="./imgs/novedades/modelo2.webp" class="img-fluid" alt="Producto 1">
+                    <img src="./imgs/novedades/alemania.png" class="img-fluid" alt="Producto 1">
                     <div class="overlay">
-                        <h5 class="text-white text-center">Adidas Horizon Pack</h5>
-                        <button class="btn btn-primary">Ver más</button>
+                        <h5 class="text-white text-center">Selección Alemana</h5>
+                        <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                     </div>
                 </div>
                 <div class="product-card mt-1">
-                    <img src="./imgs/novedades/modelo4.webp" class="img-fluid" alt="Producto 2">
+                    <img src="./imgs/novedades/portugal01.png" class="img-fluid" alt="Producto 2">
                     <div class="overlay">
-                        <h5 class="text-white text-center">Adidas Vivid Horizon Pack</h5>
-                        <button class="btn btn-primary">Ver más</button>
+                        <h5 class="text-white text-center">Selección Portuguesa</h5>
+                        <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                     </div>
                 </div>
             </div>
@@ -124,10 +126,11 @@ if (!isset($_SESSION['id_cliente'])) {
             <!-- Imagen grande en el centro -->
             <div class="col-md-6 col-sm-12 pt-5">
                 <div class="product-card">
-                    <img src="./imgs/novedades/modelo1.webp" class="img-fluid" alt="Producto central">
+                    <img src="./imgs/novedades/peru.png" class="img-fluid" alt="Producto central">
                     <div class="overlay">
-                        <h5 class="text-white text-center">Producto Central</h5>
-                        <button class="btn btn-primary">Ver Más</button>
+                        <h5 class="text-white text-center">Seleccion Peruana</h5>
+                        <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                     </div>
                 </div>
             </div>
@@ -135,17 +138,19 @@ if (!isset($_SESSION['id_cliente'])) {
                 <!-- Columna izquierda -->
                 <div class="col-md-3 col-sm-6 pt-5">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo2.webp" class="img-fluid" alt="Producto 1">
+                        <img src="./imgs/novedades/colombia.png" class="img-fluid" alt="Producto 1">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Adidas Horizon Pack</h5>
-                            <button class="btn btn-primary">Ver más</button>
+                            <h5 class="text-white text-center">Seleccion Colombiana</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                     <div class="product-card mt-1">
-                        <img src="./imgs/novedades/modelo4.webp" class="img-fluid" alt="Producto 2">
+                        <img src="./imgs/novedades/mexico.png" class="img-fluid" alt="Producto 2">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Adidas Vivid Horizon Pack</h5>
-                            <button class="btn btn-primary">Ver más</button>
+                            <h5 class="text-white text-center">Seleccion Mexicana</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
@@ -153,10 +158,11 @@ if (!isset($_SESSION['id_cliente'])) {
                 <!-- Imagen grande en el centro -->
                 <div class="col-md-6 col-sm-12 pt-5">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo1.webp" class="img-fluid" alt="Producto central">
+                        <img src="./imgs/novedades/arg24.png" class="img-fluid" alt="Producto central">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Producto Central</h5>
-                            <button class="btn btn-primary">Ver Más</button>
+                            <h5 class="text-white text-center">Selección Argentina</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
@@ -164,17 +170,19 @@ if (!isset($_SESSION['id_cliente'])) {
                 <!-- Columna derecha -->
                 <div class="col-md-3 col-sm-6 pt-5">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo3.webp" class="img-fluid" alt="Producto 3">
+                        <img src="./imgs/novedades/francia.png" class="img-fluid" alt="Producto 3">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Adidas Horizon Pack</h5>
-                            <button class="btn btn-primary">Ver más</button>
+                            <h5 class="text-white text-center">Seleccion Francesa</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                     <div class="product-card mt-1">
-                        <img src="./imgs/novedades/modelo5.webp" class="img-fluid" alt="Producto 4">
+                        <img src="./imgs/novedades/chile.png" class="img-fluid" alt="Producto 4">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Adidas Vivid Horizon Pack</h5>
-                            <button class="btn btn-primary">Ver más</button>
+                            <h5 class="text-white text-center">Seleccion Chilena</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
@@ -184,73 +192,81 @@ if (!isset($_SESSION['id_cliente'])) {
             <div class="container my-4 d-flex justify-content-center pb-5 flex-wrap">
                 <div class="col-md-3 col-sm-6 pt-5">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo1.webp" class="img-fluid" alt="Producto 5">
+                        <img src="./imgs/novedades/juventus2.png" class="img-fluid" alt="Producto 5">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Adidas Horizon Pack</h5>
-                            <button class="btn btn-primary">Ver más</button>
+                            <h5 class="text-white text-center">Camiseta Juventus</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 pt-5">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo2.webp" class="img-fluid" alt="Producto 6">
+                        <img src="./imgs/novedades/manchester.png" class="img-fluid" alt="Producto 6">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Producto 6</h5>
-                            <button class="btn btn-primary">Ver Más</button>
+                            <h5 class="text-white text-center">Camiseta Local Manchester United 24/25</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 pt-5">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo3.webp" class="img-fluid" alt="Producto 7">
+                        <img src="./imgs/novedades/real.png" class="img-fluid" alt="Producto 7">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Producto 7</h5>
-                            <button class="btn btn-primary">Ver Más</button>
+                            <h5 class="text-white text-center">Camiseta Visitante Real Madrid 24/25</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 pt-5">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo4.webp" class="img-fluid" alt="Producto 8">
+                        <img src="./imgs/novedades/roma.png" class="img-fluid" alt="Producto 8">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Producto 8</h5>
-                            <button class="btn btn-primary">Ver Más</button>
+                            <h5 class="text-white text-center">Camiseta Local AS Roma 24/24</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 ">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo1.webp" class="img-fluid" alt="Producto 5">
+                        <img src="./imgs/novedades/manchester2.png" class="img-fluid" alt="Producto 5">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Adidas Horizon Pack</h5>
-                            <button class="btn btn-primary">Ver más</button>
+                            <h5 class="text-white text-center">Camiseta Visitante Manchester United 24/25</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 ">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo2.webp" class="img-fluid" alt="Producto 6">
+                        <img src="./imgs/novedades/bayern.png" class="img-fluid" alt="Producto 6">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Producto 6</h5>
-                            <button class="btn btn-primary">Ver Más</button>
+                            <h5 class="text-white text-center">Camiseta Local FC Bayern 24/25</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 ">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo3.webp" class="img-fluid" alt="Producto 7">
+                        <img src="./imgs/novedades/real2.png" class="img-fluid" alt="Producto 7">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Producto 7</h5>
-                            <button class="btn btn-primary">Ver Más</button>
+                            <h5 class="text-white text-center">Camiseta Uniforme Local Real Madrid 23/24</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="product-card">
-                        <img src="./imgs/novedades/modelo4.webp" class="img-fluid" alt="Producto 8">
+                        <img src="./imgs/novedades/juventus.png" class="img-fluid" alt="Producto 8">
                         <div class="overlay">
-                            <h5 class="text-white text-center">Producto 8</h5>
-                            <button class="btn btn-primary">Ver Más</button>
+                            <h5 class="text-white text-center">Camiseta Juventus</h5>
+                            <button class="btn btn-primary" onclick="window.location.href='Catalogo.php';">Ver Más</button>
+
                         </div>
                     </div>
                 </div>
@@ -258,7 +274,7 @@ if (!isset($_SESSION['id_cliente'])) {
 
 
             <div class="text-center mb-4">
-                <button class="btn btn-outline-primary btn-lg">Más lanzamientos de material de fútbol</button>
+                <button class="btn btn-outline-primary btn-lg" onclick="window.location.href='Catalogo.php';">Más lanzamientos de material de fútbol</button>
             </div>
 
             <!-- Botón de whatsapp fijado siempre a la pantalla -->
