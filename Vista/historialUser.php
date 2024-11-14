@@ -20,7 +20,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
+            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.php">
                 <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70"
                     class="d-inline-block align-text-center">
                 Futbolera
@@ -39,7 +39,7 @@
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="./novedades.html">Novedades</a>
+                            <a class="nav-link" href="./novedades.php">Novedades</a>
                         </li>
                         <li class="nav-item p-3 ">
                             <a class="nav-link" href="./Catalogo.php">Catálogo</a>
@@ -48,13 +48,13 @@
                             <a class="nav-link" href="ofertas.php">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="./index.html#contacto">Contacto</a>
+                            <a class="nav-link" href="./index.php#contacto">Contacto</a>
                         </li>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" href="./login_usuario.html">
                                 <i class="fa-solid fa-user users-icon py-2"></i>
                             </a>
-                            <a class="nav-link user-item" href="#">
+                            <a class="nav-link user-item" href="Shop.php">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
                             </a>
                         </li>

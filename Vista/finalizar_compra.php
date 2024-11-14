@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_cliente'])) {
             alert('Por favor iniciar sesión');
             window.location = '../Vista/login_usuario.html'; 
           </script>";
-          exit();
+    exit();
 }
 
 // Obtener los detalles del pedido
@@ -38,10 +38,32 @@ $stmt = $pdo->prepare("SELECT * FROM clientes WHERE id_cliente = ?");
 $stmt->execute([$clienteId]);
 $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
 
+if (!isset($_SESSION['id_cliente'])) {
+    $link = "./login_usuario.html";
+    $imagenPerfil = "uploads/perfil/Por defecto.png"; // 
+} else {
+    $idCliente = $_SESSION['id_cliente'];
+    $link = "editUser.php";
+
+    // Consulta para obtener la imagen de perfil del cliente
+    $query = "SELECT imagen_perfil FROM clientes WHERE id_cliente = :id_cliente";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(':id_cliente', $idCliente, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $imagenPerfil = $stmt->fetchColumn();
+
+    // Si no hay imagen de perfil, usa una imagen predeterminada
+    if (empty($imagenPerfil)) {
+        $imagenPerfil = "uploads/perfil/Por defecto.png";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,10 +76,11 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #081625;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.html">
+            <a class="navbar-brand text-light fw-semibold fs-2" href="./index.php">
                 <img src="./imgs/logo-tienda.webp" alt="Shop logo" width="70" height="70"
                     class="d-inline-block align-text-center">
                 Futbolera
@@ -76,7 +99,7 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
                     <ul class="navbar-nav fs-5 justify-content-evenly">
                         <li class="nav-item p-3 ">
-                            <a class="nav-link" href="./novedades.html">Novedades</a>
+                            <a class="nav-link" href="./novedades.php">Novedades</a>
                         </li>
                         <li class="nav-item p-3 ">
                             <a class="nav-link" href="./Catalogo.php">Catálogo</a>
@@ -85,7 +108,7 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
                             <a class="nav-link" href="ofertas.php">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="./index.html#contacto">Contacto</a>
+                            <a class="nav-link" href="./index.php#contacto">Contacto</a>
                         </li>
                         <div id="notification" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="d-flex">
@@ -96,8 +119,8 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
-                            <a class="nav-link user-item" href="./login_usuario.html">
-                                <i class="fa-solid fa-user users-icon py-2"></i>
+                            <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
+                                <img src="<?php echo $imagenPerfil; ?>" class="profile-img">
                             </a>
                             <a class="nav-link user-item" href="./shop.php">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
@@ -151,7 +174,7 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
             </table>
             <h4 class="mt-4 compra-title">Gracias por tu compra, <?php echo htmlspecialchars($cliente['nombres']); ?>!</h4>
             <!-- Botón para volver a la tienda -->
-            <a href="index.html" class="btn btn-primary mt-3">Volver a la tienda</a>
+            <a href="index.php" class="btn btn-primary mt-3">Volver a la tienda</a>
         </div>
     </main>
     <footer class="footer">
@@ -203,4 +226,5 @@ $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

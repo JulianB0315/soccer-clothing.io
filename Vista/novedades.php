@@ -58,7 +58,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <a class="nav-link" href="ofertas.php">Ofertas</a>
                         </li>
                         <li class="nav-item p-3">
-                            <a class="nav-link" href="./index.html#contacto">Contacto</a>
+                            <a class="nav-link" href="./index.php#contacto">Contacto</a>
                         </li>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">

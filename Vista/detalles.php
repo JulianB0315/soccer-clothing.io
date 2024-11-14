@@ -3,18 +3,28 @@
 session_start();
 
 // Verificar si el usuario ha iniciado sesión
+require '../Controlador/ConectionMySQL.php'; // Conexión PDO
+
+//Verifica el inicio de sesión 
 if (!isset($_SESSION['id_cliente'])) {
     $link = "./login_usuario.html";
-    
+    $imagenPerfil = "uploads/perfil/Por defecto.png"; // 
 } else {
+    $idCliente = $_SESSION['id_cliente'];
     $link = "editUser.php";
-}
-// Inicia la conexión a la base de datos
-require '../Controlador/ConectionMySQL.php';
 
-// Verifica si la conexión se ha establecido correctamente
-if (!isset($pdo)) {
-    die("No se pudo establecer una conexión con la base de datos.");
+    // Consulta para obtener la imagen de perfil del cliente
+    $query = "SELECT imagen_perfil FROM clientes WHERE id_cliente = :id_cliente";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(':id_cliente', $idCliente, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $imagenPerfil = $stmt->fetchColumn();
+
+    // Si no hay imagen de perfil, usa una imagen predeterminada
+    if (empty($imagenPerfil)) {
+        $imagenPerfil = "uploads/perfil/Por defecto.png";
+    }
 }
 
 // Verificar si el parámetro 'id' está presente en la URL y es válido
@@ -95,7 +105,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                     </div>
                                     <li class="user-buttons d-flex justify-content-evenly p-2 ">
                                         <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
-                                            <i class="fa-solid fa-user users-icon py-2"></i>
+                                            <img src="<?php echo $imagenPerfil; ?>" class="profile-img">
                                         </a>
                                         <a class="nav-link user-item" href="./shop.php">
                                             <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>

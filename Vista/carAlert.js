@@ -62,9 +62,6 @@ function clearCart() {
 const idCliente = sessionStorage.getItem('id_cliente');
 const email = sessionStorage.getItem('email');
 
-document.getElementById('cliente-id').innerText = idCliente;
-document.getElementById('cliente-email').innerText = email;
-
 //para el bton de cerrar sesión en el servidor
 function cerrarSesion() {
     // Eliminar datos de sessionStorage
