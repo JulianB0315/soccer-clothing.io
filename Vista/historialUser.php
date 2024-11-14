@@ -76,20 +76,18 @@
         </div>
     </nav>
 <!-- Main page content-->
-<main class="pt-5">
+<main class="pt-5 bg-body-secondary pb-4">
     <div class="container-xl px-4 mt-4 pt-5">
-        <!-- Account page navigation-->
+        <!-- Navegacion-->
         <nav class="nav nav-borders">
             <a class="nav-link ms-0" href="./editUser.php">Perfil</a>
             <a class="nav-link active" href="./historialUser.php">Historial</a>
         </nav>
         <hr class="mt-0 mb-4" />
-    
         <!-- Historial de compras-->
         <div class="card mb-4">
             <div class="card-header">Historial de compras</div>
             <div class="card-body p-0">
-                <!-- Billing history table-->
                 <div class="table-responsive table-billing-history">
                     <table class="table mb-0">
                         <thead>
