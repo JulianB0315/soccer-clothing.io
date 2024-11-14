@@ -1,9 +1,8 @@
-
 <?php
 session_start();
 require '../Controlador/ConectionMySQL.php';
 
- // Verificar si id_cliente está en la sesión
+// Verificar si id_cliente está en la sesión
 try {
     // Verificar si id_cliente está en la sesión
     if (isset($_SESSION['id_cliente'])) {
@@ -35,13 +34,14 @@ try {
 } catch (PDOException $e) {
     echo "Error al consultar la base de datos: " . $e->getMessage();
 }
-?>   
+?>
 
 
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,7 +114,7 @@ try {
     <!-- Main -->
     <main>
         <!-- Comienzo de la pagina de editar perfil -->
-        <div id="layoutSidenav_content" class="bg-light pt-4" >
+        <div id="layoutSidenav_content" class="bg-light pt-4">
             <main>
                 <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
                     <div class="container-xl px-4">
@@ -156,7 +156,7 @@ try {
                                         <button class="btn btn-primary" type="submit">Sube una imagen</button>
                                     </form>
                                 </div>
-    
+
                             </div>
                         </div>
                         <div class="col-xl-8">
@@ -168,19 +168,19 @@ try {
                                         <!-- Form Group (username)-->
                                         <div class="mb-3">
                                             <label class="small mb-1" for="inputUsername">Nombre de Usuario:</label>
-                                            <input class="form-control" id="inputUsername" type="text" placeholder="Ingresa tu nombre de usuario" value="<?php echo htmlspecialchars($cliente['apodo']); ?>" disabled />
+                                            <input class="form-control" name="apodo" type="text" placeholder="Ingresa tu nombre de usuario" value="<?php echo htmlspecialchars($cliente['apodo']); ?>" disabled />
                                         </div>
                                         <!-- Form Row-->
                                         <div class="row gx-3 mb-3">
                                             <!-- Form Group (first name)-->
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputFirstName">Nombre:</label>
-                                                <input class="form-control" id="inputFirstName" type="text" placeholder="Ingresa tu nombre" value="<?php echo htmlspecialchars($cliente['nombres']); ?>" disabled />
+                                                <input class="form-control" name="nombre" type="text" placeholder="Ingresa tu nombre" value="<?php echo htmlspecialchars($cliente['nombres']); ?>" disabled />
                                             </div>
                                             <!-- Form Group (last name)-->
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputLastName">Apellido:</label>
-                                                <input class="form-control" id="inputLastName" type="text" placeholder="Ingresa tu apellido" value="<?php echo htmlspecialchars($cliente['apellido']); ?>" disabled />
+                                                <input class="form-control" name="apellido" type="text" placeholder="Ingresa tu apellido" value="<?php echo htmlspecialchars($cliente['apellido']); ?>" disabled />
                                             </div>
                                         </div>
                                         <!-- Form Row-->
@@ -188,31 +188,31 @@ try {
                                             <!-- Form Group (location)-->
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputLocation">Ubicación:</label>
-                                                <input class="form-control" id="inputLocation" type="text" placeholder="Ingresa tu ubicacion" value="<?php echo htmlspecialchars($cliente['direccion']); ?>" disabled />
+                                                <input class="form-control" name="direccion" type="text" placeholder="Ingresa tu ubicacion" value="<?php echo htmlspecialchars($cliente['direccion']); ?>" disabled />
                                             </div>
                                         </div>
                                         <!-- Form Group (email address)-->
                                         <div class="mb-3">
                                             <label class="small mb-1" for="inputEmailAddress">Correo Electronico:</label>
-                                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Ingresa tu email" value="<?php echo htmlspecialchars($cliente['email']); ?>" disabled />
+                                            <input class="form-control" name="email" type="email" placeholder="Ingresa tu email" value="<?php echo htmlspecialchars($cliente['email']); ?>" disabled />
                                         </div>
                                         <!-- Form Row-->
                                         <div class="row gx-3 mb-3">
                                             <!-- Form Group (phone number)-->
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputPhone">Numero telefonico:</label>
-                                                <input class="form-control" id="inputPhone" type="tel" placeholder="Ingresa tu numero" value="<?php echo htmlspecialchars($cliente['telefono']); ?>" disabled />
+                                                <input class="form-control" name="telefono" type="tel" placeholder="Ingresa tu numero" value="<?php echo htmlspecialchars($cliente['telefono']); ?>" disabled />
                                             </div>
                                             <!-- Form Group (birthday)-->
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <!--Save changes button-->
                                             <button class="btn btn-primary me-3" type="button" onclick="habilitarCampos()">Editar perfil</button>
-                                            <button class="btn btn-primary me-3 " type="button" id="guardarCambios" disabled onclick="deshabilitarCampos()">Guardar cambios</button>
-                                            <button class="btn btn-primary me-3 " type="button" id="cancelarCambios" disabled onclick="deshabilitarCampos()">Cancelar cambios</button>
+                                            <button class="btn btn-primary me-3" type="submit" id="guardarCambios" disabled>Guardar cambios</button>
+                                            <button class="btn btn-primary me-3" type="button" id="cancelarCambios" disabled onclick="deshabilitarCampos()">Cancelar cambios</button>
                                             <button class="btn btn-primary me-3" type="button" onclick="cerrarSesion()">Cerrar sesión</button>
                                         </div>
-                                        </form>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -225,24 +225,29 @@ try {
     <!-- Scripts  para los botones -->
     <script src="carAlert.js"></script>
     <script>
-        // Función para habilitar los cosos del form
+        // Botones de editUser
         function habilitarCampos() {
-            const inputs = document.querySelectorAll('input.form-control');
-            inputs.forEach(input => input.disabled = false);
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach(input => {
+                input.disabled = false;
+                console.log(`Habilitado: ${input.name}`); // Verifica qué campos se habilitan
+            });
 
-            // Se supone q con este se habilita el para guardar cambios
             document.getElementById('guardarCambios').disabled = false;
             document.getElementById('cancelarCambios').disabled = false;
+            console.log("Botones de guardar y cancelar habilitados");
         }
 
-        // Función para deshabilitar
         function deshabilitarCampos() {
-            const inputs = document.querySelectorAll('input.form-control');
-            inputs.forEach(input => input.disabled = true);
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach(input => {
+                input.disabled = true;
+                console.log(`Deshabilitado: ${input.name}`); // Verifica qué campos se deshabilitan
+            });
 
-            // Se supone q con este se deshabilita el para guardar cambios
             document.getElementById('guardarCambios').disabled = true;
             document.getElementById('cancelarCambios').disabled = true;
+            console.log("Botones de guardar y cancelar deshabilitados");
         }
     </script>
     <!-- Pie de pagina / Footer -->
