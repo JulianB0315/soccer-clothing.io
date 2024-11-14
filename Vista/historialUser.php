@@ -104,7 +104,9 @@
                                 <td>Aca el nombre</td>
                                 <td>Aca la fecha</td>
                                 <td>Compra 100</td>
-                                <td><button class="badge bg-success border-1 px-3">Ver</button></td>
+                                <td>
+                                    <button class="badge bg-success border-1 px-3" data-bs-toggle="modal" data-bs-target="#verProductosModal">Ver</button>
+                                </td>                                
                                 <td>S/. 100</td>
                             </tr>
                         </tbody>
@@ -113,6 +115,51 @@
             </div>
         </div>
     </div>
+
+<!-- Modal para ver productos -->
+<div class="modal fade" id="verProductosModal" tabindex="-1" role="dialog" aria-labelledby="verProductosModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="coso-table" id="verProductosModalLabel">Detalles de Compra</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Lista de productos aca lo recorres con el bucle -->
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio Unitario</th>
+                                <th scope="col">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productosLista">
+                            <!-- Te dejo ejemplo de como va -->
+                            <tr>
+                                <td>Producto 1</td>
+                                <td>2</td>
+                                <td>S/. 50</td>
+                                <td>S/. 100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Total de la compra esto lo puse como opcional-->
+                <div class="text-end mt-3 coso-table">
+                    <h5 class="coso-table">Total: <span id="totalCompra">S/. 200</span></h5>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger coso-table bg-red" type="button" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     </main>
     <!-- Pie de pagina / Footer -->
     <footer class="footer">
@@ -162,6 +209,8 @@
             <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <!-- Bootstrap Bundle JS (incluye Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -797,3 +797,23 @@ input:focus {
 .table th, .table td {
     color: #ffffff; /* Cambia esto al color que prefieras */
 }
+
+.coso-table{
+    color: white !important;;
+}
+.bg-red{
+    background-color: red;
+}
+#verProductosModal .table th,
+#verProductosModal .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#verProductosModal .table th {
+    background-color: #000000;
+}
+
+#verProductosModal .modal-body h5 {
+    font-weight: bold;
+}
