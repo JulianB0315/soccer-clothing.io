@@ -93,7 +93,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <a href="" class="nav-link">
                             <i class="px-2 py-4  fa-brands fa-facebook-f fa-lg text-center"></i>
                         </a>
-                        <a href="" class="nav-link">
+                        <a href="https://api.whatsapp.com/send?phone=51917096358&text=Quiero%20conocer%20m%C3%A1s%20acerca%20de%20tus%20productos%20waza" class="nav-link">
                             <i class="ps-1 py-4 fa-brands fa-whatsapp fa-lg text-center"></i>
                         </a>
                         <a href="" class="nav-link">
@@ -155,7 +155,7 @@ if (!isset($_SESSION['id_cliente'])) {
             <?php endif; ?>
         </div>
         <!-- Botón de whatsapp fijado siempre a la pantalla -->
-        <a href="#" class="whatsapp-link" target="_blank">
+        <a href="https://api.whatsapp.com/send?phone=51917096358&text=Quiero%20conocer%20m%C3%A1s%20acerca%20de%20tus%20productos%20waza" class="whatsapp-link" target="_blank">
             <i class="fa-brands fa-whatsapp py-4 whatsapp-icon"></i>
         </a>
     </main>

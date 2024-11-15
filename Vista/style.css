@@ -797,6 +797,13 @@ td.marcado{
     font: normal 400 1.2rem/2 var(--font-texts);
     color: var(--text-light);
 }
+/* ----- Estilos para la pfp ------ */
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
         width:30%;

@@ -89,7 +89,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
-                                <img src="<?php echo $imagenPerfil; ?>" class="profile-img img-fluid rounded-circle" style="width: 60px; height: 60px;">
+                                <img src="<?php echo $imagenPerfil; ?>" class="profile-img img-fluid rounded-circle">
 
                             </a>
                             <a class="nav-link user-item" href="./shop.php">
@@ -101,7 +101,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <a href="" class="nav-link">
                             <i class="px-2 py-4  fa-brands fa-facebook-f fa-lg text-center"></i>
                         </a>
-                        <a href="" class="nav-link">
+                        <a href="https://api.whatsapp.com/send?phone=51917096358&text=Quiero%20conocer%20m%C3%A1s%20acerca%20de%20tus%20productos%20waza" class="nav-link">
                             <i class="ps-1 py-4 fa-brands fa-whatsapp fa-lg text-center"></i>
                         </a>
                         <a href="" class="nav-link">
@@ -134,7 +134,7 @@ if (!isset($_SESSION['id_cliente'])) {
             </div>
         </section>
         <!-- Botón de whatsapp fijado siempre a la pantalla -->
-        <a href="#" class="whatsapp-link" target="_blank">
+        <a href="https://api.whatsapp.com/send?phone=51917096358&text=Quiero%20conocer%20m%C3%A1s%20acerca%20de%20tus%20productos%20waza" class="whatsapp-link" target="_blank">
             <i class="fa-brands fa-whatsapp py-4 whatsapp-icon"></i>
         </a>
     </main>
@@ -155,7 +155,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
                             <h5 class="card-title text-center">S/. 210.00</h5>
                             <input type="hidden" name="product_id" value="1">
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -172,7 +172,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
                             <input type="hidden" name="product_id" value="2">
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -187,7 +187,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <p class="card-text text-center">Camiseta Local Sportin Cristal 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
                             <input type="hidden" name="product_id" value="3" class="product-id">
-                            <a class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -202,7 +202,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
                             <input type="hidden" name="product_id" value="4" class="product-id">
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -220,7 +220,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Chelsea 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 210.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button class="btn btn-outline-primary btn-cart ms-4">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -233,7 +233,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Man. United 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button class="btn btn-outline-primary btn-cart ms-4">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -246,7 +246,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Bor. Dortmund 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button class="btn btn-outline-primary btn-cart ms-4">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -259,7 +259,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Boca Juniors 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button class="btn btn-outline-primary btn-cart ms-4">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -369,10 +369,11 @@ if (!isset($_SESSION['id_cliente'])) {
         </div>
     </section>
     <!-- Formulario de contacto -->
-    <section class="form-contacto" id="contacto pt-5">
+    <section class="form-contacto" id="contacto">
         <h2 class="text-center my-5 my-md-3 form-title">¿Quieres hacernos una consulta?</h2>
         <div class="form-container">
-            <form action="contacto.php" method="post" class="contact-form">
+            <!-- Aca se pondra el correo a donde se enviará -->
+            <form action="https://formsubmit.co/diegoalbertocastropastor@gmail.com" method="post" class="contact-form">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -383,9 +384,14 @@ if (!isset($_SESSION['id_cliente'])) {
                 </div>
                 <div class="mb-3">
                     <label for="mensaje" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required></textarea>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required style="resize: none;"></textarea>
                 </div>
                 <button type="submit" name="enviar" class="btn btn-primary btn-form">Enviar</button>
+                <!-- Algunos inputs para evitar redirecciones y captchas -->
+                <!-- Aca debemos poner una pagina de redireccion en el value xd -->
+                <input type="hidden" name="_next" value="http://localhost/soccer-clothing.io/Vista/index.php"> 
+                <!-- Que no funcione el captcha -->
+                <input type="hidden" name="_captcha" value="false">
             </form>
         </div>
     </section>
