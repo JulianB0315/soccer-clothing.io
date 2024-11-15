@@ -383,7 +383,7 @@ if (!isset($_SESSION['id_cliente'])) {
                 </div>
                 <div class="mb-3">
                     <label for="mensaje" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required></textarea>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required style="resize: none;"></textarea>
                 </div>
                 <button type="submit" name="enviar" class="btn btn-primary btn-form">Enviar</button>
             </form>
