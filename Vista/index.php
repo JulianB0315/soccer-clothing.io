@@ -369,7 +369,7 @@ if (!isset($_SESSION['id_cliente'])) {
         </div>
     </section>
     <!-- Formulario de contacto -->
-    <section class="form-contacto" id="contacto pt-5">
+    <section class="form-contacto" id="contacto">
         <h2 class="text-center my-5 my-md-3 form-title">¿Quieres hacernos una consulta?</h2>
         <div class="form-container">
             <form action="contacto.php" method="post" class="contact-form">
