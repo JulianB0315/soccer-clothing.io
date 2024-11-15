@@ -372,7 +372,7 @@ if (!isset($_SESSION['id_cliente'])) {
     <section class="form-contacto" id="contacto">
         <h2 class="text-center my-5 my-md-3 form-title">¿Quieres hacernos una consulta?</h2>
         <div class="form-container">
-            <form action="https://formsubmit.co/vegow34142@cironex.com" method="post" class="contact-form">
+            <form action="https://formsubmit.co/diegoalbertocastropastor@gmail.com" method="post" class="contact-form">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
