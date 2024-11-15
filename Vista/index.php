@@ -372,7 +372,7 @@ if (!isset($_SESSION['id_cliente'])) {
     <section class="form-contacto" id="contacto">
         <h2 class="text-center my-5 my-md-3 form-title">¿Quieres hacernos una consulta?</h2>
         <div class="form-container">
-            <form action="contacto.php" method="post" class="contact-form">
+            <form action="https://formsubmit.co/vegow34142@cironex.com" method="post" class="contact-form">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -386,6 +386,11 @@ if (!isset($_SESSION['id_cliente'])) {
                     <textarea class="form-control" id="mensaje" name="mensaje" rows="6" required style="resize: none;"></textarea>
                 </div>
                 <button type="submit" name="enviar" class="btn btn-primary btn-form">Enviar</button>
+                <!-- Algunos inputs para evitar redirecciones y captchas -->
+                <!-- Aca debemos poner una pagina de redireccion en el value xd -->
+                <input type="hidden" name="_next" value="http://localhost/soccer-clothing.io/Vista/index.php"> 
+                <!-- Que no funcione el captcha -->
+                <input type="hidden" name="_captcha" value="false">
             </form>
         </div>
     </section>
