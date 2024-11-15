@@ -155,7 +155,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
                             <h5 class="card-title text-center">S/. 210.00</h5>
                             <input type="hidden" name="product_id" value="1">
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -172,7 +172,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
                             <input type="hidden" name="product_id" value="2">
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -187,7 +187,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <p class="card-text text-center">Camiseta Local Sportin Cristal 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
                             <input type="hidden" name="product_id" value="3" class="product-id">
-                            <a class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -202,7 +202,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
                             <input type="hidden" name="product_id" value="4" class="product-id">
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -220,7 +220,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Chelsea 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 210.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button class="btn btn-outline-primary btn-cart ms-4">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -233,7 +233,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Man. United 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button class="btn btn-outline-primary btn-cart ms-4">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -246,7 +246,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Bor. Dortmund 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button class="btn btn-outline-primary btn-cart ms-4">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
@@ -259,7 +259,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Boca Juniors 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="#" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
                             <button class="btn btn-outline-primary btn-cart ms-4">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
