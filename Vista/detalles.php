@@ -138,7 +138,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                 <p class="detalle-text">Descripción: <?php echo htmlspecialchars($producto['descripcion']); ?></p>
                                 <p class="detalle-text">Stock disponible: <?php echo htmlspecialchars($producto['stock']); ?></p>
                                 <p class="detalle-text">Marca: <?php echo htmlspecialchars($producto['marca']); ?></p>
-                                <a href="Galery.php" class="btn btn-primary">Volver al catálogo</a>
+                                <a href="./Catalogo.php" class="btn btn-primary">Volver al catálogo</a>
                             </div>
                         </div>
                     </div>
