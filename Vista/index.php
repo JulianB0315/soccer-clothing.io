@@ -89,7 +89,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
-                                <img src="<?php echo $imagenPerfil; ?>" class="profile-img img-fluid rounded-circle" style="width: 60px; height: 60px;">
+                                <img src="<?php echo $imagenPerfil; ?>" class="profile-img img-fluid rounded-circle">
 
                             </a>
                             <a class="nav-link user-item" href="./shop.php">

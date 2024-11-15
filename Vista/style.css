@@ -22,7 +22,7 @@
     --font-texts:"AdihausDIN", sans-serif;
 }
 *{
-    border: 1px solid transparent; 
+    border: 1px solid blue; 
     /* Esto me esta ayudando a ver los containers asi que dejenlo XD */
     /* Actualizacion, no saquen esto porque lo necesitamos si no se recortan el tamaño de los section galeria y contacto */
 }
@@ -796,6 +796,13 @@ td.marcado{
 .container-compra p{
     font: normal 400 1.2rem/2 var(--font-texts);
     color: var(--text-light);
+}
+/* ----- Estilos para la pfp ------ */
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 @media only screen and (max-width:992px){
     .navbar-nav >.nav-item >.nav-link::after{
