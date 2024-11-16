@@ -118,46 +118,69 @@
 
 <!-- Modal para ver productos -->
 <div class="modal fade" id="verProductosModal" tabindex="-1" role="dialog" aria-labelledby="verProductosModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="coso-table" id="verProductosModalLabel">Detalles de Compra</h5>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+            <!-- Header del Modal -->
+            <div class="modal-header" style="background-color: #f5f5f5; border-bottom: 2px solid #e0e0e0;">
+                <h5 class="modal-title fw-bold" id="verProductosModalLabel" style="color: #333;">Detalles de Compra</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <!-- Lista de productos aca lo recorres con el bucle -->
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Producto</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Precio Unitario</th>
-                                <th scope="col">Subtotal</th>
-                            </tr>
-                        </thead>
-                        <tbody id="productosLista">
-                            <!-- Te dejo ejemplo de como va -->
-                            <tr>
-                                <td>Producto 1</td>
-                                <td>2</td>
-                                <td>S/. 50</td>
-                                <td>S/. 100</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="modal-body p-4" style="font-family: 'Inter', sans-serif; color: #e2e0e0;">
+                <!-- Resumen del Pedido -->
+                <div class="mb-4">
+                    <h6 class="fw-bold" style="color: #ffffff; border-bottom: 2px solid #e2e0e0; padding-bottom: 5px;">Resumen</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1"><strong>Nombre:</strong></p>
+                        <p class="mb-1" id="nombreCliente">Pedro SS</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1"><strong>ID de pedido:</strong></p>
+                        <p class="mb-1" id="idPedido">92774411</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1"><strong>Fecha del pedido:</strong></p>
+                        <p class="mb-1" id="fechaPedido">16 nov, 2024</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1"><strong>Dirección de Envío:</strong></p>
+                        <p class="mb-1" id="direccionEnvio">Senatis 2221</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <p class="mb-1"><strong>Subtotal:</strong></p>
+                        <p class="mb-1" id="subtotalCompra">S/.161.80</p>
+                    </div>
+                    <div class="d-flex justify-content-between fw-bold">
+                        <p class="mb-1">Total:</p>
+                        <p id="totalCompra" style="color: #e2e0e0">S/.161.80</p>
+                    </div>
                 </div>
-                <!-- Total de la compra esto lo puse como opcional-->
-                <div class="text-end mt-3 coso-table">
-                    <h5 class="coso-table">Total: <span id="totalCompra">S/. 200</span></h5>
+                <!-- Detalles de los Productos aca es donde va la lista de productos -->
+                <div>
+                    <h6 class="fw-bold" style="color: #ffffff; border-bottom: 2px solid #e0e0e0; padding-bottom: 5px;">Detalles de los Productos</h6>
+                    <div id="productosLista">
+                        <div class="producto-item d-flex justify-content-between align-items-center py-2" style="border-bottom: 1px solid #e0e0e0;">
+                            <div>
+                                <p class="mb-0 fw-bold" style="color: #ffffff;">Camiseta Real Madrid</p>
+                                <p class="mb-0 text-muted" style="font-size: 0.9rem;">Cantidad: 2</p>
+                            </div>
+                            <div>
+                                <p class="mb-0 fw-bold" style="color: #e2e0e0;">S/. 50.00</p>
+                                <p class="mb-0 text-muted" style="font-size: 0.9rem;">Subtotal: S/. 100.00</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-danger coso-table bg-red" type="button" data-bs-dismiss="modal">Cerrar</button>
+            <!-- Footer del Modal -->
+            <div class="modal-footer" style="background-color: #ffffff; border-top: 2px solid #e0e0e0;">
+                <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Cerrar</button>
+                <button class="btn btn-primary" type="button">Descargar Boleta</button>
             </div>
         </div>
     </div>
 </div>
+
+
 
 
     </main>
