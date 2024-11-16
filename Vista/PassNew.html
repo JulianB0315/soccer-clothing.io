@@ -69,49 +69,39 @@
         </div> 
     </nav>
     <section class="form-login">
-        <div class="container login-form-container">
-            <div class="formulario">
-                <form action="../Controlador/login_usuarios.php" method="post">
-                    <h2 class="title-form-login">Iniciar Sesión</h2>
-                
-                    <!-- Campo de Email -->
-                    <div class="input-contenedor">
-                        <span class="material-symbols-outlined">
-                            mail
-                        </span>
-                        <input type="email" required class="input-login" id="email" name="email" >
-                        <label for="email" class="lbl-email">Email</label>
-                    </div>
-                
-                    <!-- Campo de Contraseña -->
-                    <div class="input-contenedor">
-                        <span class="material-symbols-outlined">
-                            lock
-                        </span>
-                        <input type="password" required class="input-login" id="contrasena" name="contrasena">
-                        <label for="contrasena" class="lbl-contraseña">Contraseña</label>
-                    </div>
-                
-                    <!-- Enlace para olvidar la contraseña -->
-                    <div class="olvidar">
-                        <label>
-                            <a href="./RecuperarPass.html">¿Olvidaste tu contraseña?</a>
-                        </label>
-                    </div>
-                
-                    <!-- Botón de Acceder -->
-                    <div>
-                        <button type="submit" class="btn-acceder">Acceder</button>
-                        
-                        <!-- Enlaces adicionales -->
-                        <div class="registrar">
-                            <p>¿No tienes una cuenta? <a href="./registrar_usuario.html">Crear Cuenta</a></p>
-                            <a href="./index.php" class="volver">Volver a la tienda</a>
+        <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+            <div class="card shadow-lg" style="width: 100%; max-width: 500px; border-radius: 15px;">
+                <div class="card-body">
+                    <h2 class="text-center mb-4" style="font-family: 'Bebas Neue', sans-serif; color: #ffffff;">Restablecer Contraseña</h2>
+                    <p class="text-center fs-5 mb-4" style="color: #fab4b4;">Ingresa una nueva contraseña para tu cuenta.</p>
+                    <!-- Formulario -->
+                    <form action="./restablecerPass.php" method="post">
+                        <!-- Campo de Nueva Contraseña -->
+                        <div class="mb-3">
+                            <label for="nueva-contrasena" class="form-label" style="font-weight: bold;">Nueva Contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-primary text-white" style="border-radius: 5px 0 0 5px;">
+                                    <i class="fa-solid fa-lock"></i>
+                                </span>
+                                <input type="password" id="nueva-contrasena" name="nueva_contrasena" class="form-control" placeholder="Nueva contraseña" required style="border-radius: 0 5px 5px 0;">
+                            </div>
                         </div>
-                    </div>
-                </form>
-                
-                
+                        <!-- Campo de Confirmar Contraseña -->
+                        <div class="mb-3">
+                            <label for="confirmar-contrasena" class="form-label" style="font-weight: bold;">Confirmar Contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-primary text-white" style="border-radius: 5px 0 0 5px;">
+                                    <i class="fa-solid fa-lock"></i>
+                                </span>
+                                <input type="password" id="confirmar-contrasena" name="confirmar_contrasena" class="form-control" placeholder="Confirma tu contraseña" required style="border-radius: 0 5px 5px 0;">
+                            </div>
+                        </div>
+                        <!-- Botón de enviar -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary" style="background-color: #510158; border: none;">Actualizar Contraseña</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
