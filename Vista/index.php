@@ -41,6 +41,7 @@ if (!isset($_SESSION['id_cliente'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
@@ -120,17 +121,17 @@ if (!isset($_SESSION['id_cliente'])) {
             <div class="row m-2 row-main p-3">
                 <!-- Columna que lleva el mensaje y el boton -->
                 <div class="col-12 d-flex justify-content-evenly flex-column p-3">
-                    <h1 class="text-center main-title">Empresa líder en Perú para la venta de Camisetas. </h1>
-                    <p class=" text-center main-subtitle">Revisa nuestro amplio catálogo en camisetas de cualquier
+                    <h1 class="text-center main-title animate__animated animate__zoomIn">Empresa líder en Perú para la venta de Camisetas. </h1>
+                    <p class=" text-center main-subtitle animate__animated animate__zoomIn">Revisa nuestro amplio catálogo en camisetas de cualquier
                         equipo y cualquier temporada.</p>
-                    <a href="#catalog" class="btn btn-outline-primary align-self-center btn-catalog">Ir al catálogo!</a>
+                    <a href="./Catalogo.php" class="btn btn-outline-primary align-self-center btn-catalog animate__animated animate__zoomIn">Ir al catálogo!</a>
                 </div>
             </div>
         </section>
         <!-- Segunda columna que lleva la imagen principal -->
         <section class="container container-clothes col-md-6 col-12 d-flex p-3">
             <div class="container img-container-main d-flex justify-content-center">
-                <img src="./imgs/model.png" alt="T-shirt brand" class="clothe-img-brand">
+                <img src="./imgs/model.png" alt="T-shirt brand" class="clothe-img-brand animate__animated animate__zoomIn">
             </div>
         </section>
         <!-- Botón de whatsapp fijado siempre a la pantalla -->

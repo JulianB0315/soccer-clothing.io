@@ -207,7 +207,6 @@ nav .offcanvas{
     font-size: 2.3rem;
 }
 .catalog{
-    display: relative;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -598,7 +597,7 @@ nav .offcanvas{
 }
 /* CSS de notificaciones (mejorao) */
 /* Animacion provisional para la noti, no puedo asegurar q funcionen */
-/* @keyframes aparecer {
+@keyframes aparecer {
     from {
         opacity: 0;
         transform: translateY(-20px);
@@ -617,7 +616,7 @@ nav .offcanvas{
         opacity: 0;
         transform: translateY(-20px);
     }
-} */
+}
 #notification {
     z-index: 1050; 
     width: 250px; 
@@ -627,13 +626,13 @@ nav .offcanvas{
     animation-duration: .5s;
 }
 /*clases para el javascript */
-/* .aparecer {
-    animation-name: fadeIn;
+.aparecer {
+    animation-name: aparecer;
 }
 
 .desaparecer {
-    animation-name: fadeOut;
-} */
+    animation-name: desaparecer;
+}
 
 /* -------- Estilos para el error ------- */
 .error-section{

@@ -126,11 +126,10 @@ try {
         </div>
     </nav>
     <main class="main-content d-flex position-relative flex-wrap" id="main">
-        <div class="container my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap">
+        <div class="container" style="margin-top: 120px;">
             <!-- No toque esto diego cabron -->
             <div class="container">
                 <div class="row">
-                    <h2 class="subtitle-catalog my-4">Futbol Nacional</h2>
                     <?php
                     // Verifica que haya productos disponibles
                     if (empty($productos)) {
@@ -139,7 +138,7 @@ try {
                         // Bucle para mostrar todos los productos
                         foreach ($productos as $producto) {
                     ?>
-                            <div class="col-md-4 mb-4">
+                            <div class="col-md-6 col-lg-3 mb-4">
                                 <div class="card">
                                     <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-catalog" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                                     <div class="card-body">
@@ -151,7 +150,7 @@ try {
                                             <input type="hidden" name="product_price" value="<?php echo number_format($producto['precio'], 2); ?>">
                                             <input type="hidden" name="product_quantity" value="1">
                                             <a href="detalles.php?id=<?php echo htmlspecialchars($producto['id_producto']); ?>" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart(<?php echo $producto['id_producto']; ?>)">
+                                            <button type="button" class="btn btn-outline-primary btn-cart ms-3 add-to-cart-btn" onclick="addToCart(<?php echo $producto['id_producto']; ?>)">
                                                 <i class="fa-solid fa-cart-shopping"></i>
                                             </button>
                                         </form>
@@ -193,7 +192,7 @@ try {
                         <li><a class="footer-link" href="#" target="_blank">
                                 <i class="fa-brands fa-instagram fa-2xl"></i>
                                 Futbolera.pe
-             href="https://api.whatsapp.com/send?phone=51917096358&text=Quiero%20conocer%20m%C3%A1s%20acerca%20de%20tus%20productos%20waza"               </a></li>
+                            </a></li>
                         <li><a class="footer-link" href="#" target="_blank">
                                 <i class="fa-brands fa-x-twitter fa-2xl"></i>
                                 Futbolera.pe

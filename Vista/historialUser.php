@@ -7,16 +7,13 @@ try {
         echo "<script>
                 alert('Por favor iniciar sesión');
                 window.location = '../Vista/login_usuario.html';
-              </script>";
+            </script>";
         exit();
     }
 
     $id_cliente = $_SESSION['id_cliente'];
 
-    $query = "SELECT p.id_pedido, p.fecha, p.total 
-              FROM pedidos AS p 
-              WHERE p.id_cliente = :id_cliente 
-              ORDER BY p.fecha DESC";
+    $query = "SELECT p.id_pedido, p.fecha, p.total FROM pedidos AS p WHERE p.id_cliente = :id_cliente ORDER BY p.fecha DESC";
     $stmt = $pdo->prepare($query);
     $stmt->execute(['id_cliente' => $id_cliente]);
 
@@ -31,15 +28,15 @@ try {
         echo "<script>
                 alert('Error al obtener datos del cliente.');
                 window.location = '../Vista/login_usuario.html';
-              </script>";
+            </script>";
         exit();
     }
 
     if (!$pedidos) {
         echo "<script>
                 alert('No se encontraron pedidos.');
-                window.location = '../Vista/dashboard_usuario.php';
-              </script>";
+                window.location = '../Vista/editUser.php';
+            </script>";
         exit();
     }
 } catch (PDOException $e) {
