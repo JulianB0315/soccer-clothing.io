@@ -37,16 +37,30 @@ function addToCart(productId) {
 // Función para mostrar la notificación
 function showNotification() {
     var notification = document.getElementById("notification");
+    notification.classList.remove("desaparecer"); // Quita la animación de salida si existe
+    notification.classList.add("aparecer"); // Agrega la animación de entrada
     notification.style.display = "block"; // Mostrar notificación
     setTimeout(function() {
-        notification.style.display = "none"; // Ocultar después de 3 segundos
-    }, 3000);
+        notification.classList.remove("aparecer");
+        notification.classList.add("desaparecer");
+
+        // Espera a que termine la animación de salida antes de ocultarlo
+        setTimeout(function() {
+            notification.style.display = "none";
+            notification.classList.remove("fade-out"); // Limpia la clase de salida
+        }, 500); // Duración de la animación de salida (en ms)
+    }, 3000); // Tiempo de espera antes de desaparecer
 }
 
 // Función para cerrar la notificación
 function closeNotification() {
     var notification = document.getElementById("notification");
-    notification.style.display = "none";
+    notification.classList.remove("aparecer");
+    notification.classList.add("desaparecer");
+    setTimeout(function() {
+        notification.style.display = "none";
+        notification.classList.remove("desaparecer");
+    }, 500);
 }
 
 // Función para vaciar el carrito
