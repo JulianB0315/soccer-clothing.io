@@ -126,7 +126,7 @@ try {
         </div>
     </nav>
     <main class="main-content d-flex position-relative flex-wrap" id="main">
-        <div class="container my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap">
+        <div class="container" style="margin-top: 120px;">
             <!-- No toque esto diego cabron -->
             <div class="container">
                 <div class="row">
