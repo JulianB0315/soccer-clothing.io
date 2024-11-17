@@ -6,15 +6,15 @@ require '../Controlador/ConectionMySQL.php';
 if (empty($_SESSION['cart'])) {
     echo  "<script>
             alert('No hay productos en el carrito');
-            window.location = './Vista/Calatalogo.php'; 
-          </script>";
+            window.location = 'Catalogo.php'; 
+        </script>";
     exit();
 }
 if (!isset($_SESSION['id_cliente'])) {
     echo  "<script>
             alert('Por favor iniciar sesión');
-            window.location = './Vista/login_usuario.html'; 
-          </script>";
+            window.location = 'login_usuario.html';
+        </script>";
     exit();
 }
 
