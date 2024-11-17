@@ -192,7 +192,7 @@ try {
                         <li><a class="footer-link" href="#" target="_blank">
                                 <i class="fa-brands fa-instagram fa-2xl"></i>
                                 Futbolera.pe
-             href="https://api.whatsapp.com/send?phone=51917096358&text=Quiero%20conocer%20m%C3%A1s%20acerca%20de%20tus%20productos%20waza"               </a></li>
+                            </a></li>
                         <li><a class="footer-link" href="#" target="_blank">
                                 <i class="fa-brands fa-x-twitter fa-2xl"></i>
                                 Futbolera.pe
