@@ -123,7 +123,7 @@ if (!isset($_SESSION['id_cliente'])) {
                     <h1 class="text-center main-title">Empresa líder en Perú para la venta de Camisetas. </h1>
                     <p class=" text-center main-subtitle">Revisa nuestro amplio catálogo en camisetas de cualquier
                         equipo y cualquier temporada.</p>
-                    <a href="#catalog" class="btn btn-outline-primary align-self-center btn-catalog">Ir al catálogo!</a>
+                    <a href="./Catalogo.php" class="btn btn-outline-primary align-self-center btn-catalog">Ir al catálogo!</a>
                 </div>
             </div>
         </section>
