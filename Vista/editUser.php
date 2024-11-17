@@ -166,11 +166,11 @@ try {
                                         <div class="row gx-3 mb-3">
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputUsername">Nombre de Usuario:</label>
-                                                <input class="form-control" id="inputUsername" type="text" placeholder="Ingresa tu nombre de usuario" value="<?php echo htmlspecialchars($cliente['apodo']); ?>" disabled /></div>
+                                                <input class="form-control" name="apodo" type="text" placeholder="Ingresa tu nombre de usuario" value="<?php echo htmlspecialchars($cliente['apodo']); ?>" disabled /></div>
                                             <!-- Form Group (last name)-->
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputLocation">Ubicación:</label>
-                                                <input class="form-control" id="inputLocation" type="text" placeholder="Ingresa tu ubicacion" value="<?php echo htmlspecialchars($cliente['direccion']); ?>" disabled />
+                                                <input class="form-control" name="direccion" type="text" placeholder="Ingresa tu ubicacion" value="<?php echo htmlspecialchars($cliente['direccion']); ?>" disabled />
                                             </div>
                                             <!-- Form Group (first name)-->
                                             <div class="col-md-6">
