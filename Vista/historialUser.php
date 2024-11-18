@@ -171,8 +171,6 @@ try {
                 </div>
             </div>
         </div>
-
-        <!-- Modal para ver productos -->
         <!-- Modal para ver productos -->
         <div class="modal fade" id="verProductosModal" tabindex="-1" role="dialog" aria-labelledby="verProductosModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -283,27 +281,6 @@ try {
                     document.getElementById('fechaPedido').innerText = fechaPedido;
                     document.getElementById('totalCompra').innerText = "S/. " + totalCompra;
 
-                    // Cargar los productos relacionados con el pedido
-                    fetch(`productos_por_pedido.php?id_pedido=${idPedido}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            const productosLista = document.getElementById('productosLista');
-                            productosLista.innerHTML = ''; // Limpiar la lista de productos
-                            data.forEach(producto => {
-                                productosLista.innerHTML += `
-                            <div class="producto-item d-flex justify-content-between align-items-center py-2">
-                                <div>
-                                    <p class="mb-0 fw-bold">${producto.nombre}</p>
-                                    <p class="mb-0 text-muted">Cantidad: ${producto.cantidad}</p>
-                                </div>
-                                <div>
-                                    <p class="mb-0 fw-bold">S/. ${producto.precio}</p>
-                                </div>
-                            </div>
-                        `;
-                            });
-                        })
-                        .catch(error => console.log('Error al cargar productos:', error));
                 });
             });
         });
