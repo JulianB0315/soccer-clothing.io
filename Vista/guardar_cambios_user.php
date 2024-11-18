@@ -31,7 +31,7 @@ if (isset($_POST['apodo'], $_POST['nombre'], $_POST['apellido'], $_POST['email']
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':telefono', $telefono);
         $stmt->bindParam(':direccion', $direccion);
-        $stmt->bindParam(':id_cliente', $id_cliente, PDO::PARAM_INT);
+        $stmt->bindParam(':id_cliente', $id_cliente, PDO::PARAM_STR);
 
         // Ejecutar la consulta
         if ($stmt->execute()) {

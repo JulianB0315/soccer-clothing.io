@@ -195,7 +195,7 @@ a {
     display: inline-block;
     font-weight: 400;
     line-height: 1;
-    color: #69707a;
+    color: #fdf6d0;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
@@ -830,7 +830,13 @@ input:focus {
     .modal-content {
         animation: fadeIn 0.3s ease-in-out;
     }
-
+.btnVerDetalles{
+    border-radius: 40px;
+    transition: all 0.3s ease-in-out;
+}
+.btnVerDetalles:hover{
+    background-color: var(--bg-light-secondary);
+}
     @keyframes fadeIn {
         from {
             opacity: 0;

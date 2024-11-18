@@ -48,7 +48,7 @@ if (!isset($_SESSION['id_cliente'])) {
     // Consulta para obtener la imagen de perfil del cliente
     $query = "SELECT imagen_perfil FROM clientes WHERE id_cliente = :id_cliente";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(':id_cliente', $idCliente, PDO::PARAM_INT);
+    $stmt->bindParam(':id_cliente', $idCliente, PDO::PARAM_STR);
     $stmt->execute();
 
     $imagenPerfil = $stmt->fetchColumn();

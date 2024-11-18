@@ -13,7 +13,7 @@ if (!isset($_SESSION['id_cliente'])) {
     // Consulta para obtener la imagen de perfil del cliente
     $query = "SELECT imagen_perfil FROM clientes WHERE id_cliente = :id_cliente";
     $stmt = $pdo->prepare($query);
-    $stmt->bindParam(':id_cliente', $idCliente, PDO::PARAM_INT);
+    $stmt->bindParam(':id_cliente', $idCliente, PDO::PARAM_STR);
     $stmt->execute();
 
     $imagenPerfil = $stmt->fetchColumn();
@@ -126,7 +126,7 @@ try {
     </nav>
     <!-- Main -->
     <main class="main-content d-flex position-relative flex-wrap" id="main">
-        <div class="container-fluid my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap ofertas-container" style="min-width: 80vh;">
+        <div class="container my-4 d-flex justify-content-center pt-5 pb-5 flex-wrap ofertas-container" style="min-width: 80vh;">
             <!--Contenido para las novedades-->
             <div class="row justify-content-center">
                 <?php
@@ -146,7 +146,7 @@ try {
                                     <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
                                     <input type="hidden" name="product_price" value="<?php echo number_format($producto['precio'], 2); ?>">
                                     <input type="hidden" name="product_quantity" value="1">
-                                    <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-fluid" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                    <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-catalog" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo htmlspecialchars($producto['nombre']); ?></h5>
                                         <p class="card-text product-price"><?php echo number_format($producto['precio'], 2); ?>

@@ -2,13 +2,14 @@
 // Incluir el archivo de conexión PDO
 require '../Controlador/ConectionMySQL.php'; 
 function generarIdCliente() {
-    $prefijo = "Pe"; 
-    $fecha = date('ymdHis');
-    $id = $prefijo . $fecha; 
+    $prefijo = "C";  
+    $fecha = date('md');  
+    $hora = date('Hs');  
 
+    $id = $prefijo . $fecha . $hora ;
     // Asegurarnos de que el ID tenga exactamente 8 caracteres.
     if (strlen($id) > 8) {
-        $id = substr($id, 0, 8);
+        $id = substr($id, 0, 8);  
     }
 
     return $id;
