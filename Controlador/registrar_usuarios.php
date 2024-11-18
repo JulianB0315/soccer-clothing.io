@@ -1,7 +1,21 @@
 <?php
 // Incluir el archivo de conexión PDO
 require '../Controlador/ConectionMySQL.php'; 
+function generarIdCliente() {
+    $prefijo = "Pe"; 
+    $fecha = date('ymdHis');
+    $id = $prefijo . $fecha; 
 
+    // Asegurarnos de que el ID tenga exactamente 8 caracteres.
+    if (strlen($id) > 8) {
+        $id = substr($id, 0, 8);
+    }
+
+    return $id;
+}
+
+$id = generarIdCliente();
+$id_cliente=$id;
 // Obtener los datos del formulario
 $nombres = $_POST['nombres'];
 $telf = $_POST['telf'];
@@ -31,10 +45,11 @@ if ($stmt->rowCount() > 0) {
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 // Insertar los datos en la base de datos
-$sql_insert = "INSERT INTO clientes (nombres, telefono, email, contrasena) VALUES (:nombres, :telefono, :email, :contrasena)";
+$sql_insert = "INSERT INTO clientes (id_cliente ,nombres, telefono, email, contrasena) VALUES (:id_cliente,:nombres, :telefono, :email, :contrasena)";
 $stmt_insert = $pdo->prepare($sql_insert);
 
 // Vinculamos los parámetros para la inserción
+$stmt_insert->bindParam(':id_cliente', $id_cliente, PDO::PARAM_STR);
 $stmt_insert->bindParam(':nombres', $nombres, PDO::PARAM_STR);
 $stmt_insert->bindParam(':telefono', $telf, PDO::PARAM_STR);
 $stmt_insert->bindParam(':email', $email, PDO::PARAM_STR);
