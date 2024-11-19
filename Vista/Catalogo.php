@@ -150,7 +150,8 @@ try {
                                             <input type="hidden" name="product_price" value="<?php echo number_format($producto['precio'], 2); ?>">
                                             <input type="hidden" name="product_quantity" value="1">
                                             <a href="detalles.php?id=<?php echo htmlspecialchars($producto['id_producto']); ?>" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                                            <button type="button" class="btn btn-outline-primary btn-cart ms-3 add-to-cart-btn" onclick="addToCart(<?php echo $producto['id_producto']; ?>)">
+                                            <button type="button" class="btn btn-outline-primary btn-cart ms-3 add-to-cart-btn"
+                                                onclick="addToCart('<?php echo $producto['id_producto']; ?>')">
                                                 <i class="fa-solid fa-cart-shopping"></i>
                                             </button>
                                         </form>
