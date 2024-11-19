@@ -1,32 +1,54 @@
 <?php
 require '../Controlador/ConectionMySQL.php';
+require '../lib/phpmailer/PHPMailer.php';
+require '../lib/phpmailer/SMTP.php';
+require '../lib/phpmailer/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
     if ($email && $usuario) {
+        // Verificar si el correo y el nombre de usuario existen en la base de datos
         $query = $pdo->prepare("SELECT * FROM clientes WHERE email = :email AND apodo = :usuario");
         $query->execute(['email' => $email, 'usuario' => $usuario]);
         $user = $query->fetch();
 
         if ($user) {
+            // Generar un código de verificación aleatorio
             $codigo = rand(100000, 999999);  
 
-            $subject = "Código de verificación";
-            $message = "Tu código de verificación es: $codigo\n\n" .
-                       "Por favor, ingrésalo en la página para continuar.";
+            // Configurar el correo con PHPMailer
+            $mail = new PHPMailer(true);
 
-            $headers = "From: futboleraoficialsenati@gmail.com\r\n";  
-            $headers .= "Reply-To: futboleraoficialsenati@gmail.com\r\n"; 
-            $headers .= "X-Mailer: PHP/" . phpversion();
+            try {
+                // Configuración del servidor de correo
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'futboleraoficialsenati@gmail.com'; 
+                $mail->Password = 'hbbe zlil zkyo pgst'; 
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587; 
 
-            if (mail($email, $subject, $message, $headers)) {
-                echo "Se ha enviado el código de verificación a $email";
-            } else {
-                echo "Hubo un problema al enviar el correo.";
+                // Configuración del correo
+                $mail->setFrom('futboleraoficialsenati@gmail.com', 'Soporte');
+                $mail->addAddress($email);
+                $mail->Subject = 'Código de verificación';
+                $mail->Body    = "Tu código de verificación es: $codigo\n\nPor favor, ingrésalo en la página para continuar.";
+
+                // Enviar el correo
+                if ($mail->send()) {
+                    echo "Se ha enviado el código de verificación a $email";
+                } else {
+                    echo "Hubo un problema al enviar el correo.";
+                }
+            } catch (Exception $e) {
+                echo "Error al enviar el correo: {$mail->ErrorInfo}";
             }
-
         } else {
             echo "El nombre de usuario o el correo no coinciden con nuestros registros.";
         }
@@ -35,4 +57,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
