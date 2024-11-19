@@ -79,7 +79,7 @@ if (!isset($_SESSION['id_cliente'])) {
                             <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
                                 <img src="<?php echo $imagenPerfil; ?>" class="profile-img">
                             </a>
-                            <a class="nav-link user-item" href="#">
+                            <a class="nav-link user-item" href="Shop.php">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
                             </a>
                         </li>
