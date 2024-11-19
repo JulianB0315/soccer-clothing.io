@@ -41,7 +41,7 @@ if (!isset($_SESSION['id_cliente'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -155,11 +155,15 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
                             <h5 class="card-title text-center">S/. 210.00</h5>
-                            <input type="hidden" name="product_id" value="1">
-                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form id="addToCartForm">
+                                <input type="hidden" name="product_name" value="Camiseta Local Universitario 24/25">
+                                <input type="hidden" name="product_price" value="210.00">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <input type="hidden" name="product_id" value="P4835080">
+                                <a href="detalles.php?id=P4835080" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P4835080')">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -172,9 +176,12 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <input type="hidden" name="product_id" value="2">
-                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
+                            <input type="hidden" name="product_name" value="Camiseta Local Alianza Lima 24/25">
+                            <input type="hidden" name="product_price" value="240.00">
+                            <input type="hidden" name="product_quantity" value="1">
+                            <input type="hidden" name="product_id" value="P9543771">
+                            <a href="detalles.php?id=P9543771" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P9543771')">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
@@ -187,9 +194,12 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Sportin Cristal 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <input type="hidden" name="product_id" value="3" class="product-id">
-                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
+                            <input type="hidden" name="product_name" value="Camiseta Local Sportin Cristal 24/25">
+                            <input type="hidden" name="product_price" value="240.00">
+                            <input type="hidden" name="product_quantity" value="1">
+                            <input type="hidden" name="product_id" value="P0429812">
+                            <a href="detalles.php?id=P0429812" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P0429812')">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
@@ -202,9 +212,12 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <input type="hidden" name="product_id" value="4" class="product-id">
-                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn">
+                            <input type="hidden" name="product_name" value="Camiseta Local Cusco 24/25">
+                            <input type="hidden" name="product_price" value="240.00">
+                            <input type="hidden" name="product_quantity" value="1">
+                            <input type="hidden" name="product_id" value="P2848261">
+                            <a href="detalles.php?id=P2848261" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P2848261')">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
@@ -217,12 +230,16 @@ if (!isset($_SESSION['id_cliente'])) {
                 <h2 class="subtitle-catalog my-4">Camisetas al menor precio</h2>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="./imgs/catalogo/chelsea.jpg" class="card-img-top img-catalog" alt="...">
+                        <img src="./imgs/catalogo/chelsea.jpg" class="card-img-top img-catalog" alt="Camiseta Local Chelsea 24/25">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Chelsea 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 210.00</h5>
-                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4">
+                            <input type="hidden" name="product_name" value="Camiseta Local Chelsea 24/25">
+                            <input type="hidden" name="product_price" value="210.00">
+                            <input type="hidden" name="product_quantity" value="1">
+                            <input type="hidden" name="product_id" value="P2016628">
+                            <a href="detalles.php?id=P2016628" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P2016628')">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
@@ -230,12 +247,16 @@ if (!isset($_SESSION['id_cliente'])) {
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="./imgs/catalogo/mun.avif" class="card-img-top img-catalog" alt="...">
+                        <img src="./imgs/catalogo/mun.avif" class="card-img-top img-catalog" alt="Camiseta Local Man. United 24/25">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Man. United 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4">
+                            <input type="hidden" name="product_name" value="Camiseta Local Man. United 24/25">
+                            <input type="hidden" name="product_price" value="240.00">
+                            <input type="hidden" name="product_quantity" value="1">
+                            <input type="hidden" name="product_id" value="P9641081">
+                            <a href="detalles.php?id=P9641081" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P9641081')">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
@@ -243,12 +264,16 @@ if (!isset($_SESSION['id_cliente'])) {
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="./imgs/catalogo/dortmund.jpg" class="card-img-top img-catalog" alt="...">
+                        <img src="./imgs/catalogo/dortmund.jpg" class="card-img-top img-catalog" alt="Camiseta Local Bor. Dortmund 24/25">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Bor. Dortmund 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4">
+                            <input type="hidden" name="product_name" value="Camiseta Local Bor. Dortmund 24/25">
+                            <input type="hidden" name="product_price" value="240.00">
+                            <input type="hidden" name="product_quantity" value="1">
+                            <input type="hidden" name="product_id" value="P8448469">
+                            <a href="detalles.php?id=P8448469" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P8448469')">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
@@ -256,12 +281,16 @@ if (!isset($_SESSION['id_cliente'])) {
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card">
-                        <img src="./imgs/catalogo/boca.jpg" class="card-img-top img-catalog" alt="...">
+                        <img src="./imgs/catalogo/boca.jpg" class="card-img-top img-catalog" alt="Camiseta Local Boca Juniors 24/25">
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Boca Juniors 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <a href="./detalles.php" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4">
+                            <input type="hidden" name="product_name" value="Camiseta Local Boca Juniors 24/25">
+                            <input type="hidden" name="product_price" value="240.00">
+                            <input type="hidden" name="product_quantity" value="1">
+                            <input type="hidden" name="product_id" value="P6389611">
+                            <a href="detalles.php?id=P6389611" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                            <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P6389611')">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </button>
                         </div>
@@ -390,7 +419,7 @@ if (!isset($_SESSION['id_cliente'])) {
                 <button type="submit" name="enviar" class="btn btn-primary btn-form">Enviar</button>
                 <!-- Algunos inputs para evitar redirecciones y captchas -->
                 <!-- Aca debemos poner una pagina de redireccion en el value xd -->
-                <input type="hidden" name="_next" value="http://localhost/soccer-clothing.io/Vista/index.php"> 
+                <input type="hidden" name="_next" value="http://localhost/soccer-clothing.io/Vista/index.php">
                 <!-- Que no funcione el captcha -->
                 <input type="hidden" name="_captcha" value="false">
             </form>
@@ -444,25 +473,7 @@ if (!isset($_SESSION['id_cliente'])) {
             <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="carAlert.js">
-        document.addEventListener("DOMContentLoaded", function() {
-            const userLink = document.getElementById('user-link');
-
-            // Verifica si el enlace existe en el DOM
-            if (userLink) {
-                // Añadir el evento de clic
-                userLink.addEventListener('click', function() {
-                    // Obtener el id del cliente desde sessionStorage
-                    const idCliente = sessionStorage.getItem('id_cliente');
-
-                    // Imprimir el id en la consola
-                    console.log("ID del cliente:", idCliente);
-                });
-            } else {
-                console.log("El enlace de usuario no existe en el DOM");
-            }
-        });
-    </script>
+    <script src="carAlert.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
