@@ -2,22 +2,16 @@
 require '../Controlador/ConectionMySQL.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    function generarIdCliente() {
-        $prefijo = "P";  
-        $fecha = date('md');  
-        $hora = date('Hs');  
-    
-        $id = $prefijo . $fecha . $hora ;
-        // Asegurarnos de que el ID tenga exactamente 8 caracteres.
-        if (strlen($id) > 8) {
-            $id = substr($id, 0, 8);  
+    function idProductos()
+    {
+        $id = 'P';
+        for ($i = 0; $i < 7; $i++) {
+            $id .= rand(0, 9);
         }
-    
         return $id;
     }
-    $id = generarIdCliente();
-    $id_producto=$id;
-    
+    $id_producto = idProductos();
+
     // Obtener los datos del formulario
     $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
     $descripcion = filter_input(INPUT_POST, 'descripcion', FILTER_SANITIZE_STRING);
@@ -30,41 +24,43 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $color = filter_input(INPUT_POST, 'color', FILTER_SANITIZE_STRING);
 
     // Procesar la imagen cargada
-    $imagen_url = "";
+    // Procesar la imagen cargada
+    $tipos_permitidos = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/avif'];
+
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0) {
         $imagen_nombre = $_FILES['imagen']['name'];
         $imagen_tmp = $_FILES['imagen']['tmp_name'];
-        $imagen_extension = pathinfo($imagen_nombre, PATHINFO_EXTENSION);
-        
-        // Verificar que la extensión sea una de las permitidas (por ejemplo, jpg, jpeg, png, webp)
-        $extensiones_permitidas = ['jpg', 'jpeg', 'png', 'webp'];
-        if (in_array(strtolower($imagen_extension), $extensiones_permitidas)) {
-            // Verificar si la imagen es válida
-            $image_info = getimagesize($imagen_tmp);
-            if ($image_info !== false) {
-                // Definir la ruta donde se guardará la imagen
-                $directorio_destino = 'uploads/Catalogo/';
-                $imagen_url = $directorio_destino . uniqid() . '.' . $imagen_extension;
-                
-                // Mover la imagen a la carpeta del servidor
-                if (move_uploaded_file($imagen_tmp, $imagen_url)) {
-                    echo "Imagen cargada con éxito.";
-                } else {
-                    echo "Error al cargar la imagen.";
-                }
+        $mime_type = mime_content_type($imagen_tmp);
+
+        // Verificación manual para AVIF
+        if (pathinfo($imagen_nombre, PATHINFO_EXTENSION) === 'avif') {
+            $mime_type = 'image/avif';
+        }
+
+        if (in_array($mime_type, $tipos_permitidos)) {
+            $directorio_destino = 'uploads/Catalogo/';
+            $imagen_extension = pathinfo($imagen_nombre, PATHINFO_EXTENSION);
+            $imagen_url = $directorio_destino . uniqid() . '.' . $imagen_extension;
+
+            if (move_uploaded_file($imagen_tmp, $imagen_url)) {
+                echo "Imagen cargada con éxito.";
             } else {
-                echo "El archivo no es una imagen válida.";
+                echo "Error al cargar la imagen.";
             }
         } else {
-            echo "Solo se permiten archivos JPG, JPEG, PNG o WebP.";
+            echo "Solo se permiten archivos de imagen (JPG, JPEG, PNG, GIF, WebP, AVIF).";
         }
+    } else {
+        echo "No se seleccionó ninguna imagen o ocurrió un error al cargarla.";
     }
+
+
 
     // Insertar el producto en la base de datos
     if ($nombre && $precio && $stock) {
         $query = $pdo->prepare("INSERT INTO productos (id_producto, nombre, descripcion, precio, stock, oferta, id_categoria, talla, marca, color, imagen_url)
                                 VALUES (:id_producto, :nombre, :descripcion, :precio, :stock, :oferta, :id_categoria, :talla, :marca, :color, :imagen_url)");
-        
+
         $query->execute([
             'id_producto' => $id_producto,
             'nombre' => $nombre,
@@ -89,12 +85,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!-- Formulario HTML para ingresar el producto -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Producto</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
     <div class="container mt-5">
         <h2>Agregar Producto</h2>
@@ -143,4 +141,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </form>
     </div>
 </body>
+
 </html>
