@@ -28,8 +28,8 @@ if (!isset($_SESSION['id_cliente'])) {
 }
 
 // Verificar si el parámetro 'id' está presente en la URL y es válido
-if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-    $id = intval($_GET['id']); // Convertir a entero para mayor seguridad
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id = $_GET['id'];; // Convertir a entero para mayor seguridad
 
     try {
         // Preparar la consulta para obtener el producto por su ID
