@@ -17,6 +17,14 @@ function generarIdPedido() {
 }
 $id = generarIdPedido();
 $id_pedido=$id;
+function generarIDdetalles() {
+    // Generar un ID de 18 números aleatorios
+    $id = '';
+    for ($i = 0; $i < 18; $i++) {
+        $id .= rand(0, 9); 
+    }
+    return $id;
+}
 // Verificar que el carrito no está vacío o no está logueado 
 if (empty($_SESSION['cart'])) {
     echo  "<script>
@@ -45,10 +53,11 @@ try {
 
     // Insertar los detalles del pedido en la tabla 'detalles_pedido'
     foreach ($_SESSION['cart'] as $item) {
+        $id_detalle = generarIDdetalles();
         $total_price += $item['price'] * $item['quantity'];
         // Insertar el detalle del pedido en la base de datos
-        $stmt = $pdo->prepare("INSERT INTO detalles_pedido (id_pedido, id_producto, cantidad, precio) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$id_pedido, $item['id'], $item['quantity'], $item['price']]);
+        $stmt = $pdo->prepare("INSERT INTO detalles_pedido (id_detalle,id_pedido, id_producto, cantidad, precio) VALUES (?,?, ?, ?, ?)");
+        $stmt->execute([$id_detalle,$id_pedido, $item['id'], $item['quantity'], $item['price']]);
         // Actualizar el stock del producto en la base de datos
         $stmt_update = $pdo->prepare("UPDATE productos SET stock = stock - ? WHERE id_producto = ?");
         $stmt_update->execute([$item['quantity'], $item['id']]);
