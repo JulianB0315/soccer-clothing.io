@@ -152,7 +152,7 @@ try {
                                         <p class="card-text product-price"><?php echo number_format($producto['precio'], 2); ?>
                                             <span class="product-old-price"><?php echo number_format($producto['precio'] + 90, 2); ?></span>
                                         </p>
-                                        <button type="button" class="btn btn-dark" onclick="addToCart(<?php echo $producto['id_producto']; ?>)">Añadir al Carrito</button>
+                                        <button type="button" class="btn btn-dark" onclick="addToCart('<?php echo $producto['id_producto']; ?>')">Añadir al Carrito</button>
                                 </form>
                             </div>
                         </div>
