@@ -87,7 +87,7 @@ try {
                             <a class="nav-link" href="./index.php#contacto">Contacto</a>
                         </li>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
-                            <a class="nav-link user-item" href="#">
+                            <a class="nav-link user-item" href="Shop.php">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
                             </a>
                         </li>
