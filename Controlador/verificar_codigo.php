@@ -21,7 +21,7 @@ if ($codigo_web === $codigo_email) {
             $id_cliente = $cliente['id_cliente'];
 
             // Redirigir a otra página pasando el id_cliente como parámetro GET
-            header("Location: ../Vista/?id_cliente=" . urlencode($id_cliente));
+            header("Location: ../Vista/nueva_contraseña.php?id_cliente=" . urlencode($id_cliente));
             exit;
         } else {
             // Si no se encuentra el cliente
@@ -33,5 +33,8 @@ if ($codigo_web === $codigo_email) {
     }
 } else {
     // Si los códigos no coinciden
-    echo "El código ingresado no es válido.";
+    echo "<script>
+                alert('Codigo incorrecto');
+              </script>";
+              
 }
