@@ -69,46 +69,38 @@
         </div> 
     </nav>
     <section class="form-login">
-        <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-            <div class="card shadow-lg" style="width: 100%; max-width: 500px; border-radius: 15px;">
-                <div class="card-body">
-                    <h2 class="text-center mb-4" style="font-family: 'Bebas Neue', sans-serif; color: #ffffff;">Recuperar tu cuenta</h2>
-                    <p class="text-center fs-5 mb-4" style="color: #fab4b4;">Ingresa tu usuario y correo electrónico registrados, y te enviaremos un enlace para restablecer tu contraseña.</p>
-                    <!--Incio de form-->
-                    <form action="./restablecerPass.php" method="post">
-                        <!-- Campo del nmombre de usuario -->
-                        <div class="mb-3">
-                            <label for="usuario" class="form-label" style="font-weight: bold;">Nombre de Usuario</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-primary text-white" style="border-radius: 5px 0 0 5px;">
-                                    <i class="fa-solid fa-user"></i>
-                                </span>
-                                <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Tu nombre de usuario" required style="border-radius: 0 5px 5px 0;">
-                            </div>
+        <div class="container login-form-container registro-form">
+            <div class="formulario">
+                <form action="../Controlador/recuperar_cuenta.php" method="POST">
+                    <h2 class="title-form-login text-center ">Recuperar Contraseña</h2>
+                    <p class="descripcion-formulario text-center pbg ">
+                        Ingresa tu nombre de usuario y correo electrónico para restablecer tu contraseña.
+                    </p>
+                    <div class="input-contenedor2">
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                        <input type="text" required class="input-login" id="usuario" name="usuario">
+                        <label for="usuario" class="lbl-nombres-registro">Nombre de usuario</label>
+                    </div>
+                    <div class="input-contenedor2">
+                        <span class="material-symbols-outlined">
+                            mail
+                        </span>
+                        <input type="email" required class="input-login" id="email" name="email">
+                        <label for="email" class="lbl-email">Email</label>
+                    </div>
+                    <div>
+                        <input type="submit" class="btn-acceder" value="Enviar enlace">
+                        <div class="registrar">
+                            <a href="./index.php" class="volver">Volver a la tienda</a>
                         </div>
-                        <!-- Campo del gmail -->
-                        <div class="mb-3">
-                            <label for="email" class="form-label" style="font-weight: bold;">Correo Electrónico</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-primary text-white" style="border-radius: 5px 0 0 5px;">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </span>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="usuario12@ejemplo.com" required style="border-radius: 0 5px 5px 0;">
-                            </div>
-                        </div>
-                        <!-- Botón de enviar el enlace al correo -->
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary" style="background-color: #510158; border: none;">Enviar Enlace</button>
-                        </div>
-                        <!-- Enlace para volver al de iniciar sesion -->
-                        <div class="text-center mt-3">
-                            <a href="./login_usuario.html" class="text-decoration-none" style="color: #fbfdff;">Iniciar sesión</a>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
+    
     <footer class="footer">
         <div class="container">
             <div class="row">
