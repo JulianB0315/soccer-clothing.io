@@ -71,7 +71,7 @@ try {
     unset($_SESSION['cart']);
 
     // Redirigir a la página de finalización de compra
-    header("Location: finalizar_compra.php");
+    header("Location: ../Vista/finalizar_compra.php");
     exit();
 } catch (PDOException $e) {
     die("Error al procesar el carrito: " . $e->getMessage());
