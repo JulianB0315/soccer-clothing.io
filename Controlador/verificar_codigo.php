@@ -35,6 +35,7 @@ if ($codigo_web === $codigo_email) {
     // Si los códigos no coinciden
     echo "<script>
                 alert('Codigo incorrecto');
+                
               </script>";
               
 }

@@ -8,10 +8,12 @@ require '../Controlador/ConectionMySQL.php'; // Conexión PDO
 //Verifica el inicio de sesión 
 if (!isset($_SESSION['id_cliente'])) {
     $link = "./login_usuario.html";
-    $imagenPerfil = "uploads/perfil/Por defecto.png"; // 
+    $imagenPerfil = "uploads/perfil/Por defecto.png"; 
+    $class = "";
 } else {
     $idCliente = $_SESSION['id_cliente'];
     $link = "editUser.php";
+    $class = "profile-img";
 
     // Consulta para obtener la imagen de perfil del cliente
     $query = "SELECT imagen_perfil FROM clientes WHERE id_cliente = :id_cliente";
@@ -24,6 +26,7 @@ if (!isset($_SESSION['id_cliente'])) {
     // Si no hay imagen de perfil, usa una imagen predeterminada
     if (empty($imagenPerfil)) {
         $imagenPerfil = "uploads/perfil/Por defecto.png";
+        $class = "";
     }
 }
 
@@ -105,7 +108,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                                     </div>
                                     <li class="user-buttons d-flex justify-content-evenly p-2 ">
                                         <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
-                                            <img src="<?php echo $imagenPerfil; ?>" class="profile-img">
+                                            <img src="<?php echo $imagenPerfil; ?>" class="<?php echo $class;?>">
                                         </a>
                                         <a class="nav-link user-item" href="./shop.php">
                                             <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
@@ -137,11 +140,95 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                                 <h5 class="detalle-title"><?php echo htmlspecialchars($producto['nombre']); ?></h5>
                                 <p class="detalle-text">Descripción: <?php echo htmlspecialchars($producto['descripcion']); ?></p>
                                 <p class="detalle-text">Stock disponible: <?php echo htmlspecialchars($producto['stock']); ?></p>
+                                <p class="detalle-text">Precio: S/. <?php echo number_format($producto['precio'], 2); ?></p>
                                 <p class="detalle-text">Marca: <?php echo htmlspecialchars($producto['marca']); ?></p>
-                                <a href="./Catalogo.php" class="btn btn-primary">Volver al catálogo</a>
+                                <p class="detalle-text">Color: <?php echo htmlspecialchars($producto['color']); ?></p>
+                                <form id="addToCartForm<?php echo $producto['id_producto']; ?>">
+                                    <input type="hidden" name="product_id" value="<?php echo $producto['id_producto']; ?>">
+                                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                    <input type="hidden" name="product_price" value="<?php echo number_format($producto['precio'], 2); ?>">
+                                    <input type="hidden" name="product_quantity" value="1">
+                                    <a href="./Catalogo.php" class="btn btn-primary">Volver al catálogo</a>
+                                    <button type="button" class="btn btn-outline-primary btn-cart ms-3 add-to-cart-btn" onclick="addToCart('<?php echo $producto['id_producto']; ?>')">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    <section class="galeria" id="galeria" style="height: 900px;">
+                        <h3 class="galeria-titulo mt-5 ms-5 mt-md-5 ms-md-4">
+                            También te puede interesar
+                        </h3>
+                        <?php
+                        $categoria = $producto['id_categoria'];
+                        $query = "SELECT * FROM productos WHERE id_categoria = :categoria LIMIT 12;";
+                        $stmt = $pdo->prepare($query);
+                        $stmt->bindParam(':categoria', $categoria, PDO::PARAM_STR);
+                        $stmt->execute();
+                        if ($stmt->rowCount() > 0) {
+                        ?>
+                            <div id="carouselExampleCaptions" class="carousel slide carrusel-galeria" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <?php
+                                    $contador = 0;
+                                    while ($producto = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                        // Inicia un nuevo grupo de productos cada 4 elementos
+                                        if ($contador % 4 == 0) {
+                                            $activeClass = ($contador == 0) ? 'active' : '';
+                                            echo '<div class="carousel-item ' . $activeClass . '" style="height: 600px;">';
+                                            echo '<div class="row">';
+                                        }
+                                    ?>
+                                        <div class="col-md-6 col-lg-3 mb-4">
+                                            <div class="card">
+                                                <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-catalog" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                                <div class="card-body">
+                                                    <p class="card-text text-center"><?php echo htmlspecialchars($producto['nombre']); ?></p>
+                                                    <h5 class="card-title text-center">S/. <?php echo number_format($producto['precio'], 2); ?></h5>
+                                                    <form id="addToCartForm<?php echo $producto['id_producto']; ?>">
+                                                        <input type="hidden" name="product_id" value="<?php echo $producto['id_producto']; ?>">
+                                                        <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                                        <input type="hidden" name="product_price" value="<?php echo number_format($producto['precio'], 2); ?>">
+                                                        <input type="hidden" name="product_quantity" value="1">
+                                                        <a href="detalles.php?id=<?php echo htmlspecialchars($producto['id_producto']); ?>" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                                        <button type="button" class="btn btn-outline-primary btn-cart ms-3 add-to-cart-btn" onclick="addToCart('<?php echo $producto['id_producto']; ?>')">
+                                                            <i class="fa-solid fa-cart-shopping"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                        $contador++;
+                                        // Cierra el grupo de productos después de 4 elementos
+                                        if ($contador % 4 == 0) {
+                                            echo '</div></div>';
+                                        }
+                                    }
+                                    // Si no se completó el último grupo, ciérralo
+                                    if ($contador % 4 != 0) {
+                                        echo '</div></div>';
+                                    }
+                                    ?>
+                                </div>
+                                <!-- Controles del carrusel -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Anterior</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Siguiente</span>
+                                </button>
+                            </div>
+                        <?php
+                        } else {
+                            echo "<p>No se encontraron productos para mostrar.</p>";
+                        }
+                        ?>
+                    </section>
+
                     <!-- Botón de whatsapp fijado siempre a la pantalla -->
                     <a href="https://api.whatsapp.com/send?phone=51917096358&text=Quiero%20conocer%20m%C3%A1s%20acerca%20de%20tus%20productos%20waza" class="whatsapp-link" target="_blank">
                         <i class="fa-brands fa-whatsapp py-4 whatsapp-icon"></i>
@@ -194,7 +281,11 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                         <p>&copy; 2024 Futbolera. Todos los derechos reservados.</p>
                     </div>
                 </footer>
+                <script src="carAlert.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             </body>
 
             </html>

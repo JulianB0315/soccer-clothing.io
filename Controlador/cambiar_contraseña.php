@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     ]);
 
     if ($query->rowCount() > 0) {
-        "<script>
+        echo "<script>
                 alert('Se cambio la contraseña con exito');
                 window.location = '../Vista/login_usuario.html'; 
               </script>";

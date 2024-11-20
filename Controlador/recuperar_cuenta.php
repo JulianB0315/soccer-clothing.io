@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($email && $usuario) {
         // Verificar si el correo y el nombre de usuario existen en la base de datos
-        $query = $pdo->prepare("SELECT * FROM clientes WHERE email = :email AND apodo = :usuario");
+        $query = $pdo->prepare("SELECT * FROM clientes WHERE email = :email AND nombres = :usuario");
         $query->execute(['email' => $email, 'usuario' => $usuario]);
         $user = $query->fetch();
 
@@ -48,9 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futbolera</title>
     <style>
-        *{
-            border: 1px solid ;
-        }
         body {
             font-family: "Arial", sans-serif;
             margin: 0;

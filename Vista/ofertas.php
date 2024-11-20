@@ -5,11 +5,12 @@ require '../Controlador/ConectionMySQL.php'; // Conexión PDO
 //Verifica el inicio de sesión 
 if (!isset($_SESSION['id_cliente'])) {
     $link = "./login_usuario.html";
-    $imagenPerfil = "uploads/perfil/Por defecto.png"; // 
+    $imagenPerfil = "uploads/perfil/Por defecto.png";
+    $class = "";
 } else {
     $idCliente = $_SESSION['id_cliente'];
     $link = "editUser.php";
-
+    $class = "profile-img";
     // Consulta para obtener la imagen de perfil del cliente
     $query = "SELECT imagen_perfil FROM clientes WHERE id_cliente = :id_cliente";
     $stmt = $pdo->prepare($query);
@@ -21,6 +22,7 @@ if (!isset($_SESSION['id_cliente'])) {
     // Si no hay imagen de perfil, usa una imagen predeterminada
     if (empty($imagenPerfil)) {
         $imagenPerfil = "uploads/perfil/Por defecto.png";
+        $class = "";
     }
 }
 
@@ -102,7 +104,7 @@ try {
                         </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
-                                <img src="<?php echo $imagenPerfil; ?>" class="profile-img">
+                                <img src="<?php echo $imagenPerfil; ?>" class="<?php echo $class ?>">
                             </a>
                             <a class="nav-link user-item" href="./shop.php">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
@@ -146,7 +148,9 @@ try {
                                     <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($producto['nombre']); ?>">
                                     <input type="hidden" name="product_price" value="<?php echo number_format($producto['precio'], 2); ?>">
                                     <input type="hidden" name="product_quantity" value="1">
-                                    <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-catalog" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                    <a href="detalles.php?id=<?php echo htmlspecialchars($producto['id_producto']); ?>">
+                                        <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="card-img-top img-catalog" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+                                    </a>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo htmlspecialchars($producto['nombre']); ?></h5>
                                         <p class="card-text product-price"><?php echo number_format($producto['precio'], 2); ?>
