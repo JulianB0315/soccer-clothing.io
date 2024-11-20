@@ -155,7 +155,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Universitario 24/25</p>
                             <h5 class="card-title text-center">S/. 210.00</h5>
-                            <form id="addToCartForm">
+                            <form id="addToCartFormP4835080">
                                 <input type="hidden" name="product_name" value="Camiseta Local Universitario 24/25">
                                 <input type="hidden" name="product_price" value="210.00">
                                 <input type="hidden" name="product_quantity" value="1">
@@ -176,14 +176,16 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Alianza Lima 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <input type="hidden" name="product_name" value="Camiseta Local Alianza Lima 24/25">
-                            <input type="hidden" name="product_price" value="240.00">
-                            <input type="hidden" name="product_quantity" value="1">
-                            <input type="hidden" name="product_id" value="P9543771">
-                            <a href="detalles.php?id=P9543771" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P9543771')">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form id="addToCartFormP9543771">
+                                <input type="hidden" name="product_name" value="Camiseta Local Alianza Lima 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <input type="hidden" name="product_id" value="P9543771">
+                                <a href="detalles.php?id=P9543771" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P9543771')">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -194,14 +196,16 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Sportin Cristal 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <input type="hidden" name="product_name" value="Camiseta Local Sportin Cristal 24/25">
-                            <input type="hidden" name="product_price" value="240.00">
-                            <input type="hidden" name="product_quantity" value="1">
-                            <input type="hidden" name="product_id" value="P0429812">
-                            <a href="detalles.php?id=P0429812" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P0429812')">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form id="addToCartFormP0429812">
+                                <input type="hidden" name="product_name" value="Camiseta Local Sportin Cristal 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <input type="hidden" name="product_id" value="P0429812">
+                                <a href="detalles.php?id=P0429812" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P0429812')">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -212,14 +216,16 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Cusco 24/25</p>
                             <h5 class="card-title text-center">S/. 240.00</h5>
-                            <input type="hidden" name="product_name" value="Camiseta Local Cusco 24/25">
-                            <input type="hidden" name="product_price" value="240.00">
-                            <input type="hidden" name="product_quantity" value="1">
-                            <input type="hidden" name="product_id" value="P2848261">
-                            <a href="detalles.php?id=P2848261" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P2848261')">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form id="addToCartFormP2848261">
+                                <input type="hidden" name="product_name" value="Camiseta Local Cusco 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <input type="hidden" name="product_id" value="P2848261">
+                                <a href="detalles.php?id=P2848261" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                <button type="button" class="btn btn-outline-primary btn-cart ms-4 add-to-cart-btn" onclick="addToCart('P2848261')">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -234,14 +240,16 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Chelsea 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 210.00</h5>
-                            <input type="hidden" name="product_name" value="Camiseta Local Chelsea 24/25">
-                            <input type="hidden" name="product_price" value="210.00">
-                            <input type="hidden" name="product_quantity" value="1">
-                            <input type="hidden" name="product_id" value="P2016628">
-                            <a href="detalles.php?id=P2016628" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P2016628')">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form id="addToCartFormP2016628">
+                                <input type="hidden" name="product_name" value="Camiseta Local Chelsea 24/25">
+                                <input type="hidden" name="product_price" value="210.00">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <input type="hidden" name="product_id" value="P2016628">
+                                <a href="detalles.php?id=P2016628" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P2016628')">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -251,14 +259,16 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Man. United 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <input type="hidden" name="product_name" value="Camiseta Local Man. United 24/25">
-                            <input type="hidden" name="product_price" value="240.00">
-                            <input type="hidden" name="product_quantity" value="1">
-                            <input type="hidden" name="product_id" value="P9641081">
-                            <a href="detalles.php?id=P9641081" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P9641081')">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form id="addToCartFormP9641081">
+                                <input type="hidden" name="product_name" value="Camiseta Local Man. United 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <input type="hidden" name="product_id" value="P9641081">
+                                <a href="detalles.php?id=P9641081" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P9641081')">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -268,14 +278,16 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Bor. Dortmund 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <input type="hidden" name="product_name" value="Camiseta Local Bor. Dortmund 24/25">
-                            <input type="hidden" name="product_price" value="240.00">
-                            <input type="hidden" name="product_quantity" value="1">
-                            <input type="hidden" name="product_id" value="P8448469">
-                            <a href="detalles.php?id=P8448469" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P8448469')">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form id="addToCartFormP8448469">
+                                <input type="hidden" name="product_name" value="Camiseta Local Bor. Dortmund 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <input type="hidden" name="product_id" value="P8448469">
+                                <a href="detalles.php?id=P8448469" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P8448469')">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -285,14 +297,16 @@ if (!isset($_SESSION['id_cliente'])) {
                         <div class="card-body">
                             <p class="card-text text-center">Camiseta Local Boca Juniors 24/25</p>
                             <h5 class="card-title text-center mb-3">S/. 240.00</h5>
-                            <input type="hidden" name="product_name" value="Camiseta Local Boca Juniors 24/25">
-                            <input type="hidden" name="product_price" value="240.00">
-                            <input type="hidden" name="product_quantity" value="1">
-                            <input type="hidden" name="product_id" value="P6389611">
-                            <a href="detalles.php?id=P6389611" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
-                            <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P6389611')">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </button>
+                            <form id="addToCartFormP6389611">
+                                <input type="hidden" name="product_name" value="Camiseta Local Boca Juniors 24/25">
+                                <input type="hidden" name="product_price" value="240.00">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <input type="hidden" name="product_id" value="P6389611">
+                                <a href="detalles.php?id=P6389611" class="btn btn-primary ms-4 btn-detalles">Ir a detalles</a>
+                                <button class="btn btn-outline-primary btn-cart ms-4" onclick="addToCart('P6389611')">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
