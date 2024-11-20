@@ -4,11 +4,12 @@ require '../Controlador/ConectionMySQL.php';
 
 if (!isset($_SESSION['id_cliente'])) {
     $link = "./login_usuario.html";
-    $imagenPerfil = "uploads/perfil/Por defecto.png"; // 
+    $imagenPerfil = "uploads/perfil/Por defecto.png";
+    $class = "";
 } else {
     $idCliente = $_SESSION['id_cliente'];
     $link = "editUser.php";
-
+    $class = "profile-img";
     // Consulta para obtener la imagen de perfil del cliente
     $query = "SELECT imagen_perfil FROM clientes WHERE id_cliente = :id_cliente";
     $stmt = $pdo->prepare($query);
@@ -20,6 +21,7 @@ if (!isset($_SESSION['id_cliente'])) {
     // Si no hay imagen de perfil, usa una imagen predeterminada
     if (empty($imagenPerfil)) {
         $imagenPerfil = "uploads/perfil/Por defecto.png";
+        $class = "";
     }
 }
 ?>
@@ -82,7 +84,7 @@ if (!isset($_SESSION['id_cliente'])) {
                         </div>
                         <li class="user-buttons d-flex justify-content-evenly p-2 ">
                             <a class="nav-link user-item" id="user-link" href="<?php echo $link; ?>">
-                                <img src="<?php echo $imagenPerfil; ?>" class="profile-img">
+                                <img src="<?php echo $imagenPerfil; ?>" class="<?php echo $class;?>">
                             </a>
                             <a class="nav-link user-item" href="./shop.php">
                                 <i class="fa-solid fa-cart-shopping users-icon py-2 px-1"></i>
