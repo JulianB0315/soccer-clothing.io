@@ -146,7 +146,7 @@ try {
                                     <!-- Profile picture help block-->
                                     <div class="small font-italic text-muted mb-4">JPG o PNG no mayor de 5 MB</div>
                                     <!-- Profile picture upload form-->
-                                    <form action="upload_image.php" method="POST" enctype="multipart/form-data">
+                                    <form action="../Controlador/upload_image.php" method="POST" enctype="multipart/form-data">
                                         <!-- File input for image -->
                                         <input type="file" name="profile_image" accept="image/jpeg, image/png" class="form-control mb-3" required />
                                         <!-- Submit button -->

@@ -147,7 +147,7 @@ if (!isset($_SESSION['id_cliente'])) {
                     </tbody>
                 </table>
                 <!-- Finalizar compra -->
-                <form action="guardar_carrito.php" method="post" class="finalizar-compra-form">
+                <form action="../Controlador/guardar_carrito.php" method="post" class="finalizar-compra-form">
                     <button type="submit" name="checkout" class="btn btn-success btn-comprar">Finalizar Compra</button>
                 </form>
             <?php else: ?>
