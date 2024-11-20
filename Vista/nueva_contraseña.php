@@ -1,3 +1,11 @@
+<?php
+if (isset($_GET['id_cliente'])) {
+    // Recuperar las variables
+    $id_cliente = $_GET['id_cliente'];
+
+    $id_cliente = htmlspecialchars($id_cliente, ENT_QUOTES, 'UTF-8');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,7 +79,8 @@
     <section class="form-login">
         <div class="container login-form-container registro-form">
             <div class="formulario">
-                <form action="./restablecerPass.php" method="POST">
+                <form action="../Controlador/cambiar_contraseña.php" method="POST">
+                <input type="hidden" name="id_cliente" value="<?php echo $id_cliente; ?>">
                     <h2 class="title-form-login text-center">Restablecer Contraseña</h2>
                     <p class="descripcion-formulario text-center pbg">
                         Ingresa una nueva contraseña para tu cuenta.
