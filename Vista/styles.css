@@ -438,12 +438,17 @@ a {
 :root{
     --texts-principal:#fdf6d0;
     --bg-secondary:#264667;
-    --bg-thirdy:#020c18;
+    --bg-thirdy:#123254;
     --bg-color-primary:#081625;
+    --bg-light:#fdf6d0;
     --bg-light-blue:#659adb;
     --bg-light-secondary:#4877b0;
+    --bg-dark:#1d1d20;
+    --font-titles:'Anton', sans-serif;
+    --bg-accent: #3498db;
     --bg-warm: #f7d2c4;
     --text-muted: #666666;
+    --text-light: #9ec2e0;
     --font-texts:"AdihausDIN", sans-serif;
 }
 html{
