@@ -133,7 +133,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <main class="main-content d-flex position-relative flex-wrap" id="main">
                     <div class="container-fluid my-5">
                         <div class="row row-detalle">
-                            <div class="col-lg-6 col-md-12 p-3">
+                            <div class="col-lg-6 col-md-12 p-3 d-flex justify-content-center align-items-center" style="height: 1000px;">
                                 <img src="<?php echo htmlspecialchars($producto['imagen_url']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                             </div>
                             <div class="col-lg-6 col-md-12">
