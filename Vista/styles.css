@@ -796,8 +796,9 @@ th {
 }
 
 input:focus {
-    background-color: transparent !important;;
-    color: black !important;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    color: rgb(255, 255, 255) !important;
 }
 
 .table th, .table td {
