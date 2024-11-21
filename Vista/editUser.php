@@ -135,7 +135,7 @@ try {
                         <a class="nav-link active ms-0" href="#">Perfil</a>
                         <a class="nav-link" href="./historialUser.php">Historial</a>
                     </nav>
-                    <hr class="mt-0 mb-4" />
+                    <hr class="mt-0 mb-4 hr-edit" />
                     <div class="row">
                         <div class="col-xl-4">
                             <!-- Profile picture card-->

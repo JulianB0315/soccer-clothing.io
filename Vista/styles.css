@@ -37,10 +37,10 @@ body {
 
 hr {
     margin: 1rem 0;
-    color: inherit;
-    background-color: currentColor;
+    color: var(--text-light);
+    background-color: var(--text-light);
     border: 0;
-    opacity: 0.25;
+    opacity: 0.30;
 }
 
 hr:not([size]) {
@@ -317,11 +317,11 @@ a {
 }
 
 .card:not([class*=bg-]) .card-header {
-    color: #0061f2;
+    color: var(--bg-accent);
 }
 
 .nav-borders .nav-link {
-    color: #69707a;
+    color: var(--text-muted);
     border-bottom-width: 0.125rem;
     border-bottom-style: solid;
     border-bottom-color: transparent;
@@ -334,8 +334,8 @@ a {
 }
 
 .nav-borders .nav-link.active {
-    color: #0061f2;
-    border-bottom-color: #0061f2;
+    color:var(--bg-accent) ;
+    border-bottom-color: var(--bg-accent);
 }
 
 .page-header .page-header-content .page-header-title {
@@ -842,6 +842,9 @@ input:focus {
 }
 .btnVerDetalles:hover{
     background-color: var(--bg-light-secondary);
+}
+label{
+    color: var(--bg-accent);
 }
     @keyframes fadeIn {
         from {
