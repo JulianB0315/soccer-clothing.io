@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require '../Controlador/ConectionMySQL.php';
 
@@ -34,7 +34,7 @@ try {
 } catch (PDOException $e) {
     echo "Error al consultar la base de datos: " . $e->getMessage();
 }
-?> 
+?>  -->
 
 <!DOCTYPE html>
 <html lang="en">
