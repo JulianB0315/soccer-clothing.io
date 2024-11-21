@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'futboleraoficialsenati@gmail.com';
-                $mail->Password = 'hbbe zlil zkyo pgst';
+                $mail->Password = 'wtnc ieor nxme ezhq';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
 
