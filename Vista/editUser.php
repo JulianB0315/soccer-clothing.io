@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require '../Controlador/ConectionMySQL.php';
 
@@ -34,7 +34,7 @@ try {
 } catch (PDOException $e) {
     echo "Error al consultar la base de datos: " . $e->getMessage();
 }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +156,10 @@ try {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-8">
+                        <div class="col-xl-8 card">
                             <!-- Account details card-->
                             <div class="mb-4">
-                                <div class="card-header">Detalles de la Cuenta</div>
+                                <div class="card-header fw-bold text-azul ">Detalles de la Cuenta</div>
                                 <div class="card-body">
                                     <form method="post" action="guardar_cambios_user.php">
                                         <!-- Form Group (username)-->
@@ -193,7 +193,7 @@ try {
                                             </div>
                                         </div>
                                     </div>
-                                        <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center justify-content-center">
                                             <!--Save changes button-->
                                             <button class="btn btn-primary me-3" type="button" onclick="habilitarCampos()">Editar perfil</button>
                                             <button class="btn btn-primary me-3" type="submit" id="guardarCambios" disabled>Guardar cambios</button>

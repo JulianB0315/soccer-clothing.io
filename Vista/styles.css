@@ -856,3 +856,6 @@ label{
             transform: scale(1);
         }
     }
+.text-azul{
+    color: var(--bg-accent);
+}
