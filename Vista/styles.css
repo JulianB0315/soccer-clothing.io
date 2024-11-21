@@ -856,3 +856,26 @@ label{
             transform: scale(1);
         }
     }
+.text-azul{
+    color: var(--bg-accent);
+}
+
+.text-azulito{
+    color: var(--bg-light-blue);
+}
+
+.main-content{
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 60% 50%, var(--bg-color-primary), var(--bg-thirdy));
+}
+.card3{
+    background-color: var(--bg-color-primary);
+    color: var(--texts-principal);
+    transition: all 0.5s ease;
+    border: none;
+}

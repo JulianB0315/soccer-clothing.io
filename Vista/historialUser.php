@@ -43,7 +43,7 @@ try {
     echo "Error: " . $e->getMessage();
     exit();
 }
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -118,7 +118,7 @@ try {
         </div>
     </nav>
     <!-- Main page content-->
-    <main class="pt-5 bg-body-secondary pb-4">
+    <main class="pt-5 bg-body-secondary pb-4 main-content">
         <div class="container-xl px-4 mt-4 pt-5">
             <!-- Navegacion-->
             <nav class="nav nav-borders">
@@ -127,8 +127,8 @@ try {
             </nav>
             <hr class="mt-0 mb-4" />
             <!-- Historial de compras-->
-            <div class="card mb-4">
-                <div class="card-header">Historial de compras</div>
+            <div class="card mb-4 card3">
+                <div class="card-header fw-bold">Historial de compras</div>
                 <div class="card-body p-0">
                     <div class="table-responsive table-billing-history">
                         <table class="table">
@@ -163,7 +163,6 @@ try {
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
