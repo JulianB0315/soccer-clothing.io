@@ -154,7 +154,7 @@ if (!isset($_SESSION['id_cliente'])) {
             <p><strong>Email:</strong> <?php echo htmlspecialchars($cliente['email']); ?></p>
             <p><strong>Fecha de Pedido:</strong> <?php echo date("Y-m-d H:i:s", strtotime($pedido['fecha'])); ?></p>
             <p><strong>Total:</strong> S/. <?php echo number_format($pedido['total'], 2); ?></p>
-            <h5>Productos Comprados:</h5>
+            <h5 class="mt-3 compra-subtitle">Productos Comprados:</h5>
             <table class="table compra-tabla">
                 <thead>
                     <tr>

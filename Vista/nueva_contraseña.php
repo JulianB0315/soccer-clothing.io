@@ -90,6 +90,7 @@ if (isset($_GET['id_cliente'])) {
                             class="input-login"
                             id="nuevaContrasena"
                             name="nuevaContrasena"
+                            minlength="8"
                         />
                         <label for="nueva-contrasena" class="lbl-nombres-registro">Nueva Contraseña</label>
                     </div>
@@ -101,6 +102,7 @@ if (isset($_GET['id_cliente'])) {
                             class="input-login"
                             id="confirmarContrasena"
                             name="confirmarContrasena"
+                            minlength="8"
                         />
                         <label for="confirmarContrasena" class="lbl-nombres-registro">Repetir Contraseña</label>
                     </div>

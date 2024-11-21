@@ -37,10 +37,10 @@ body {
 
 hr {
     margin: 1rem 0;
-    color: inherit;
-    background-color: currentColor;
+    color: var(--text-light);
+    background-color: var(--text-light);
     border: 0;
-    opacity: 0.25;
+    opacity: 0.30;
 }
 
 hr:not([size]) {
@@ -317,11 +317,11 @@ a {
 }
 
 .card:not([class*=bg-]) .card-header {
-    color: #0061f2;
+    color: var(--bg-accent);
 }
 
 .nav-borders .nav-link {
-    color: #69707a;
+    color: var(--text-muted);
     border-bottom-width: 0.125rem;
     border-bottom-style: solid;
     border-bottom-color: transparent;
@@ -334,8 +334,8 @@ a {
 }
 
 .nav-borders .nav-link.active {
-    color: #0061f2;
-    border-bottom-color: #0061f2;
+    color:var(--bg-accent) ;
+    border-bottom-color: var(--bg-accent);
 }
 
 .page-header .page-header-content .page-header-title {
@@ -362,6 +362,7 @@ a {
 
 .img-account-profile {
     height: 10rem;
+    /* background-color: var(--texts-principal); */
 }
 
 .footer{
@@ -437,12 +438,17 @@ a {
 :root{
     --texts-principal:#fdf6d0;
     --bg-secondary:#264667;
-    --bg-thirdy:#020c18;
+    --bg-thirdy:#123254;
     --bg-color-primary:#081625;
+    --bg-light:#fdf6d0;
     --bg-light-blue:#659adb;
     --bg-light-secondary:#4877b0;
+    --bg-dark:#1d1d20;
+    --font-titles:'Anton', sans-serif;
+    --bg-accent: #3498db;
     --bg-warm: #f7d2c4;
     --text-muted: #666666;
+    --text-light: #9ec2e0;
     --font-texts:"AdihausDIN", sans-serif;
 }
 html{
@@ -836,6 +842,9 @@ input:focus {
 }
 .btnVerDetalles:hover{
     background-color: var(--bg-light-secondary);
+}
+label{
+    color: var(--bg-accent);
 }
     @keyframes fadeIn {
         from {
