@@ -873,3 +873,9 @@ label{
     align-items: center;
     background: radial-gradient(circle at 60% 50%, var(--bg-color-primary), var(--bg-thirdy));
 }
+.card3{
+    background-color: var(--bg-color-primary);
+    color: var(--texts-principal);
+    transition: all 0.5s ease;
+    border: none;
+}
