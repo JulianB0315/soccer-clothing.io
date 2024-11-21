@@ -362,6 +362,7 @@ a {
 
 .img-account-profile {
     height: 10rem;
+    /* background-color: var(--texts-principal); */
 }
 
 .footer{
