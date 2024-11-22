@@ -33,9 +33,5 @@ if ($codigo_web === $codigo_email) {
     }
 } else {
     // Si los códigos no coinciden
-    echo "<script>
-                alert('Codigo incorrecto');
-                
-              </script>";
-              
+    header("Location: ../Vista/menu_codigo.php?codigo=" . urlencode($codigo_email) . "&email=" . urlencode($email));          
 }

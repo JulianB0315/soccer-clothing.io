@@ -63,13 +63,13 @@ function closeNotification() {
     }, 500);
 }
 
-// Función para vaciar el carrito
-function clearCart() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "shop.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("action=clear_cart");
-}
+// // Función para vaciar el carrito
+// function clearCart() {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open("POST", "shop.php", true);
+//     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//     xhr.send("action=clear_cart");
+// }
 
 /*Cargar los datos del cliente */
 // Obtener los valores guardados previamente en sessionStorage

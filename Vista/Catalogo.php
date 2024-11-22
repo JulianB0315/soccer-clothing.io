@@ -2,6 +2,9 @@
 session_start();
 
 require '../Controlador/ConectionMySQL.php'; // Conexión PDO
+if (!isset($pdo)) {
+    die("No se pudo establecer una conexión con la base de datos.");
+}
 
 //Verifica el inicio de sesión 
 if (!isset($_SESSION['id_cliente'])) {
@@ -24,13 +27,7 @@ if (!isset($_SESSION['id_cliente'])) {
     }
 }
 
-require '../Controlador/ConectionMySQL.php';
-
 // Verifica si la variable $pdo está definida
-if (!isset($pdo)) {
-    die("No se pudo establecer una conexión con la base de datos.");
-}
-
 try {
     // Consulta para obtener productos con stock disponible
     $query = $pdo->query("SELECT * FROM productos WHERE stock > 0 AND oferta = 'no'");
@@ -126,7 +123,6 @@ try {
     </nav>
     <main class="main-content d-flex position-relative flex-wrap" id="main">
         <div class="container" style="margin-top: 120px;">
-            <!-- No toque esto diego cabron -->
             <div class="container">
                 <div class="row">
                     <?php

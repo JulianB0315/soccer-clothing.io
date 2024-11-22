@@ -161,7 +161,7 @@ try {
                             <div class="mb-4">
                                 <div class="card-header fw-bold text-azul ">Detalles de la Cuenta</div>
                                 <div class="card-body">
-                                    <form method="post" action="guardar_cambios_user.php">
+                                    <form method="post" action="../Controlador/guardar_cambios_user.php">
                                         <!-- Form Group (username)-->
                                         <!-- Form Row-->
                                         <div class="row gx-3 mb-3">
@@ -185,7 +185,7 @@ try {
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputEmailAddress">Correo Electronico:</label>
-                                            <input class="form-control" name="email" type="email" placeholder="Ingresa tu email" value="<?php echo htmlspecialchars($cliente['email']); ?>" disabled />
+                                            <input class="form-control" placeholder="Ingresa tu email" value="<?php echo htmlspecialchars($cliente['email']); ?>" disabled />
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="small mb-1" for="inputPhone">Numero telefonico:</label>
