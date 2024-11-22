@@ -97,7 +97,7 @@ if (isset($_GET['codigo']) && isset($_GET['email'])) {
                         <input type="text" required class="input-login" id="codigo_email" name="codigo_email">
                         <label for="codigo_email" class="lbl-nombres-registro">Ingresar codigo</label>
                     </div>
-                    <input type="submit" class="btn-acceder" value="Registrarse">
+                    <input type="submit" class="btn-acceder" value="Ingresar Codigo">
                     <div class="registrar">
                         <a href="./index.php" class="volver">Volver a la tienda</a>
                     </div>
