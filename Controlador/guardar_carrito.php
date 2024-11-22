@@ -29,14 +29,14 @@ function generarIDdetalles() {
 if (empty($_SESSION['cart'])) {
     echo  "<script>
             alert('No hay productos en el carrito');
-            window.location = 'Catalogo.php'; 
+            window.location = '../Vista/Catalogo.php'; 
         </script>";
     exit();
 }
 if (!isset($_SESSION['id_cliente'])) {
     echo  "<script>
             alert('Por favor iniciar sesión');
-            window.location = 'login_usuario.html';
+            window.location = '../Vista/login_usuario.html';
         </script>";
     exit();
 }
