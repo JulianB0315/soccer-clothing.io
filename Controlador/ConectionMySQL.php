@@ -1,8 +1,8 @@
 <?php
-$host = 'junction.proxy.rlwy.net:37362';  // o el host que estés utilizando
+$host = 'localhost';  // o el host que estés utilizando
 $dbname = 'soccer-clothing';  // nombre de tu base de datos
 $username = 'root';  // tu usuario de la base de datos
-$password = 'riBVLjJKTBeHzTEEcpSUnJvsEcgpcwCO';  // tu contraseña
+$password = '';  // tu contraseña
 
 try {
     // Crea la conexión PDO
